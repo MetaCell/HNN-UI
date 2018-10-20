@@ -1,0 +1,9 @@
+.ipynb_checkpoints/
+*.pyc
+*.egg-info
+.DS_Store
+pygeppetto/
+org.geppetto.frontend.jupyter/
+*.ipynb
+init.py
+.idea/
