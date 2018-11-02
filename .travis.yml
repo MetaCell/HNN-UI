@@ -8,8 +8,12 @@ node_js:
 env:
   global:
     secure: dn0FPQ5IG4M/3kdwnyI78ElQ308Vc3QnKAvkWfwMFb8QxDqxQdnTo7AV1qTMtbLrDNkeEWIgi4nc7jmXNtvGTwOfhAULVh6606Qs5B+ezTdwzajbbFMI8SKQx/pnTojOMu8dx7V4lMoR/YWcojR0VC1IWVC62TGbSB1k5BDGgH0=
+git:
+  submodules: false
 before_install:
   - sudo apt-get install -y xserver-xorg-dev libxext-dev libxi-dev
+  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+  - git submodule update --init --recursive
 install:
   - git clone --quiet  https://github.com/MetaCell/geppetto-hnn.git
   - cd geppetto-hnn
