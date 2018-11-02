@@ -11,7 +11,7 @@ env:
 before_install:
   - sudo apt-get install -y xserver-xorg-dev libxext-dev libxi-dev
 install:
-  - git clone --quiet  https://github.com/MetaCell/geppetto-hnn
+  - git clone --quiet  https://github.com/MetaCell/geppetto-hnn.git
   - cd geppetto-hnn
   - if [ `git branch -a | egrep "remotes/origin/${TRAVIS_BRANCH}"` ]; then git checkout $TRAVIS_BRANCH ; else echo "Branch $TRAVIS_BRANCH does not exist for the dependent bundle, checking out development ..." && git checkout development; fi
   - cd ..
@@ -21,7 +21,7 @@ install:
   - npm install --silent -g gl
 python:
   - "2.7"
-  - "3.7"
+  - "3.5"
 edge: true
 notifications:
   slack: metacell:5ALSeoP88DqIhORUJvxE56sq
@@ -48,7 +48,7 @@ script:
   - cd $TRAVIS_BUILD_DIR/ && ls
   - cd geppetto-hnn && ls
   - cd tests
-  - bash utilities/netpyne-server-status.sh
+  - bash utilities/hnn-server-status.sh
   - sleep 30
   - http_status=$(curl -s -I $1 http://localhost:8888/geppetto | grep HTTP/1.1 | awk {'print $2'})
   - echo "$http_status"
@@ -58,17 +58,17 @@ script:
     docker stop $(docker ps -a -q);
     docker rm $(docker ps -a -q);
     docker run  -t -dit --name=hnn-ui_container -h localhost -p 8888:8888 hnn-ui:latest
-    bash utilities/netpyne-server-status.sh
+    bash utilities/hnn-server-status.sh
     sleep 30;
     http_status=$(curl -s -I $1 http://localhost:8888/geppetto | grep HTTP/1.1 | awk {'print $2'})
     echo "Done restarting";
     echo "$http_status";
     done;
   - http_status=$(curl -s -I $1 http://localhost:28081 | grep HTTP/1.1 | awk {'print $2'})
-  - echo "$http_status";
+  - echo "$http_status";netpyne
   - "curl -s -I $1 http://localhost:8888/geppetto | grep HTTP/1.1 | awk {'print $2'}"
   - firefox --version
-  - travis_retry xvfb-run -a --server-args="-screen 0 1024x768x24"  casperjs test netpyne-tests.js --host=http://localhost:8888/ --engine=slimerjs
+  - travis_retry xvfb-run -a --server-args="-screen 0 1024x768x24"  casperjs test hnn-tests.js --host=http://localhost:8888/ --engine=slimerjs
   - python -c "import fcntl; fcntl.fcntl(1, fcntl.F_SETFL, 0)"
   - docker logs -t hnn-ui_container
   - docker stop $(docker ps -a -q)
