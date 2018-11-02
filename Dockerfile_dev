@@ -50,7 +50,7 @@ WORKDIR src/nrnpython
 ENV PATH="/home/jovyan/work/nrn/x86_64/bin:${PATH}"
 RUN /bin/bash -c "source activate snakes && python setup.py install"
 
-# Clone NetPyNE-UI and install the development version
+# Clone HNN-UI and install the development version
 WORKDIR ../../../
 RUN wget https://github.com/MetaCell/HNN-UI/archive/$hnnuiBranch.zip
 RUN unzip $hnnuiBranch.zip
