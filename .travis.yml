@@ -8,16 +8,12 @@ node_js:
 env:
   global:
     secure: dn0FPQ5IG4M/3kdwnyI78ElQ308Vc3QnKAvkWfwMFb8QxDqxQdnTo7AV1qTMtbLrDNkeEWIgi4nc7jmXNtvGTwOfhAULVh6606Qs5B+ezTdwzajbbFMI8SKQx/pnTojOMu8dx7V4lMoR/YWcojR0VC1IWVC62TGbSB1k5BDGgH0=
-git:
-  submodules: false
 before_install:
   - sudo apt-get install -y xserver-xorg-dev libxext-dev libxi-dev
-  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
-  - git submodule update --init --recursive
 install:
   - git clone --quiet  https://github.com/MetaCell/geppetto-hnn.git
   - cd geppetto-hnn
-  - if [ `git branch -a | egrep "remotes/origin/${TRAVIS_BRANCH}"` ]; then git checkout $TRAVIS_BRANCH ; else echo "Branch $TRAVIS_BRANCH does not exist for the dependent bundle, checking out development ..." && git checkout development; fi
+  - if [ `git branch -a | egrep "remotes/origin/${TRAVIS_BRANCH}"` ]; then git checkout $TRAVIS_BRANCH ; else echo "Branch $TRAVIS_BRANCH does not exist for the dependent bundle, checking out material-ui-submodule ..." && git checkout material-ui-submodule; fi
   - cd ..
   - npm install --silent -g phantomjs
   - npm install --silent -g casperjs

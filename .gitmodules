@@ -1,4 +1,4 @@
 [submodule "hnn_ui/geppetto"]
 	path = hnn_ui/geppetto
-	url = git@github.com:openworm/org.geppetto.frontend.git
-	branch = refactor-sync
+	url = https://github.com/openworm/org.geppetto.frontend.git
+	branch = refactor-upgrade-materialui
