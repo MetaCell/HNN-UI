@@ -1,49 +1,12 @@
-FROM jupyter/base-notebook:eb70bcf1a292
-USER root
+# The purpose of this Dockerfile is to serve as skeleton for a future production version.
+# Therefore currently it is NOT functional
 
-RUN apt-get -qq update
-RUN apt-get install -y \
-        locales \
-        wget \
-        gcc \
-        g++ \
-        build-essential \
-        libncurses-dev \
-        libpython-dev \
-        cython \
-        libx11-dev \
-        git \
-        bison \
-        flex \
-        automake \
-        libtool \
-        libxext-dev \
-        libncurses-dev \
-        xfonts-100dpi \
-        libopenmpi-dev \
-        make \
-        zlib1g-dev \
-        unzip \
-        vim \
-        libpng-dev
-
-# Switch to non sudo, create a Python 3 virtual environment
+FROM metacell/jupyter-neuron:latest
 USER $NB_USER
-RUN conda create --name snakes python=3.7
 
-# Install latest iv and NEURON
-RUN git clone --branch 7.6.2 https://github.com/neuronsimulator/nrn
-WORKDIR nrn
-RUN ./build.sh
-# Activate conda to configure nrn with the right python version
-RUN /bin/bash -c "source activate snakes && ./configure --without-x --with-nrnpython=python3 --without-paranrn --prefix='/home/jovyan/work/nrn/' --without-iv"
-RUN make --silent -j4
-RUN make --silent install -j4
-
-# Install NEURON python
-WORKDIR src/nrnpython
-ENV PATH="/home/jovyan/work/nrn/x86_64/bin:${PATH}"
-RUN /bin/bash -c "source activate snakes && python setup.py install"
+ARG hnnuiBranch=skeleton
+ENV hnnuiBranch=${hnnuiBranch}
+RUN echo "$hnnuiBranch";
 
 ARG INCUBATOR_VER=unknown
 RUN /bin/bash -c "INCUBATOR_VER=${INCUBATOR_VER} source activate snakes && pip install netpyne_ui"
@@ -51,7 +14,8 @@ RUN /bin/bash -c "source activate snakes && jupyter nbextension enable --py jupy
 RUN /bin/bash -c "source activate snakes &&  jupyter serverextension enable --py jupyter_geppetto"
 RUN /bin/bash -c "source activate snakes && jupyter nbextension enable --py widgetsnbextension"
 
-WORKDIR /home/jovyan
-RUN git clone --branch skeleton https://github.com/MetaCell/HNN-UI.git
-WORKDIR /home/jovyan/HNN-UI
+WORKDIR /home/jovyan/work
+RUN wget https://github.com/MetaCell/HNN-UI/archive/$hnnuiBranch.zip -q
+RUN unzip $hnnuiBranch.zip
+WORKDIR /home/jovyan/work/HNN-UI-$hnnuiBranch/utilities
 CMD /bin/bash -c "exec jupyter notebook --NotebookApp.default_url=/geppetto --NotebookApp.token='' --library=hnn_ui"
