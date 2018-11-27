@@ -60,7 +60,7 @@ subprocess.call(['npm', 'install'], cwd='./org.geppetto.frontend.jupyter/js')
 subprocess.call(['npm', 'run', 'build-dev'], cwd='./org.geppetto.frontend.jupyter/js')
 
 # subprocess.call(['git', 'submodule', 'update', '--init'], cwd='./')
-clone('https://github.com/openworm/org.geppetto.frontend.git', 'geppetto', 'refactor-sync', 'hnn_ui/', False, 'geppetto')
+clone('https://github.com/openworm/org.geppetto.frontend.git', 'geppetto', 'refactor-upgrade-materialui', 'hnn_ui/', False, 'geppetto')
 # checkout('geppetto', 'development','org.geppetto.frontend.jupyter/src/jupyter_geppetto/')
 clone('https://github.com/MetaCell/geppetto-hnn.git', 'geppetto-hnn', 'skeleton',
       'hnn_ui/geppetto/src/main/webapp/extensions/')
