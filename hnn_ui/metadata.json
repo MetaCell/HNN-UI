@@ -1,0 +1,2975 @@
+{
+  "cell": {
+    "label": "Network Parameters",
+    "type": "",
+    "default": "",
+    "component": "",
+    "suggestions": "",
+    "hintText": "",
+    "help": "",
+    "children": {
+      "L2/3_pyr": {
+        "label": "Layer 2/3 pyramidal cell parameters",
+        "type": "",
+        "default": "",
+        "component": "",
+        "suggestions": "",
+        "hintText": "",
+        "help": "",
+        "children": {
+          "geometry": {
+            "label": "Geometric cell properties",
+            "type": "",
+            "default": "",
+            "component": "",
+            "suggestions": "",
+            "hintText": "",
+            "help": "",
+            "children": {
+              "soma": {
+                "label": "Soma section",
+                "type": "",
+                "default": "",
+                "component": "",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "length": {
+                    "label": "Soma length",
+                    "type": "float",
+                    "default": "22.1",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter soma length",
+                    "help": "Enter soma length in microns",
+                    "children": {
+                    }
+                  },
+                  "diameter": {
+                    "label": "Soma diameter",
+                    "type": "float",
+                    "default": "23.4",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter soma diameter in microns",
+                    "help": "Enter soma diameter in microns",
+                    "children": {}
+                  },
+                  "resistivity": {
+                    "label": "Soma resistivity",
+                    "type": "float",
+                    "default": "200.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter soma resistivity in ohm-cm",
+                    "help": "",
+                    "children": {}
+                  },
+                  "capacitance": {
+                    "label": "Soma capacitive density",
+                    "type": "float",
+                    "default": "0.6195",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter soma capacitive density in F/cm2",
+                    "help": "Enter soma capacitive density in F/cm2",
+                    "children": {}
+                  }
+                }
+              },
+              "apicalDendriteTrunk": {
+                "label": "Apical dendrite trunk section",
+                "type": "",
+                "default": "",
+                "component": "",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "length": {
+                    "label": "Apical dendrite trunk length",
+                    "type": "float",
+                    "default": "59.5",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite trunk length",
+                    "help": "Enter apical dendrite trunk length in microns",
+                    "children": {
+                    }
+                  },
+                  "diameter": {
+                    "label": "Apical dendrite trunk diameter",
+                    "type": "float",
+                    "default": "4.25",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite trunk diameter in microns",
+                    "help": "Enter apical dendrite trunk diameter in microns",
+                    "children": {}
+                  },
+                  "resistivity": {
+                    "label": "Apical dendrite trunk resistivity",
+                    "type": "float",
+                    "default": "200.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite trunk resistivity in ohm-cm",
+                    "help": "Enter apical dendrite trunk resistivity in ohm-cm",
+                    "children": {}
+                  },
+                  "capacitance": {
+                    "label": "Apical dendrite trunk capacitive density",
+                    "type": "float",
+                    "default": "0.6195",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite trunk capacitive density in F/cm2",
+                    "help": "Enter apical dendrite trunk capacitive density in F/cm2",
+                    "children": {}
+                  }
+                }
+              },
+              "apicaldendrite": {
+                "label": "Apical dendrite section",
+                "type": "",
+                "default": "",
+                "component": "",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "length": {
+                    "label": "Apical dendrite length",
+                    "type": "float",
+                    "default": "306.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite length",
+                    "help": "Enter apical dendrite length in microns",
+                    "children": {
+                    }
+                  },
+                  "diameter": {
+                    "label": "Apical dendrite diameter",
+                    "type": "float",
+                    "default": "4.08",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite diameter in microns",
+                    "help": "Enter apical dendrite diameter in microns",
+                    "children": {}
+                  },
+                  "resistivity": {
+                    "label": "Apical dendrite resistivity",
+                    "type": "float",
+                    "default": "200.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite resistivity in ohm-cm",
+                    "help": "Enter apical dendrite resistivity in ohm-cm",
+                    "children": {}
+                  },
+                  "capacitance": {
+                    "label": "Apical dendrite capacitive density",
+                    "type": "float",
+                    "default": "0.6195",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite capacitive density in F/cm2",
+                    "help": "Enter apical dendrite capacitive density in F/cm2",
+                    "children": {}
+                  }
+                }
+              },
+              "apicaldendriteTurf": {
+                "label": "Apical dendrite turf section",
+                "type": "",
+                "default": "",
+                "component": "",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "length": {
+                    "label": "Apical dendrite turf length",
+                    "type": "float",
+                    "default": "238.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite turf length",
+                    "help": "Enter apical dendrite turf length in microns",
+                    "children": {
+                    }
+                  },
+                  "diameter": {
+                    "label": "Apical dendrite turf diameter",
+                    "type": "float",
+                    "default": "3.4",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite turf diameter in microns",
+                    "help": "Enter apical dendrite turf diameter in microns",
+                    "children": {}
+                  },
+                  "resistivity": {
+                    "label": "Apical dendrite turf resistivity",
+                    "type": "float",
+                    "default": "200.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite turf resistivity in ohm-cm",
+                    "help": "Enter apical dendrite turf resistivity in ohm-cm",
+                    "children": {}
+                  },
+                  "capacitance": {
+                    "label": "Apical dendrite turf capacitive density",
+                    "type": "float",
+                    "default": "0.6195",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite turf capacitive density in F/cm2",
+                    "help": "Enter apical dendrite turf capacitive density in F/cm2",
+                    "children": {}
+                  }
+                }
+              },
+              "obliqueApicaldendrite": {
+                "label": "Oblique apical dendrite section",
+                "type": "",
+                "default": "",
+                "component": "",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "length": {
+                    "label": "Oblique apical dendrite length",
+                    "type": "float",
+                    "default": "238.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter oblique apical dendrite length",
+                    "help": "Enter oblique apical dendrite length in microns",
+                    "children": {
+                    }
+                  },
+                  "diameter": {
+                    "label": "Oblique apical dendrite diameter",
+                    "type": "float",
+                    "default": "3.91",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter oblique apical dendrite diameter in microns",
+                    "help": "Enter oblique apical dendrite diameter in microns",
+                    "children": {}
+                  },
+                  "resistivity": {
+                    "label": "Oblique apical dendrite resistivity",
+                    "type": "float",
+                    "default": "200.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter oblique apical dendrite resistivity in ohm-cm",
+                    "help": "Enter oblique apical dendrite resistivity in ohm-cm",
+                    "children": {}
+                  },
+                  "capacitance": {
+                    "label": "Oblique apical dendrite capacitive density",
+                    "type": "float",
+                    "default": "0.6195",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter oblique apical dendrite capacitive density in F/cm2",
+                    "help": "Enter oblique apical dendrite capacitive density in F/cm2",
+                    "children": {}
+                  }
+                }
+              },
+              "basaldendrite1": {
+                "label": "Basal dendrite 1 section",
+                "type": "",
+                "default": "",
+                "component": "",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "length": {
+                    "label": "Basal dendrite 1 length",
+                    "type": "float",
+                    "default": "85.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter basal dendrite 1 length",
+                    "help": "Enter basal dendrite 1 length in microns",
+                    "children": {
+                    }
+                  },
+                  "diameter": {
+                    "label": "Basal dendrite 1 diameter",
+                    "type": "float",
+                    "default": "4.25",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter basal dendrite 1 diameter in microns",
+                    "help": "Enter basal dendrite 1 diameter in microns",
+                    "children": {}
+                  },
+                  "resistivity": {
+                    "label": "Basal dendrite 1 resistivity",
+                    "type": "float",
+                    "default": "200.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter basal dendrite 1 resistivity in ohm-cm",
+                    "help": "Enter basal dendrite 1 resistivity in ohm-cm",
+                    "children": {}
+                  },
+                  "capacitance": {
+                    "label": "Basal dendrite 1 capacitive density",
+                    "type": "float",
+                    "default": "0.6195",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter basal dendrite 1 capacitive density in F/cm2",
+                    "help": "Enter basal dendrite 1 capacitive density in F/cm2",
+                    "children": {}
+                  }
+                }
+              },
+              "basaldendrite2": {
+                "label": "Basal dendrite 2 section",
+                "type": "",
+                "default": "",
+                "component": "",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "length": {
+                    "label": "Basal dendrite 2 length",
+                    "type": "float",
+                    "default": "255.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter basal dendrite 2 length",
+                    "help": "Enter basal dendrite 2 length in microns",
+                    "children": {
+                    }
+                  },
+                  "diameter": {
+                    "label": "Basal dendrite 2 diameter",
+                    "type": "float",
+                    "default": "2.72",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter basal dendrite 2 diameter in microns",
+                    "help": "Enter basal dendrite 2 diameter in microns",
+                    "children": {}
+                  },
+                  "resistivity": {
+                    "label": "Basal dendrite 2 resistivity",
+                    "type": "float",
+                    "default": "200.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter basal dendrite 2 resistivity in ohm-cm",
+                    "help": "Enter basal dendrite 2 resistivity in ohm-cm",
+                    "children": {}
+                  },
+                  "capacitance": {
+                    "label": "Basal dendrite 2 capacitive density",
+                    "type": "float",
+                    "default": "0.6195",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter basal dendrite 2 capacitive density in F/cm2",
+                    "help": "Enter basal dendrite 2 capacitive density in F/cm2",
+                    "children": {}
+                  }
+                }
+              },
+              "basaldendrite3": {
+                "label": "Basal dendrite 3 section",
+                "type": "",
+                "default": "",
+                "component": "",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "length": {
+                    "label": "Basal dendrite 3 length",
+                    "type": "float",
+                    "default": "255.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter basal dendrite 3 length",
+                    "help": "Enter basal dendrite 3 length in microns",
+                    "children": {
+                    }
+                  },
+                  "diameter": {
+                    "label": "Basal dendrite 3 diameter",
+                    "type": "float",
+                    "default": "2.72",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter basal dendrite 3 diameter in microns",
+                    "help": "Enter basal dendrite 3 diameter in microns",
+                    "children": {}
+                  },
+                  "resistivity": {
+                    "label": "Basal dendrite 3 resistivity",
+                    "type": "float",
+                    "default": "200.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter basal dendrite 3 resistivity in ohm-cm",
+                    "help": "Enter basal dendrite 3 resistivity in ohm-cm",
+                    "children": {}
+                  },
+                  "capacitance": {
+                    "label": "Basal dendrite 3 capacitive density",
+                    "type": "float",
+                    "default": "0.6195",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter basal dendrite 3 capacitive density in F/cm2",
+                    "help": "Enter basal dendrite 3 capacitive density in F/cm2",
+                    "children": {}
+                  }
+                }
+              }
+            }
+          },
+          "synapses": {
+            "label": "Layer 2/3 synaptic cell properties",
+            "type": "",
+            "default": "",
+            "component": "",
+            "suggestions": "",
+            "hintText": "",
+            "help": "",
+            "children": {
+              "AMPA": {
+                "label": "AMPA synaptic mechanism",
+                "type": "",
+                "default": "",
+                "component": "",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "reversal": {
+                    "label": "Reversal potencial",
+                    "type": "float",
+                    "default": "0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Reversal potencial in mV",
+                    "help": "Reversal potencial in mV",
+                    "children": {}
+                  },
+                  "rise": {
+                    "label": "Raise time",
+                    "type": "float",
+                    "default": "0.5",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Rise time in ms",
+                    "help": "Rise time in ms",
+                    "children": {}
+                  },
+                  "decay": {
+                    "label": "Decay time",
+                    "type": "float",
+                    "default": "5",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Decay time",
+                    "help": "Decay time",
+                    "children": {}
+                  }
+                }
+              },
+              "NMDA": {
+                "label": "NMDA synaptic mechanism",
+                "type": "",
+                "default": "",
+                "component": "",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "reversal": {
+                    "label": "Reversal potencial",
+                    "type": "float",
+                    "default": "0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Reversal potencial in mV",
+                    "help": "Reversal potencial in mV",
+                    "children": {}
+                  },
+                  "rise": {
+                    "label": "Raise time",
+                    "type": "float",
+                    "default": "1",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Rise time in ms",
+                    "help": "Rise time in ms",
+                    "children": {}
+                  },
+                  "decay": {
+                    "label": "Decay time",
+                    "type": "float",
+                    "default": "20",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Decay time",
+                    "help": "Decay time",
+                    "children": {}
+                  }
+                }
+              },
+              "GABAA": {
+                "label": "AMPA synaptic mechanism",
+                "type": "",
+                "default": "",
+                "component": "",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "reversal": {
+                    "label": "Reversal potencial",
+                    "type": "float",
+                    "default": "-80",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Reversal potencial in mV",
+                    "help": "Reversal potencial in mV",
+                    "children": {}
+                  },
+                  "rise": {
+                    "label": "Raise time",
+                    "type": "float",
+                    "default": "0.5",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Rise time in ms",
+                    "help": "Rise time in ms",
+                    "children": {}
+                  },
+                  "decay": {
+                    "label": "Decay time",
+                    "type": "float",
+                    "default": "5",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Decay time",
+                    "help": "Decay time",
+                    "children": {}
+                  }
+                }
+              },
+              "GABAB": {
+                "label": "AMPA synaptic mechanism",
+                "type": "",
+                "default": "",
+                "component": "",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "reversal": {
+                    "label": "Reversal potencial",
+                    "type": "float",
+                    "default": "-80",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Reversal potencial in mV",
+                    "help": "Reversal potencial in mV",
+                    "children": {}
+                  },
+                  "rise": {
+                    "label": "Raise time",
+                    "type": "float",
+                    "default": "1",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Rise time in ms",
+                    "help": "Rise time in ms",
+                    "children": {}
+                  },
+                  "decay": {
+                    "label": "Decay time",
+                    "type": "float",
+                    "default": "20",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Decay time",
+                    "help": "Decay time",
+                    "children": {}
+                  }
+                }
+              }
+            }
+          },
+          "biophysics": {
+            "label": "Biophysical cell properties",
+            "type": "",
+            "default": "",
+            "component": "",
+            "suggestions": "",
+            "hintText": "",
+            "help": "",
+            "children": {
+              "soma": {
+                "label": "Soma biophysics",
+                "type": "",
+                "default": "",
+                "component": "",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "Km": {
+                    "label": "Potassium channel",
+                    "type": "",
+                    "default": "",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "channelDensity": {
+                        "label": "Channel capacitance density",
+                        "type": "float",
+                        "default": "250",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Channel capacitance density in S/cm2",
+                        "help": "Channel capacitance density in S/cm2",
+                        "children": {}
+                      }
+                    }
+                  },
+                  "Kv": {
+                    "label": "Voltage gated potassium channel",
+                    "type": "",
+                    "default": "",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "channelDensity": {
+                        "label": "Channel capacitance density",
+                        "type": "float",
+                        "default": "0.01",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Channel capacitance density in S/cm2",
+                        "help": "Channel capacitance density in S/cm2",
+                        "children": {}
+                      }
+                    }
+                  },
+                  "Na": {
+                    "label": "Voltage gated sodium channel",
+                    "type": "",
+                    "default": "",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "channelDensity": {
+                        "label": "Channel capacitance density",
+                        "type": "float",
+                        "default": "0.18",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Channel capacitance density in S/cm2",
+                        "help": "Channel capacitance density in S/cm2",
+                        "children": {}
+                      }
+                    }
+                  },
+                  "leak": {
+                    "label": "Leak channel",
+                    "type": "",
+                    "default": "",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "reversal": {
+                        "label": "Reversal potencial",
+                        "type": "float",
+                        "default": "-65",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Reversal potencial in mV",
+                        "help": "Reversal potencial in mV",
+                        "children": {}
+                      },
+                      "channelDensity": {
+                        "label": "Channel capacitance density",
+                        "type": "float",
+                        "default": "4.26e-05",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Channel capacitance density in S/cm2",
+                        "help": "Channel capacitance density in S/cm2",
+                        "children": {}
+                      }
+                    }
+                  }
+                }
+              },
+              "dendrite": {
+                "label": "Dendrite biophysics",
+                "type": "",
+                "default": "",
+                "component": "",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "Km": {
+                    "label": "Potassium channel",
+                    "type": "",
+                    "default": "",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "channelDensity": {
+                        "label": "Channel capacitance density",
+                        "type": "float",
+                        "default": "250",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Channel capacitance density in S/cm2",
+                        "help": "Channel capacitance density in S/cm2",
+                        "children": {}
+                      }
+                    }
+                  },
+                  "Kv": {
+                    "label": "Voltage gated potassium channel",
+                    "type": "",
+                    "default": "0.01",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "channelDensity": {
+                        "label": "Channel capacitance density",
+                        "type": "float",
+                        "default": "0.01",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Channel capacitance density in S/cm2",
+                        "help": "Channel capacitance density in S/cm2",
+                        "children": {}
+                      }
+                    }
+                  },
+                  "Na": {
+                    "label": "Voltage gated sodium channel",
+                    "type": "",
+                    "default": "0.15",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "channelDensity": {
+                        "label": "Channel capacitance density",
+                        "type": "float",
+                        "default": "0.15",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Channel capacitance density in S/cm2",
+                        "help": "Channel capacitance density in S/cm2",
+                        "children": {}
+                      }
+                    }
+                  },
+                  "leak": {
+                    "label": "Leak current",
+                    "type": "",
+                    "default": "",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "reversal": {
+                        "label": "Reversal potencial",
+                        "type": "float",
+                        "default": "-65",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Reversal potencial in mV",
+                        "help": "Reversal potencial in mV",
+                        "children": {}
+                      },
+                      "channelDensity": {
+                        "label": "Channel capacitance density",
+                        "type": "float",
+                        "default": "",
+                        "component": "TextField",
+                        "suggestions": "4.26e-05",
+                        "hintText": "Channel capacitance density in S/cm2",
+                        "help": "Channel capacitance density in S/cm2",
+                        "children": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "L5_pyr": {
+        "label": "Layer 5 pyramidal cell parameters",
+        "type": "",
+        "default": "",
+        "component": "",
+        "suggestions": "",
+        "hintText": "",
+        "help": "",
+        "children": {
+          "geometry": {
+            "label": "Geometric cell properties",
+            "type": "",
+            "default": "",
+            "component": "",
+            "suggestions": "",
+            "hintText": "",
+            "help": "",
+            "children": {
+              "soma": {
+                "label": "Soma section",
+                "type": "",
+                "default": "",
+                "component": "",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "length": {
+                    "label": "Soma length",
+                    "type": "float",
+                    "default": "39.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter soma length",
+                    "help": "Enter soma length in microns",
+                    "children": {
+                    }
+                  },
+                  "diameter": {
+                    "label": "Soma diameter",
+                    "type": "float",
+                    "default": "28.9",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter soma diameter in microns",
+                    "help": "Enter soma diameter in microns",
+                    "children": {}
+                  },
+                  "resistivity": {
+                    "label": "Soma resistivity",
+                    "type": "float",
+                    "default": "200.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter soma resistivity in ohm-cm",
+                    "help": "",
+                    "children": {}
+                  },
+                  "capacitance": {
+                    "label": "Soma capacitive density",
+                    "type": "float",
+                    "default": "0.85",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter soma capacitive density in F/cm2",
+                    "help": "Enter soma capacitive density in F/cm2",
+                    "children": {}
+                  }
+                }
+              },
+              "apicalDendriteTrunk": {
+                "label": "Apical dendrite trunk section",
+                "type": "",
+                "default": "",
+                "component": "",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "length": {
+                    "label": "Apical dendrite trunk length",
+                    "type": "float",
+                    "default": "102.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite trunk length",
+                    "help": "Enter apical dendrite trunk length in microns",
+                    "children": {
+                    }
+                  },
+                  "diameter": {
+                    "label": "Apical dendrite trunk diameter",
+                    "type": "float",
+                    "default": "10.2",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite trunk diameter in microns",
+                    "help": "Enter apical dendrite trunk diameter in microns",
+                    "children": {}
+                  },
+                  "resistivity": {
+                    "label": "Apical dendrite trunk resistivity",
+                    "type": "float",
+                    "default": "200.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite trunk resistivity in ohm-cm",
+                    "help": "Enter apical dendrite trunk resistivity in ohm-cm",
+                    "children": {}
+                  },
+                  "capacitance": {
+                    "label": "Apical dendrite trunk capacitive density",
+                    "type": "float",
+                    "default": "0.85",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite trunk capacitive density in F/cm2",
+                    "help": "Enter apical dendrite trunk capacitive density in F/cm2",
+                    "children": {}
+                  }
+                }
+              },
+              "apicaldendrite1": {
+                "label": "Apical dendrite 1 section",
+                "type": "",
+                "default": "",
+                "component": "",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "length": {
+                    "label": "Apical dendrite 1 length",
+                    "type": "float",
+                    "default": "680.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite 1 length",
+                    "help": "Enter apical dendrite 1 length in microns",
+                    "children": {
+                    }
+                  },
+                  "diameter": {
+                    "label": "Apical dendrite 1 diameter",
+                    "type": "float",
+                    "default": "7.48",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite 1 diameter in microns",
+                    "help": "Enter apical dendrite 1 diameter in microns",
+                    "children": {}
+                  },
+                  "resistivity": {
+                    "label": "Apical dendrite 1 resistivity",
+                    "type": "float",
+                    "default": "200.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite 1 resistivity in ohm-cm",
+                    "help": "Enter apical dendrite 1 1resistivity in ohm-cm",
+                    "children": {}
+                  },
+                  "capacitance": {
+                    "label": "Apical dendrite 1 capacitive density",
+                    "type": "float",
+                    "default": "0.85",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite 1 capacitive density in F/cm2",
+                    "help": "Enter apical dendrite 1 capacitive density in F/cm2",
+                    "children": {}
+                  }
+                }
+              },
+              "apicaldendrite2": {
+                "label": "Apical dendrite 2 section",
+                "type": "",
+                "default": "",
+                "component": "",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "length": {
+                    "label": "Apical dendrite 2 length",
+                    "type": "float",
+                    "default": "680.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite 2 length",
+                    "help": "Enter apical dendrite 2 length in microns",
+                    "children": {
+                    }
+                  },
+                  "diameter": {
+                    "label": "Apical dendrite 2 diameter",
+                    "type": "float",
+                    "default": "4.93",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite 2 diameter in microns",
+                    "help": "Enter apical dendrite 2 diameter in microns",
+                    "children": {}
+                  },
+                  "resistivity": {
+                    "label": "Apical dendrite 2 resistivity",
+                    "type": "float",
+                    "default": "200.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite 2 resistivity in ohm-cm",
+                    "help": "Enter apical dendrite 2 1resistivity in ohm-cm",
+                    "children": {}
+                  },
+                  "capacitance": {
+                    "label": "Apical dendrite 2 capacitive density",
+                    "type": "float",
+                    "default": "0.85",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite 2 capacitive density in F/cm2",
+                    "help": "Enter apical dendrite 2 capacitive density in F/cm2",
+                    "children": {}
+                  }
+                }
+              },
+              "apicaldendriteTurf": {
+                "label": "Apical dendrite turf section",
+                "type": "",
+                "default": "",
+                "component": "",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "length": {
+                    "label": "Apical dendrite turf length",
+                    "type": "float",
+                    "default": "425.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite turf length",
+                    "help": "Enter apical dendrite turf length in microns",
+                    "children": {
+                    }
+                  },
+                  "diameter": {
+                    "label": "Apical dendrite turf diameter",
+                    "type": "float",
+                    "default": "3.4",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite turf diameter in microns",
+                    "help": "Enter apical dendrite turf diameter in microns",
+                    "children": {}
+                  },
+                  "resistivity": {
+                    "label": "Apical dendrite turf resistivity",
+                    "type": "float",
+                    "default": "200.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite turf resistivity in ohm-cm",
+                    "help": "Enter apical dendrite turf resistivity in ohm-cm",
+                    "children": {}
+                  },
+                  "capacitance": {
+                    "label": "Apical dendrite turf capacitive density",
+                    "type": "float",
+                    "default": "0.85",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter apical dendrite turf capacitive density in F/cm2",
+                    "help": "Enter apical dendrite turf capacitive density in F/cm2",
+                    "children": {}
+                  }
+                }
+              },
+              "obliqueApicaldendrite": {
+                "label": "Oblique apical dendrite section",
+                "type": "",
+                "default": "",
+                "component": "",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "length": {
+                    "label": "Oblique apical dendrite length",
+                    "type": "float",
+                    "default": "255.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter oblique apical dendrite length",
+                    "help": "Enter oblique apical dendrite length in microns",
+                    "children": {
+                    }
+                  },
+                  "diameter": {
+                    "label": "Oblique apical dendrite diameter",
+                    "type": "float",
+                    "default": "5.1",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter oblique apical dendrite diameter in microns",
+                    "help": "Enter oblique apical dendrite diameter in microns",
+                    "children": {}
+                  },
+                  "resistivity": {
+                    "label": "Oblique apical dendrite resistivity",
+                    "type": "float",
+                    "default": "200.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter oblique apical dendrite resistivity in ohm-cm",
+                    "help": "Enter oblique apical dendrite resistivity in ohm-cm",
+                    "children": {}
+                  },
+                  "capacitance": {
+                    "label": "Oblique apical dendrite capacitive density",
+                    "type": "float",
+                    "default": "0.85",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter oblique apical dendrite capacitive density in F/cm2",
+                    "help": "Enter oblique apical dendrite capacitive density in F/cm2",
+                    "children": {}
+                  }
+                }
+              },
+              "basaldendrite1": {
+                "label": "Basal dendrite 1 section",
+                "type": "",
+                "default": "",
+                "component": "",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "length": {
+                    "label": "Basal dendrite 1 length",
+                    "type": "float",
+                    "default": "85.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter basal dendrite 1 length",
+                    "help": "Enter basal dendrite 1 length in microns",
+                    "children": {
+                    }
+                  },
+                  "diameter": {
+                    "label": "Basal dendrite 1 diameter",
+                    "type": "float",
+                    "default": "6.8",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter basal dendrite 1 diameter in microns",
+                    "help": "Enter basal dendrite 1 diameter in microns",
+                    "children": {}
+                  },
+                  "resistivity": {
+                    "label": "Basal dendrite 1 resistivity",
+                    "type": "float",
+                    "default": "200.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter basal dendrite 1 resistivity in ohm-cm",
+                    "help": "Enter basal dendrite 1 resistivity in ohm-cm",
+                    "children": {}
+                  },
+                  "capacitance": {
+                    "label": "Basal dendrite 1 capacitive density",
+                    "type": "float",
+                    "default": "0.85",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter basal dendrite 1 capacitive density in F/cm2",
+                    "help": "Enter basal dendrite 1 capacitive density in F/cm2",
+                    "children": {}
+                  }
+                }
+              },
+              "basaldendrite2": {
+                "label": "Basal dendrite 2 section",
+                "type": "",
+                "default": "",
+                "component": "",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "length": {
+                    "label": "Basal dendrite 2 length",
+                    "type": "float",
+                    "default": "255.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter basal dendrite 2 length",
+                    "help": "Enter basal dendrite 2 length in microns",
+                    "children": {
+                    }
+                  },
+                  "diameter": {
+                    "label": "Basal dendrite 2 diameter",
+                    "type": "float",
+                    "default": "8.5",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter basal dendrite 2 diameter in microns",
+                    "help": "Enter basal dendrite 2 diameter in microns",
+                    "children": {}
+                  },
+                  "resistivity": {
+                    "label": "Basal dendrite 2 resistivity",
+                    "type": "float",
+                    "default": "200.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter basal dendrite 2 resistivity in ohm-cm",
+                    "help": "Enter basal dendrite 2 resistivity in ohm-cm",
+                    "children": {}
+                  },
+                  "capacitance": {
+                    "label": "Basal dendrite 2 capacitive density",
+                    "type": "float",
+                    "default": "0.85",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter basal dendrite 2 capacitive density in F/cm2",
+                    "help": "Enter basal dendrite 2 capacitive density in F/cm2",
+                    "children": {}
+                  }
+                }
+              },
+              "basaldendrite3": {
+                "label": "Basal dendrite 3 section",
+                "type": "",
+                "default": "",
+                "component": "",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "length": {
+                    "label": "Basal dendrite 3 length",
+                    "type": "float",
+                    "default": "255.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter basal dendrite 3 length",
+                    "help": "Enter basal dendrite 3 length in microns",
+                    "children": {
+                    }
+                  },
+                  "diameter": {
+                    "label": "Basal dendrite 3 diameter",
+                    "type": "float",
+                    "default": "8.5",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter basal dendrite 3 diameter in microns",
+                    "help": "Enter basal dendrite 3 diameter in microns",
+                    "children": {}
+                  },
+                  "resistivity": {
+                    "label": "Basal dendrite 3 resistivity",
+                    "type": "float",
+                    "default": "200.0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter basal dendrite 3 resistivity in ohm-cm",
+                    "help": "Enter basal dendrite 3 resistivity in ohm-cm",
+                    "children": {}
+                  },
+                  "capacitance": {
+                    "label": "Basal dendrite 3 capacitive density",
+                    "type": "float",
+                    "default": "0.85",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Enter basal dendrite 3 capacitive density in F/cm2",
+                    "help": "Enter basal dendrite 3 capacitive density in F/cm2",
+                    "children": {}
+                  }
+                }
+              }
+            }
+          },
+          "synapses": {
+            "label": "Layer 5 synaptic cell properties",
+            "type": "",
+            "default": "",
+            "component": "",
+            "suggestions": "",
+            "hintText": "",
+            "help": "",
+            "children": {
+              "AMPA": {
+                "label": "AMPA synaptic mechanism",
+                "type": "",
+                "default": "",
+                "component": "Container",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "reversal": {
+                    "label": "Reversal potencial",
+                    "type": "float",
+                    "default": "0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Reversal potencial in mV",
+                    "help": "Reversal potencial in mV",
+                    "children": {}
+                  },
+                  "rise": {
+                    "label": "Raise time",
+                    "type": "float",
+                    "default": "0.5",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Rise time in ms",
+                    "help": "Rise time in ms",
+                    "children": {}
+                  },
+                  "decay": {
+                    "label": "Decay time",
+                    "type": "float",
+                    "default": "5",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Decay time",
+                    "help": "Decay time",
+                    "children": {}
+                  }
+                }
+              },
+              "NMDA": {
+                "label": "NMDA synaptic mechanism",
+                "type": "",
+                "default": "",
+                "component": "Container",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "reversal": {
+                    "label": "Reversal potencial",
+                    "type": "float",
+                    "default": "0",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Reversal potencial in mV",
+                    "help": "Reversal potencial in mV",
+                    "children": {}
+                  },
+                  "rise": {
+                    "label": "Raise time",
+                    "type": "float",
+                    "default": "1",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Rise time in ms",
+                    "help": "Rise time in ms",
+                    "children": {}
+                  },
+                  "decay": {
+                    "label": "Decay time",
+                    "type": "float",
+                    "default": "20",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Decay time",
+                    "help": "Decay time",
+                    "children": {}
+                  }
+                }
+              },
+              "GABAA": {
+                "label": "AMPA synaptic mechanism",
+                "type": "",
+                "default": "",
+                "component": "Container",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "reversal": {
+                    "label": "Reversal potencial",
+                    "type": "float",
+                    "default": "-80",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Reversal potencial in mV",
+                    "help": "Reversal potencial in mV",
+                    "children": {}
+                  },
+                  "rise": {
+                    "label": "Raise time",
+                    "type": "float",
+                    "default": "0.5",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Rise time in ms",
+                    "help": "Rise time in ms",
+                    "children": {}
+                  },
+                  "decay": {
+                    "label": "Decay time",
+                    "type": "float",
+                    "default": "5",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Decay time",
+                    "help": "Decay time",
+                    "children": {}
+                  }
+                }
+              },
+              "GABAB": {
+                "label": "AMPA synaptic mechanism",
+                "type": "",
+                "default": "",
+                "component": "Container",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "reversal": {
+                    "label": "Reversal potencial",
+                    "type": "float",
+                    "default": "-80",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Reversal potencial in mV",
+                    "help": "Reversal potencial in mV",
+                    "children": {}
+                  },
+                  "rise": {
+                    "label": "Raise time",
+                    "type": "float",
+                    "default": "1",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Rise time in ms",
+                    "help": "Rise time in ms",
+                    "children": {}
+                  },
+                  "decay": {
+                    "label": "Decay time",
+                    "type": "float",
+                    "default": "20",
+                    "component": "TextField",
+                    "suggestions": "",
+                    "hintText": "Decay time",
+                    "help": "Decay time",
+                    "children": {}
+                  }
+                }
+              }
+            }
+          },
+          "biophysics": {
+            "label": "Layer 5 biophysical cell properties",
+            "type": "",
+            "default": "",
+            "component": "",
+            "suggestions": "",
+            "hintText": "",
+            "help": "",
+            "children": {
+              "soma": {
+                "label": "Soma biophysics",
+                "type": "",
+                "default": "",
+                "component": "",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "Kv": {
+                    "label": "Voltage gated potassium channel",
+                    "type": "",
+                    "default": "",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "channelDensity": {
+                        "label": "Channel capacitance density",
+                        "type": "float",
+                        "default": "0.01",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Channel capacitance density in S/cm2",
+                        "help": "Channel capacitance density in S/cm2",
+                        "children": {}
+                      }
+                    }
+                  },
+                  "Na": {
+                    "label": "Voltage gated sodium channel",
+                    "type": "",
+                    "default": "",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "channelDensity": {
+                        "label": "Channel capacitance density",
+                        "type": "float",
+                        "default": "0.14",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Channel capacitance density in S/cm2",
+                        "help": "Channel capacitance density in S/cm2",
+                        "children": {}
+                      }
+                    }
+                  },
+                  "leak": {
+                    "label": "Leak current",
+                    "type": "",
+                    "default": "",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "reversal": {
+                        "label": "Reversal potencial",
+                        "type": "float",
+                        "default": "-71.0",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Reversal potencial in mV",
+                        "help": "Reversal potencial in mV",
+                        "children": {}
+                      },
+                      "channelDensity": {
+                        "label": "Channel capacitance density",
+                        "type": "float",
+                        "default": "0.0000426",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Channel capacitance density in S/cm2",
+                        "help": "Channel capacitance density in S/cm2",
+                        "children": {}
+                      }
+                    }
+                  },
+                  "Ca": {
+                    "label": "Voltage gated calcium channel",
+                    "type": "",
+                    "default": "",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "channelDensity": {
+                        "label": "Channel capacitance density",
+                        "type": "float",
+                        "default": "60.0",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Channel capacitance density in pS/micron2",
+                        "help": "Channel capacitance density in pS/micron2",
+                        "children": {}
+                      }
+                    }
+                  },
+                  "Cad": {
+                    "label": "Calcium concentration decay channel",
+                    "type": "",
+                    "default": "",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "channelDensity": {
+                        "label": "Channel time constant",
+                        "type": "float",
+                        "default": "20",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Channel time decay constant in ms",
+                        "help": "Channel time decay constant in ms",
+                        "children": {}
+                      }
+                    }
+                  },
+                  "KCa": {
+                    "label": "Calcium dependant Potassium channel",
+                    "type": "",
+                    "default": "",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "channelDensity": {
+                        "label": "Channel capacitance density",
+                        "type": "float",
+                        "default": "0.0002",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Channel capacitance density in pS/micron2",
+                        "help": "Channel capacitance density in pS/micron2",
+                        "children": {}
+                      }
+                    }
+                  },
+                  "Km": {
+                    "label": "Potassium channel",
+                    "type": "",
+                    "default": "",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "channelDensity": {
+                        "label": "Channel capacitance density",
+                        "type": "float",
+                        "default": "200",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Channel capacitance density in S/cm2",
+                        "help": "Channel capacitance density in S/cm2",
+                        "children": {}
+                      }
+                    }
+                  },
+                  "CaT": {
+                    "label": "Calcium low threshold channel",
+                    "type": "",
+                    "default": "",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "channelDensity": {
+                        "label": "Channel capacitance density",
+                        "type": "float",
+                        "default": "0.0002",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Channel capacitance density in pS/micron2",
+                        "help": "Channel capacitance density in pS/micron2",
+                        "children": {}
+                      }
+                    }
+                  },
+                  "HCN": {
+                    "label": "Anomalous rectifier current channel",
+                    "type": "",
+                    "default": "",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "channelDensity": {
+                        "label": "Channel capacitance density",
+                        "type": "float",
+                        "default": "0.000001",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Channel capacitance density in pS/micron2",
+                        "help": "Channel capacitance density in pS/micron2",
+                        "children": {}
+                      }
+                    }
+                  }
+                }
+              },
+              "dendrite": {
+                "label": "Dendrite biophysics",
+                "type": "",
+                "default": "",
+                "component": "",
+                "suggestions": "",
+                "hintText": "",
+                "help": "",
+                "children": {
+                  "Kv": {
+                    "label": "Voltage gated potassium channel",
+                    "type": "",
+                    "default": "",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "channelDensity": {
+                        "label": "Channel capacitance density",
+                        "type": "float",
+                        "default": "0.01",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Channel capacitance density in S/cm2",
+                        "help": "Channel capacitance density in S/cm2",
+                        "children": {}
+                      }
+                    }
+                  },
+                  "Na": {
+                    "label": "Voltage gated sodium channel",
+                    "type": "",
+                    "default": "",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "channelDensity": {
+                        "label": "Channel capacitance density",
+                        "type": "float",
+                        "default": "0.16",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Channel capacitance density in S/cm2",
+                        "help": "Channel capacitance density in S/cm2",
+                        "children": {}
+                      }
+                    }
+                  },
+                  "leak": {
+                    "label": "Leak current",
+                    "type": "",
+                    "default": "",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "reversal": {
+                        "label": "Reversal potencial",
+                        "type": "float",
+                        "default": "-65.0",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Reversal potencial in mV",
+                        "help": "Reversal potencial in mV",
+                        "children": {}
+                      },
+                      "channelDensity": {
+                        "label": "Channel capacitance density",
+                        "type": "float",
+                        "default": "0.0000426",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Channel capacitance density in S/cm2",
+                        "help": "Channel capacitance density in S/cm2",
+                        "children": {}
+                      }
+                    }
+                  },
+                  "Ca": {
+                    "label": "Voltage gated calcium channel",
+                    "type": "",
+                    "default": "",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "channelDensity": {
+                        "label": "Channel capacitance density",
+                        "type": "float",
+                        "default": "60.0",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Channel capacitance density in pS/micron2",
+                        "help": "Channel capacitance density in pS/micron2",
+                        "children": {}
+                      }
+                    }
+                  },
+                  "Cad": {
+                    "label": "Calcium concentration decay channel",
+                    "type": "",
+                    "default": "",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "channelDensity": {
+                        "label": "Channel time constant",
+                        "type": "float",
+                        "default": "20",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Channel time decay constant in ms",
+                        "help": "Channel time decay constant in ms",
+                        "children": {}
+                      }
+                    }
+                  },
+                  "KCa": {
+                    "label": "Calcium dependant Potassium channel",
+                    "type": "",
+                    "default": "",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "channelDensity": {
+                        "label": "Channel capacitance density",
+                        "type": "float",
+                        "default": "0.0002",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Channel capacitance density in pS/micron2",
+                        "help": "Channel capacitance density in pS/micron2",
+                        "children": {}
+                      }
+                    }
+                  },
+                  "Km": {
+                    "label": "Potassium channel",
+                    "type": "",
+                    "default": "",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "channelDensity": {
+                        "label": "Channel capacitance density",
+                        "type": "float",
+                        "default": "200",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Channel capacitance density in S/cm2",
+                        "help": "Channel capacitance density in S/cm2",
+                        "children": {}
+                      }
+                    }
+                  },
+                  "CaT": {
+                    "label": "Calcium low threshold channel",
+                    "type": "",
+                    "default": "",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "channelDensity": {
+                        "label": "Channel capacitance density",
+                        "type": "float",
+                        "default": "0.0002",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Channel capacitance density in pS/micron2",
+                        "help": "Channel capacitance density in pS/micron2",
+                        "children": {}
+                      }
+                    }
+                  },
+                  "HCN": {
+                    "label": "Anomalous rectifier current channel",
+                    "type": "",
+                    "default": "",
+                    "component": "Container",
+                    "suggestions": "",
+                    "hintText": "",
+                    "help": "",
+                    "children": {
+                      "channelDensity": {
+                        "label": "Channel capacitance density",
+                        "type": "float",
+                        "default": "0.000001",
+                        "component": "TextField",
+                        "suggestions": "",
+                        "hintText": "Channel capacitance density in pS/micron2",
+                        "help": "Channel capacitance density in pS/micron2",
+                        "children": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "localNetwork":{
+    "label": "Local network parameters",
+    "type": "",
+    "default": "",
+    "component": "",
+    "suggestions": "",
+    "hintText": "",
+    "help": "",
+    "children": {
+      "cells": {
+        "label": "Define number of cells",
+        "type": "",
+        "default": "",
+        "component": "Container",
+        "suggestions": "",
+        "hintText": "",
+        "help": "",
+        "children": {
+          "x": {
+            "label": "Number of pyramidal cells (x direction)",
+            "type": "int",
+            "default": "10",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Number of cells in X direction",
+            "help": "Define the number of pyramidal cells in the X direction",
+            "children": {}
+          },
+          "y": {
+            "label": "Number of pyramidal cells (y direction)",
+            "type": "int",
+            "default": "10",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Number of cells in Y direction",
+            "help": "Define the number of pyramidal cells in the Y direction",
+            "children": {}
+          }
+        }
+      },
+      "toL2/3Pyr": {
+        "label": "Connection weights to Layer 2/3 pyramidal cell",
+        "type": "",
+        "default": "",
+        "component": "Container",
+        "suggestions": "",
+        "hintText": "",
+        "help": "",
+        "children": {
+          "L2/3PyrAMPA": {
+            "label": "AMPA connection weight from L2/3 pyr to L2/3 pyr",
+            "type": "float",
+            "default": "0.0005",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "AMPA connection weight from L2/3 pyramidal cells to L2/3 pyramidal cells in uS",
+            "help": "AMPA connection weight from L2/3 pyramidal cells to L2/3 pyramidal cells in uS",
+            "children": {}
+          },
+          "L2/3PyrNMDA": {
+            "label": "NMDA connection weight from L2/3 pyr to L2/3 pyr",
+            "type": "float",
+            "default": "0.0005",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "NMDA connection weight from L2/3 pyramidal cells to L2/3 pyramidal cells in uS",
+            "help": "NMDA connection weight from L2/3 pyramidal cells to L2/3 pyramidal cells in uS",
+            "children": {}
+          },
+          "L2/3BasketGABAA": {
+            "label": "GABAA connection weight from L2/3 basket to L2/3 pyr",
+            "type": "float",
+            "default": "0.05",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "GABAA connection weight from L2/3 basket cells to L2/3 pyramidal cells in uS",
+            "help": "GABAA connection weight from L2/3 basket cells to L2/3 pyramidal cells in uS",
+            "children": {}
+          },
+          "L2/3BasketGABAB": {
+            "label": "GABAB connection weight from L2/3 basket to L2/3 pyr",
+            "type": "float",
+            "default": "0.05",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "GABAB connection weight from L2/3 basket cells to L2/3 pyramidal cells in uS",
+            "help": "GABAB connection weight from L2/3 basket cells to L2/3 pyramidal cells in uS",
+            "children": {}
+          }
+        }
+      },
+      "toL5Pyr": {
+        "label": "Connection weight to Layer 5 pyramidal cell",
+        "type": "",
+        "default": "",
+        "component": "Container",
+        "suggestions": "",
+        "hintText": "",
+        "help": "",
+        "children": {
+          "L2/3Pyr": {
+            "label": "Connection weight from L2/3 pyr to L5 pyr",
+            "type": "float",
+            "default": "0.00025",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Connection weight from L2/3 pyramidal cells to L5 pyramidal cells in uS",
+            "help": "Connection weight from L2/3 pyramidal cells to L5 pyramidal cells in uS",
+            "children": {}
+          },
+          "L2/3Basket": {
+            "label": "Connection weight from L2/3 basket to L5 pyr",
+            "type": "float",
+            "default": "0.001",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Connection weight from L2/3 basket cells to L5 pyramidal cells in uS",
+            "help": "Connection weight from L2/3 basket cells to L5 pyramidal cells in uS",
+            "children": {}
+          },
+          "L5PyrAMPA": {
+            "label": "AMPA connection weight from L5 pyr to 5 pyr",
+            "type": "float",
+            "default": "0.0005",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "AMPA connection weight from L5 pyramidal cells to L5 pyramidal cells in uS",
+            "help": "GABAA connection weight from L5 pyramidal cells to L5 pyramidal cells in uS",
+            "children": {}
+          },
+          "L5PyrNMDA": {
+            "label": "NMDA connection weight from L5 pyr to L5 pyr",
+            "type": "float",
+            "default": "0.0005",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "NMDA connection weight from L2/3 pyramidal cells to L5 pyramidal cells in uS",
+            "help": "NMDA connection weight from L2/3 pyramidal cells to L5 pyramidal cells in uS",
+            "children": {}
+          },
+          "L5BasketGABAA": {
+            "label": "GABAA connection weight from L5 basket to 5 pyr",
+            "type": "float",
+            "default": "0.025",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "GABAA connection weight from L5 basket cells to L5 pyramidal cells in uS",
+            "help": "GABAA connection weight from L5 basket cells to L5 pyramidal cells in uS",
+            "children": {}
+          },
+          "L5BasketGABAB": {
+            "label": "GABAB connection weight from L5 basket to L5 pyr",
+            "type": "float",
+            "default": "0.025",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "GABAB connection weight from L2/3 basket cells to L5 pyramidal cells in uS",
+            "help": "GABAB connection weight from L2/3 basket cells to L5 pyramidal cells in uS",
+            "children": {}
+          }
+        }
+      },
+      "toL2/3Basket": {
+        "label": "Connection weights to Layer 2/3 basket cell",
+        "type": "",
+        "default": "",
+        "component": "Container",
+        "suggestions": "",
+        "hintText": "",
+        "help": "",
+        "children": {
+          "L2/3Pyr": {
+            "label": "Connection weight from L2/3 pyr to L2/3 basket",
+            "type": "float",
+            "default": "0.0005",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Connection weight from L2/3 pyramidal cells to L2/3 basket cells in uS",
+            "help": "Connection weight from L2/3 pyramidal cells to L2/3 basket cells in uS",
+            "children": {}
+          },
+          "L2/3Basket": {
+            "label": "Connection weight from L2/3 basket to L2/3 basket",
+            "type": "float",
+            "default": "0.02",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Connection weight from L2/3 basket cells to L2/3 basket cells in uS",
+            "help": "Connection weight from L2/3 basket cells to L2/3 basket cells in uS",
+            "children": {}
+          }
+        }
+      },
+      "toL5Basket": {
+        "label": "Connection weights to Layer 5 basket cell",
+        "type": "",
+        "default": "",
+        "component": "Container",
+        "suggestions": "",
+        "hintText": "",
+        "help": "",
+        "children": {
+          "L2/3Pyr": {
+            "label": "Connection weight from L2/3 pyr to L5 basket",
+            "type": "float",
+            "default": "0.00025",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Connection weight from L2/3 pyramidal cells to L5 basket cells in uS",
+            "help": "Connection weight from L2/3 pyramidal cells to L5 basket cells in uS",
+            "children": {}
+          },
+          "L5pyr": {
+            "label": "Connection weight from L5 pyr to L5 basket",
+            "type": "float",
+            "default": "0.0005",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Connection weight from L5 pyramidal cells to L5 basket cells in uS",
+            "help": "Connection weight from L5 pyramidal cells to L5 basket cells in uS",
+            "children": {}
+          },
+          "L2/3Basket": {
+            "label": "Connection weight from L5 basket to L5 basket",
+            "type": "float",
+            "default": "0.02",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Connection weight from L5 basket cells to L5 basket cells in uS",
+            "help": "Connection weight from L5 basket cells to L5 basket cells in uS",
+            "children": {}
+          }
+        }
+      }
+    }
+  },
+  "synapticGain":{
+    "label": "Synaptic gains",
+    "type": "",
+    "default": "",
+    "component": "",
+    "suggestions": "",
+    "hintText": "",
+    "help": "",
+    "children": {
+      "E->E": {
+        "label": "Excitatory to Excitatory synaptic gain",
+        "type": "float",
+        "default": "1.0",
+        "component": "TextField",
+        "suggestions": "",
+        "hintText": "Excitatory to Excitatory synaptic gain",
+        "help": "Excitatory to Excitatory synaptic gain",
+        "children":{}
+      },
+      "E->I": {
+        "label": "Excitatory to inhibitory synaptic gain",
+        "type": "float",
+        "default": "1.0",
+        "component": "TextField",
+        "suggestions": "",
+        "hintText": "Excitatory to inhibitory synaptic gain",
+        "help": "Excitatory to inhibitory synaptic gain",
+        "children":{}
+      },
+      "I->E": {
+        "label": "Inhibitory to Excitatory synaptic gain",
+        "type": "float",
+        "default": "1.0",
+        "component": "TextField",
+        "suggestions": "",
+        "hintText": "Inhibitory to Excitatory synaptic gain",
+        "help": "Inhibitory to Excitatory synaptic gain",
+        "children":{}
+      },
+      "I->I": {
+        "label": "Inhibitory to inhibitory synaptic gain",
+        "type": "float",
+        "default": "1.0",
+        "component": "TextField",
+        "suggestions": "",
+        "hintText": "Inhibitory to inhibitory synaptic gain",
+        "help": "Inhibitory to inhibitory synaptic gain",
+        "children":{}
+      }
+    }
+  },
+  "rhythmicProximalInputs": {
+    "label": "Set rhythmic proximal inputs",
+    "type": "",
+    "default": "",
+    "component": "Container",
+    "suggestions": "",
+    "hintText": "",
+    "help": "",
+    "children": {
+      "timing": {
+        "label": "Set time related variables",
+        "type": "",
+        "default": "",
+        "component": "Container",
+        "suggestions": "",
+        "hintText": "",
+        "help": "",
+        "children": {
+          "startMean": {
+            "label": "Start time mean",
+            "type": "float",
+            "default": "1000.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set start time mean in ms",
+            "help": "Set start time mean in ms",
+            "children": {}
+          },
+          "startStd": {
+            "label": "Start time standard deviation",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set start time standard deviation in ms",
+            "help": "Set start time standard deviation in ms",
+            "children": {}
+          },
+          "stop": {
+            "label": "Stop time",
+            "type": "float",
+            "default": "1001.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set stop time ms",
+            "help": "Set stop time ms",
+            "children": {}
+          },
+          "burstFq": {
+            "label": "Set burst frequency",
+            "type": "float",
+            "default": "10.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set burst frequency in Hz",
+            "help": "Set burst frequency in Hz",
+            "children": {}
+          },
+          "burstStd": {
+            "label": "Set burst standart deviation",
+            "type": "float",
+            "default": "20.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set burst standard deviation in ms",
+            "help": "Set burst standard deviation in ms",
+            "children": {}
+          },
+          "spikesPerBurst": {
+            "label": "Set spikes per burst",
+            "type": "int",
+            "default": "2",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set the number of spikes per burst",
+            "help": "Set the number of spikes per burst",
+            "children": {}
+          },
+          "burstsNumber": {
+            "label": "Set number of burst",
+            "type": "int",
+            "default": "10",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set the total number of burst",
+            "help": "Set the total number of burst",
+            "children": {}
+          }
+        }
+      },
+      "layer2/3": {
+        "label": "Set input connection weights to layer 2/3 cells",
+        "type": "",
+        "default": "",
+        "component": "Container",
+        "suggestions": "",
+        "hintText": "",
+        "help": "",
+        "children": {
+          "pyrAMPA": {
+            "label": "AMPA input connection weight to layer 2/3 pyr cells",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "AMPA input connection weight to layer 2/3 pyr cells in uS",
+            "help": "AMPA input connection weight to layer 2/3 pyr cells in uS",
+            "children": {}
+          },
+          "pyrNMDA": {
+            "label": "NMDA input connection weight to layer 2/3 pyr cells",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "NMDA input connection weight to layer 2/3 pyr cells in uS",
+            "help": "NMDA input connection weight to layer 2/3 pyr cells in uS",
+            "children": {}
+          },
+          "basketAMPA": {
+            "label": "AMPA input connection weight to layer 2/3 basket cells",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "AMPA input connection weight to layer 2/3 basket cells in uS",
+            "help": "AMPA input connection weight to layer 2/3 basket cells in uS",
+            "children": {}
+          },
+          "basketNMDA": {
+            "label": "NMDA input connection weight to layer 2/3 basket cells",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "NMDA input connection weight to layer 2/3 basket cells in uS",
+            "help": "NMDA input connection weight to layer 2/3 basket cells in uS",
+            "children": {}
+          },
+          "delay": {
+            "label": "Input connection delay to layer 2/3 cells",
+            "type": "float",
+            "default": "0.1",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Input connection delay to layer 2/3 cells in uS",
+            "help": "Input connection delay to layer 2/3 cells in uS",
+            "children": {}
+          }
+        }
+      },
+      "layer5": {
+        "label": "Set input connection weights to layer 5 cells",
+        "type": "",
+        "default": "",
+        "component": "Container",
+        "suggestions": "",
+        "hintText": "",
+        "help": "",
+        "children": {
+          "pyrAMPA": {
+            "label": "AMPA input connection weight to layer 5 pyr cells",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "AMPA input connection weight to layer 5 pyr cells in uS",
+            "help": "AMPA input connection weight to layer 5 pyr cells in uS",
+            "children": {}
+          },
+          "pyrNMDA": {
+            "label": "NMDA input connection weight to layer 5 pyr cells",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "NMDA input connection weight to layer 5 pyr cells in uS",
+            "help": "NMDA input connection weight to layer 5 pyr cells in uS",
+            "children": {}
+          },
+          "basketAMPA": {
+            "label": "AMPA input connection weight to layer 5 basket cells",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "AMPA input connection weight to layer 5 basket cells in uS",
+            "help": "AMPA input connection weight to layer 5 basket cells in uS",
+            "children": {}
+          },
+          "basketNMDA": {
+            "label": "NMDA input connection weight to layer 5 basket cells",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "NMDA input connection weight to layer 5 basket cells in uS",
+            "help": "NMDA input connection weight to layer 5 basket cells in uS",
+            "children": {}
+          },
+          "delay": {
+            "label": "Input connection delay to layer 5 cells",
+            "type": "float",
+            "default": "1",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Input connection delay to layer 5 cells in uS",
+            "help": "Input connection delay to layer 5 cells in uS",
+            "children": {}
+          }
+        }
+      }
+    }
+  },
+  "rhythmicDistalInputs": {
+    "label": "Set rhythmic distal inputs",
+    "type": "",
+    "default": "",
+    "component": "Container",
+    "suggestions": "",
+    "hintText": "",
+    "help": "",
+    "children": {
+      "timing": {
+        "label": "Set time related variables",
+        "type": "",
+        "default": "",
+        "component": "Container",
+        "suggestions": "",
+        "hintText": "",
+        "help": "",
+        "children": {
+          "startMean": {
+            "label": "Start time mean",
+            "type": "float",
+            "default": "1000.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set start time mean in ms",
+            "help": "Set start time mean in ms",
+            "children": {}
+          },
+          "startStd": {
+            "label": "Start time standard deviation",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set start time standard deviation in ms",
+            "help": "Set start time standard deviation in ms",
+            "children": {}
+          },
+          "stop": {
+            "label": "Stop time",
+            "type": "float",
+            "default": "1001.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set stop time ms",
+            "help": "Set stop time ms",
+            "children": {}
+          },
+          "burstFq": {
+            "label": "Set burst frequency",
+            "type": "float",
+            "default": "10.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set burst frequency in Hz",
+            "help": "Set burst frequency in Hz",
+            "children": {}
+          },
+          "burstStd": {
+            "label": "Set burst standart deviation",
+            "type": "float",
+            "default": "20.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set burst standard deviation in ms",
+            "help": "Set burst standard deviation in ms",
+            "children": {}
+          },
+          "spikesPerBurst": {
+            "label": "Set spikes per burst",
+            "type": "int",
+            "default": "2",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set the number of spikes per burst",
+            "help": "Set the number of spikes per burst",
+            "children": {}
+          },
+          "burstsNumber": {
+            "label": "Set number of burst",
+            "type": "int",
+            "default": "10",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set the total number of burst",
+            "help": "Set the total number of burst",
+            "children": {}
+          }
+        }
+      },
+      "layer2/3": {
+        "label": "Set input connection weights to layer 2/3 cells",
+        "type": "",
+        "default": "",
+        "component": "Container",
+        "suggestions": "",
+        "hintText": "",
+        "help": "",
+        "children": {
+          "pyrAMPA": {
+            "label": "AMPA input connection weight to layer 2/3 pyr cells",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "AMPA input connection weight to layer 2/3 pyr cells in uS",
+            "help": "AMPA input connection weight to layer 2/3 pyr cells in uS",
+            "children": {}
+          },
+          "pyrNMDA": {
+            "label": "NMDA input connection weight to layer 2/3 pyr cells",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "NMDA input connection weight to layer 2/3 pyr cells in uS",
+            "help": "NMDA input connection weight to layer 2/3 pyr cells in uS",
+            "children": {}
+          },
+          "basketAMPA": {
+            "label": "AMPA input connection weight to layer 2/3 basket cells",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "AMPA input connection weight to layer 2/3 basket cells in uS",
+            "help": "AMPA input connection weight to layer 2/3 basket cells in uS",
+            "children": {}
+          },
+          "basketNMDA": {
+            "label": "NMDA input connection weight to layer 2/3 basket cells",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "NMDA input connection weight to layer 2/3 basket cells in uS",
+            "help": "NMDA input connection weight to layer 2/3 basket cells in uS",
+            "children": {}
+          },
+          "delay": {
+            "label": "Input connection delay to layer 2/3 cells",
+            "type": "float",
+            "default": "0.1",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Input connection delay to layer 2/3 cells in uS",
+            "help": "Input connection delay to layer 2/3 cells in uS",
+            "children": {}
+          }
+        }
+      },
+      "layer5": {
+        "label": "Set input connection weights to layer 5 cells",
+        "type": "",
+        "default": "",
+        "component": "Container",
+        "suggestions": "",
+        "hintText": "",
+        "help": "",
+        "children": {
+          "pyrAMPA": {
+            "label": "AMPA input connection weight to layer 5 pyr cells",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "AMPA input connection weight to layer 5 pyr cells in uS",
+            "help": "AMPA input connection weight to layer 5 pyr cells in uS",
+            "children": {}
+          },
+          "pyrNMDA": {
+            "label": "NMDA input connection weight to layer 5 pyr cells",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "NMDA input connection weight to layer 5 pyr cells in uS",
+            "help": "NMDA input connection weight to layer 5 pyr cells in uS",
+            "children": {}
+          },
+          "delay": {
+            "label": "Input connection delay to layer 5 cells",
+            "type": "float",
+            "default": "5.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Input connection delay to layer 5 cells in uS",
+            "help": "Input connection delay to layer 5 cells in uS",
+            "children": {}
+          }
+        }
+      }
+    }
+  },
+  "poissonInput": {
+    "label": "Set poisson input parameters",
+    "type": "",
+    "default": "",
+    "component": "Container",
+    "suggestions": "",
+    "hintText": "",
+    "help": "",
+    "children": {
+      "layer2/3": {
+        "label": "Set input parameters for layer 2/3 cells",
+        "type": "",
+        "default": "",
+        "component": "Container",
+        "suggestions": "",
+        "hintText": "",
+        "help": "",
+        "children": {
+          "pyrAMPA": {
+            "label": "AMPA connection weight",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set input AMPA connection weight for Layer 2/3 pyramidal cells in uS",
+            "help": "Set input AMPA connection weight for Layer 2/3 pyramidal cells in uS",
+            "children": {}
+          },
+          "pyrNMDA": {
+            "label": "NMDA connection weight",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set input NMDA connection weight for Layer 2/3 pyramidal cells in uS",
+            "help": "Set input NMDA connection weight for Layer 2/3 pyramidal cells in uS",
+            "children": {}
+          },
+          "pyrFreq": {
+            "label": "Set frequency",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set frequency of poisson distribution for Layer 2/3 pyramidal cells in Hz",
+            "help": "Set frequency of poisson distribution for Layer 2/3 pyramidal cells in Hz",
+            "children": {}
+          },
+          "basketAMPA": {
+            "label": "AMPA connection weight",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set input AMPA connection weight for Layer 2/3 basket cells in uS",
+            "help": "Set input AMPA connection weight for Layer 2/3 basket cells in uS",
+            "children": {}
+          },
+          "basketNMDA": {
+            "label": "NMDA connection weight",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set input NMDA connection weight for Layer 2/3 basket cells in uS",
+            "help": "Set input NMDA connection weight for Layer 2/3 basket cells in uS",
+            "children": {}
+          },
+          "basketFreq": {
+            "label": "Set frequency",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set frequency of poisson distribution for Layer 2/3 basket cells in Hz",
+            "help": "Set frequency of poisson distribution for Layer 2/3 basket cells in Hz",
+            "children": {}
+          }
+        }
+      },
+      "layer5": {
+        "label": "Set input parameters for layer 5 cells",
+        "type": "",
+        "default": "",
+        "component": "Container",
+        "suggestions": "",
+        "hintText": "",
+        "help": "",
+        "children": {
+          "pyrAMPA": {
+            "label": "AMPA connection weight",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set input AMPA connection weight for Layer 5 pyramidal cells in uS",
+            "help": "Set input AMPA connection weight for Layer 5 pyramidal cells in uS",
+            "children": {}
+          },
+          "pyrNMDA": {
+            "label": "NMDA connection weight",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set input NMDA connection weight for Layer 5 pyramidal cells in uS",
+            "help": "Set input NMDA connection weight for Layer 5 pyramidal cells in uS",
+            "children": {}
+          },
+          "pyrFreq": {
+            "label": "Set frequency",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set frequency of poisson distribution for Layer 5 pyramidal cells in Hz",
+            "help": "Set frequency of poisson distribution for Layer 5 pyramidal cells in Hz",
+            "children": {}
+          },
+          "basketAMPA": {
+            "label": "AMPA connection weight",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set input AMPA connection weight for Layer 5 basket cells in uS",
+            "help": "Set input AMPA connection weight for Layer 5 basket cells in uS",
+            "children": {}
+          },
+          "basketNMDA": {
+            "label": "NMDA connection weight",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set input NMDA connection weight for Layer 5 basket cells in uS",
+            "help": "Set input NMDA connection weight for Layer 5 basket cells in uS",
+            "children": {}
+          },
+          "basketFreq": {
+            "label": "Set frequency",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set frequency of poisson distribution for Layer 5 basket cells in Hz",
+            "help": "Set frequency of poisson distribution for Layer 5 basket cells in Hz",
+            "children": {}
+          }
+        }
+      },
+      "timing": {
+        "label": "Set input time parameters",
+        "type": "",
+        "default": "",
+        "component": "Container",
+        "suggestions": "",
+        "hintText": "",
+        "help": "",
+        "children": {
+          "start": {
+            "label": "Set starting time",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set input start time in ms",
+            "help": "Set input start time in ms",
+            "children": {}
+          },
+          "stop": {
+            "label": "Set stop time",
+            "type": "float",
+            "default": "-1.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set input stop time in ms",
+            "help": "Set input stop time in ms",
+            "children": {}
+          }
+        }
+      }
+    }
+  },
+  "tonicInput": {
+    "label": "Set tonic input parameters",
+    "type": "",
+    "default": "",
+    "component": "Container",
+    "suggestions": "",
+    "hintText": "",
+    "help": "",
+    "children": {
+      "layer2/3": {
+        "label": "Set input parameters for layer 2/3 cells",
+        "type": "",
+        "default": "",
+        "component": "Container",
+        "suggestions": "",
+        "hintText": "",
+        "help": "",
+        "children": {
+          "pyrAmplitud": {
+            "label": "Set input current for pyramidal cells in nA",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set input current for layer 2/3 pyramidal cells in nA",
+            "help": "Set input current for layer 2/3 pyramidal cells in nA",
+            "children": {}
+          },
+          "pyrStartTime": {
+            "label": "Set input start time for pyr cells",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set input start time for layer 2/3 pyramidal cells in ms",
+            "help": "Set input start time for layer 2/3 pyramidal cells in ms",
+            "children": {}
+          },
+          "pyrStopTime": {
+            "label": "Set input stop time for pyr cells",
+            "type": "float",
+            "default": "-1.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set input stop time for layer 2/3 pyramidal cells in ms",
+            "help": "Set input stop time for layer 2/3 pyramidal cells in ms",
+            "children": {}
+          },
+          "basketAmplitud": {
+            "label": "Set input current for basket cells in nA",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set input AMPA connection weight for Layer 2/3 basket cells in uS",
+            "help": "Set input AMPA connection weight for Layer 2/3 basket cells in uS",
+            "children": {}
+          },
+          "basketStartTime": {
+            "label": "Set input start time for basket cells",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set input NMDA connection weight for Layer 2/3 basket cells in uS",
+            "help": "Set input NMDA connection weight for Layer 2/3 basket cells in uS",
+            "children": {}
+          },
+          "basketStopTime": {
+            "label": "Set input stop time for basket cells",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set frequency of poisson distribution for Layer 2/3 basket cells in Hz",
+            "help": "Set frequency of poisson distribution for Layer 2/3 basket cells in Hz",
+            "children": {}
+          }
+        }
+      },
+      "layer5": {
+        "label": "Set input parameters for layer 5 cells",
+        "type": "",
+        "default": "",
+        "component": "Container",
+        "suggestions": "",
+        "hintText": "",
+        "help": "",
+        "children": {
+          "pyrAmplitud": {
+            "label": "Set input current for pyramidal cells in nA",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set input current for layer 5 pyramidal cells in nA",
+            "help": "Set input current for layer 5 pyramidal cells in nA",
+            "children": {}
+          },
+          "pyrStartTime": {
+            "label": "Set input start time for pyramidal cell",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set input start time for layer 5 pyramidal cells in ms",
+            "help": "Set input start time for layer 5 pyramidal cells in ms",
+            "children": {}
+          },
+          "pyrStopTime": {
+            "label": "Set input stop time for pyramidal cell",
+            "type": "float",
+            "default": "-1.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set input stop time for layer 5 pyramidal cells in ms",
+            "help": "Set input stop time for layer 5 pyramidal cells in ms",
+            "children": {}
+          },
+          "basketAmplitud": {
+            "label": "Set input current for basket cells in nA",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set input AMPA connection weight for Layer 5 basket cells in uS",
+            "help": "Set input AMPA connection weight for Layer 5 basket cells in uS",
+            "children": {}
+          },
+          "basketStartTime": {
+            "label": "Set input start time for pyramidal cell",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set input NMDA connection weight for Layer 5 basket cells in uS",
+            "help": "Set input NMDA connection weight for Layer 5 basket cells in uS",
+            "children": {}
+          },
+          "basketStopTime": {
+            "label": "Set input stop time for pyramidal cell",
+            "type": "float",
+            "default": "0.0",
+            "component": "TextField",
+            "suggestions": "",
+            "hintText": "Set frequency of poisson distribution for Layer 5 basket cells in Hz",
+            "help": "Set frequency of poisson distribution for Layer 5 basket cells in Hz",
+            "children": {}
+          }
+        }
+      }
+    }
+  }
+}
