@@ -13,7 +13,7 @@ before_install:
 install:
   - git clone --quiet  https://github.com/MetaCell/geppetto-hnn.git
   - cd geppetto-hnn
-  - if [ `git branch -a | egrep "remotes/origin/${TRAVIS_BRANCH}"` ]; then git checkout $TRAVIS_BRANCH ; else echo "Branch $TRAVIS_BRANCH does not exist for the dependent bundle, checking out material-ui-submodule ..." && git checkout material-ui-submodule; fi
+  - if [ `git branch -a | egrep "remotes/origin/${TRAVIS_BRANCH}"` ]; then git checkout $TRAVIS_BRANCH ; else echo "Branch $TRAVIS_BRANCH does not exist for the dependent bundle, checking out development ..." && git checkout development; fi
   - cd ..
   - npm install --silent -g phantomjs
   - npm install --silent -g casperjs
