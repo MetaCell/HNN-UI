@@ -4,7 +4,7 @@
 FROM metacell/jupyter-neuron:latest
 USER $NB_USER
 
-ARG hnnuiBranch=skeleton
+ARG hnnuiBranch=development
 ENV hnnuiBranch=${hnnuiBranch}
 RUN echo "$hnnuiBranch";
 
