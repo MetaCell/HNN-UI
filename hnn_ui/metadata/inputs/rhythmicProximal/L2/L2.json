@@ -1,0 +1,41 @@
+{
+  "id": "layer2/3",
+  "label": "Set input connection weights to layer 2/3 cells",
+  "children": [
+    {
+      "label": "AMPA input connection weight to layer 2/3 pyr cells",
+      "id": "cfg.input_prox_A_weight_L2Pyr_ampa",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "AMPA input connection weight to layer 2/3 pyr cells in uS"
+    },
+    {
+      "label": "NMDA input connection weight to layer 2/3 pyr cells",
+      "id": "cfg.input_prox_A_weight_L2Pyr_nmda",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "NMDA input connection weight to layer 2/3 pyr cells in uS"
+    },
+    {
+      "label": "AMPA input connection weight to layer 2/3 basket cells",
+      "id": "cfg.input_prox_A_weight_L2Basket_ampa",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "AMPA input connection weight to layer 2/3 basket cells in uS"
+    },
+    {
+      "label": "NMDA input connection weight to layer 2/3 basket cells",
+      "id": "cfg.input_prox_A_weight_L2Basket_nmda",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "NMDA input connection weight to layer 2/3 basket cells in uS"
+    },
+    {
+      "label": "Input connection delay to layer 2/3 cells",
+      "id": "cfg.input_prox_A_delay_L2",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Input connection delay to layer 2/3 cells in uS"
+    }
+  ]
+}

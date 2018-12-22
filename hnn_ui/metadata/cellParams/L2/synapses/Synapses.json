@@ -1,0 +1,90 @@
+{
+  "id": "synapses",
+  "label": "Layer 2/3 synaptic cell properties",
+  "children": [
+    {
+      "label": "AMPA reversal potencial",
+      "id": "cfg.L2Pyr_ampa_e",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Reversal potencial in mV"
+    },
+    {
+      "label": "AMPA raise time",
+      "id": "cfg.L2Pyr_ampa_tau1",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Rise time in ms"
+    },
+    {
+      "label": "AMPA decay time",
+      "id": "cfg.L2Pyr_ampa_tau2",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Decay time"
+    },
+    {
+      "label": "NMDA reversal potencial",
+      "id": "cfg.L2Pyr_nmda_e",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Reversal potencial in mV"
+    },
+    {
+      "label": "NMDA raise time",
+      "id": "cfg.L2Pyr_nmda_tau1",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Rise time in ms"
+    },
+    {
+      "label": "NMDA decay time",
+      "id": "cfg.L2Pyr_nmda_tau2",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Decay time"
+    },
+    {
+      "label": " GABAA reversal potencial",
+      "id": "cfg.L2Pyr_gabaa_e",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Reversal potencial in mV"
+    },
+    {
+      "label": "GABAA raise time",
+      "id": "cfg.L2Pyr_gabaa_tau1",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Rise time in ms"
+    },
+    {
+      "label": "GABAA decay time",
+      "id": "cfg.L2Pyr_gabaa_tau2",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Decay time"
+    },
+    {
+      "label": "GABAB reversal potencial",
+      "id": "cfg.L2Pyr_gabab_e",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Reversal potencial in mV"
+    },
+    {
+      "label": "GABAB raise time",
+      "id": "cfg.L2Pyr_gabab_tau1",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Rise time in ms"
+    },
+    {
+      "label": "GABAB decay time",
+      "id": "cfg.L2Pyr_gabab_tau2",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Decay time"
+    }
+  ]
+}
