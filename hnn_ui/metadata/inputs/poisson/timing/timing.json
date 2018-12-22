@@ -1,0 +1,20 @@
+{
+  "id": "timing",
+  "label": "Set input time parameters",
+  "children": [
+    {
+      "label": "Set starting time",
+      "id": "cfg.t0_pois",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Set input start time in ms"
+    },
+    {
+      "label": "Set stop time",
+      "id": "cfg.T_pois",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Set input stop time in ms"
+    }
+  ]
+}

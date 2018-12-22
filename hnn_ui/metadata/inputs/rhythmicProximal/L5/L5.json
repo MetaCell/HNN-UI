@@ -1,0 +1,41 @@
+{
+  "id": "layer5",
+  "label": "Set input connection weights to layer 5 cells",
+  "children": [
+    {
+      "label": "AMPA input connection weight to layer 5 pyr cells",
+      "id": "cfg.input_prox_A_weight_L5Pyr_ampa",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "AMPA input connection weight to layer 5 pyr cells in uS"
+    },
+    {
+      "label": "NMDA input connection weight to layer 5 pyr cells",
+      "id": "cfg.input_prox_A_weight_L5Pyr_nmda",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "NMDA input connection weight to layer 5 pyr cells in uS"
+    },
+    {
+      "label": "AMPA input connection weight to layer 5 basket cells",
+      "id": "cfg.input_prox_A_weight_L5Basket_ampa",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "AMPA input connection weight to layer 5 basket cells in uS"
+    },
+    {
+      "label": "NMDA input connection weight to layer 5 basket cells",
+      "id": "cfg.input_prox_A_weight_L5Basket_nmda",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "NMDA input connection weight to layer 5 basket cells in uS"
+    },
+    {
+      "label": "Input connection delay to layer 5 cells",
+      "id": "cfg.input_prox_A_delay_L5",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Input connection delay to layer 5 cells in uS"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "cells",
+  "label": "Define number of cells",
+  "children": [
+    {
+      "label": "Number of pyramidal cells (x direction)",
+      "id": "cfg.N_pyr_x",
+      "field_type": "int",
+      "component": "TextField",
+      "hintText": "Define the number of pyramidal cells in the X direction"
+    },
+    {
+      "label": "Number of pyramidal cells (y direction)",
+      "id": "cfg.N_pyr_y",
+      "field_type": "int",
+      "component": "TextField",
+      "hintText": "Define the number of pyramidal cells in the Y direction"
+    }
+  ]
+}

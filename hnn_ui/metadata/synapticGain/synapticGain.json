@@ -1,0 +1,38 @@
+{
+  "label": "Synaptic gains",
+  "hintText": "Define here the synaptic gains",
+  "children": [
+    {
+      "label": "Excitatory to Excitatory synaptic gain",
+      "id": "cfg.ee",
+      "field_type": "float",
+      "default_value": 1,
+      "component": "TextField",
+      "hintText": "Excitatory to Excitatory synaptic gain"
+    },
+    {
+      "label": "Excitatory to inhibitory synaptic gain",
+      "id": "cfg.ei",
+      "field_type": "float",
+      "default_value": 1,
+      "component": "TextField",
+      "hintText": "Excitatory to inhibitory synaptic gain"
+    },
+    {
+      "label": "Inhibitory to Excitatory synaptic gain",
+      "id": "cfg.ie",
+      "field_type": "float",
+      "default_value": 1,
+      "component": "TextField",
+      "hintText": "Inhibitory to Excitatory synaptic gain"
+    },
+    {
+      "label": "Inhibitory to inhibitory synaptic gain",
+      "id": "cfg.ii",
+      "field_type": "float",
+      "default_value": 1,
+      "component": "TextField",
+      "hintText": "Inhibitory to inhibitory synaptic gain"
+    }
+  ]
+}
