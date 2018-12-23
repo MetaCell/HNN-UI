@@ -6,7 +6,7 @@
 '''
 import numpy as np
 from netpyne import specs
-from cfg import cfg
+from .cfg import cfg
 
 # ----------------------------------------------------------------------------
 # Cell parameters

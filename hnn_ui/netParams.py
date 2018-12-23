@@ -2,10 +2,12 @@
 
 from netpyne import specs
 
-try:
-  from __main__ import cfg  # import SimConfig object with params from parent module
-except:
-  from cfg import cfg  # if no simConfig in parent module, import directly from cfg module
+from .cfg import cfg
+
+# try:
+#   from __main__ import cfg  # import SimConfig object with params from parent module
+# except:
+#   from cfg import cfg  # if no simConfig in parent module, import directly from cfg module
 
 import numpy as np
 
@@ -28,7 +30,7 @@ netParams.shape = 'cuboid'
 # ----------------------------------------------------------------------------
 # Cell parameters
 # ----------------------------------------------------------------------------
-from cellParams import cellParams  # defined in separate module for clarity
+from .cellParams import cellParams  # defined in separate module for clarity
 netParams.cellParams = cellParams
 
 

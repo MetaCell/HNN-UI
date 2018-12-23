@@ -22,8 +22,8 @@ class NetPyNEModelInterpreter():
             name='netpynelib')
         geppetto_model.libraries.append(netpyne_geppetto_library)
 
-        # self.extractPopulations(netpyne_model, netpyne_geppetto_library, geppetto_model)
-        # self.extractInstances(netpyne_model, netpyne_geppetto_library, geppetto_model)
+        self.extractPopulations(netpyne_model, netpyne_geppetto_library, geppetto_model)
+        self.extractInstances(netpyne_model, netpyne_geppetto_library, geppetto_model)
 
         return geppetto_model
 

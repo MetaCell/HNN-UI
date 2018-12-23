@@ -49,20 +49,17 @@ class HNNGeppetto():
     def __init__(self):
         self.model_interpreter = NetPyNEModelInterpreter()
 
-        self.netParams = specs.NetParams()
         self.cfg = self.load_cfg()
 
         synchronization.startSynchronization(self.__dict__)
         logging.debug("Initializing the original model")
 
-        jupyter_geppetto.context = {'hnn_geppetto': self}
+        jupyter_geppetto.context = { 'hnn_geppetto': self }
 
     def getData(self):
         with redirect_stdout(sys.__stdout__):
             return {
                 "metadata": model_utils.load_metadata("hnn_ui/metadata"),
-                "netParams": self.netParams.todict(),
-                "simConfig": self.cfg.todict(),
                 "isDocker": os.path.isfile('/.dockerenv'),
                 "currentFolder": os.getcwd()
             }
@@ -71,26 +68,26 @@ class HNNGeppetto():
         cfg_module = importlib.import_module("hnn_ui.cfg")
         return getattr(cfg_module, "cfg")
     
-    def instantiateNetPyNEModelInGeppetto(self, args):
+    def instantiateModelInGeppetto(self):
         try:
             with redirect_stdout(sys.__stdout__):
-                netpyne_model = self.instantiateNetPyNEModel()
+                netpyne_model = self.instantiateModel()
                 self.geppetto_model = self.model_interpreter.getGeppettoModel(netpyne_model)
                 
                 return json.loads(GeppettoModelSerializer().serialize(self.geppetto_model))
         except:
             return utils.getJSONError("Error while instantiating the NetPyNE model", sys.exc_info())
 
-    def instantiateNetPyNEModel(self):
+    def instantiateModel(self):
         with redirect_stdout(sys.__stdout__):
             netParams_module = importlib.import_module("hnn_ui.netParams")
             netParams_snapshot = getattr(netParams_module, "netParams")
             # saveData = sim.allSimData if hasattr(sim, 'allSimData') and 'spkt' in sim.allSimData.keys() and len(sim.allSimData['spkt'])>0 else False
             sim.create(simConfig=self.cfg, netParams=netParams_snapshot)
             # sim.net.defineCellShapes()  # creates 3d pt for cells with stylized geometries
-            # sim.gatherData(gatherLFP=False)
+            sim.gatherData(gatherLFP=False)
             # if saveData: sim.allSimData = saveData  # preserve data from previous simulation
-        
+
         return sim
 
     def getEvokedInputs(self):
