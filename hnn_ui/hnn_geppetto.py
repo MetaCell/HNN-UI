@@ -13,6 +13,7 @@ from netpyne import specs, sim, analysis
 from hnn_ui.netpyne_model_interpreter import NetPyNEModelInterpreter
 from pygeppetto.model.model_serializer import GeppettoModelSerializer
 from jupyter_geppetto import jupyter_geppetto, synchronization, utils
+
 import hnn_ui.cfg as cfg
 import hnn_ui.model_utils as model_utils
 from contextlib import redirect_stdout, redirect_stderr
@@ -48,6 +49,7 @@ class HNNGeppetto():
 
     def __init__(self):
         self.model_interpreter = NetPyNEModelInterpreter()
+
 
         self.cfg = self.load_cfg()
 
@@ -103,6 +105,7 @@ class HNNGeppetto():
     def removeEvokedInput(self, name):
         del self.cfg.evoked[name]
         return self.getEvokedInputs()
+
 
 logging.info("Initialising HNN UI")
 hnn_geppetto = HNNGeppetto()
