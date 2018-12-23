@@ -18,7 +18,8 @@ import hnn_ui.cfg as cfg
 import hnn_ui.model_utils as model_utils
 from contextlib import redirect_stdout, redirect_stderr
 
-
+from hnn_ui.netParams import set_netParams
+from hnn_ui.cellParams import set_cellParams
 PROXIMAL = {
     "startTimeMean": 0.,
     "stopTimeStd": 2.5,
@@ -82,8 +83,11 @@ class HNNGeppetto():
 
     def instantiateModel(self):
         with redirect_stdout(sys.__stdout__):
-            netParams_module = importlib.import_module("hnn_ui.netParams")
-            netParams_snapshot = getattr(netParams_module, "netParams")
+            # netParams_module = importlib.import_module("hnn_ui.netParams")
+            # netParams_snapshot = getattr(netParams_module, "netParams")
+            netParams_snapshot = set_netParams(self.cfg)
+            netParams_snapshot.cellParams = set_cellParams(self.cfg)
+
             # saveData = sim.allSimData if hasattr(sim, 'allSimData') and 'spkt' in sim.allSimData.keys() and len(sim.allSimData['spkt'])>0 else False
             sim.create(simConfig=self.cfg, netParams=netParams_snapshot)
             # sim.net.defineCellShapes()  # creates 3d pt for cells with stylized geometries
