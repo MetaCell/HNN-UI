@@ -20,40 +20,16 @@ from contextlib import redirect_stdout, redirect_stderr
 
 from hnn_ui.netParams import set_netParams
 from hnn_ui.cellParams import set_cellParams
-PROXIMAL = {
-    "startTimeMean": 0.,
-    "stopTimeStd": 2.5,
-    "numberOfSpikes": 1,
-    "L2PyrAMPAWeight": 0.,
-    "L2PyrNMDAWeight": 0.,
-    "L2BasketAMPAWeight": 0.,
-    "L2BasketNMDAWeight": 0.,
-    "L5PyrAMPAWeight": 0.,
-    "L5PyrNMDAWeight": 0.,
-    "L5BasketAMPAWeight": 0.,
-    "L5BasketNMDAWeight": 0.
-}
 
-DISTAL = {
-    "startTimeMean": 0.,
-    "stopTimeStd": 6.,
-    "numberOfSpikes": 1,
-    "L2PyrAMPAWeight": 0.,
-    "L2PyrNMDAWeight": 0.,
-    "L2BasketAMPAWeight": 0.,
-    "L2BasketNMDAWeight": 0.,
-    "L5PyrAMPAWeight": 0.,
-    "L5PyrNMDAWeight": 0.
-}
+from hnn_ui.constants import CANVAS_KEYS, PROXIMAL, DISTAL
 
 class HNNGeppetto():
 
     def __init__(self):
         self.model_interpreter = NetPyNEModelInterpreter()
-
-
         self.cfg = self.load_cfg()
-
+        # use to decide wheter or not to update the canvas in the front end
+        self.last_cfg_snapshot = self.cfg.__dict__.copy()
         synchronization.startSynchronization(self.__dict__)
         logging.debug("Initializing the original model")
 
@@ -83,16 +59,11 @@ class HNNGeppetto():
 
     def instantiateModel(self):
         with redirect_stdout(sys.__stdout__):
-            # netParams_module = importlib.import_module("hnn_ui.netParams")
-            # netParams_snapshot = getattr(netParams_module, "netParams")
             netParams_snapshot = set_netParams(self.cfg)
             netParams_snapshot.cellParams = set_cellParams(self.cfg)
-
-            # saveData = sim.allSimData if hasattr(sim, 'allSimData') and 'spkt' in sim.allSimData.keys() and len(sim.allSimData['spkt'])>0 else False
             sim.create(simConfig=self.cfg, netParams=netParams_snapshot)
-            # sim.net.defineCellShapes()  # creates 3d pt for cells with stylized geometries
             sim.gatherData(gatherLFP=False)
-            # if saveData: sim.allSimData = saveData  # preserve data from previous simulation
+            self.last_cfg_snapshot = self.cfg.__dict__.copy()
 
         return sim
 
@@ -110,6 +81,24 @@ class HNNGeppetto():
         del self.cfg.evoked[name]
         return self.getEvokedInputs()
 
+    def compare_cfg_to_last_snapshot(self):
+        return {
+            "canvasUpdateRequired": self._is_canvas_update_required(),
+            "simulationUpdateRequired": self._have_params_changed()
+        }
+
+    def _is_canvas_update_required(self):
+        for key in self.cfg.__dict__:
+            for end in CANVAS_KEYS:
+                if key.endswith(end) and getattr(self.cfg, key) != self.last_cfg_snapshot[key]:
+                    return True
+        return False
+
+    def _have_params_changed(self):
+        for key in self.cfg.__dict__:
+            if getattr(self.cfg, key) != self.last_cfg_snapshot[key]:
+                return True
+        return False
 
 logging.info("Initialising HNN UI")
 hnn_geppetto = HNNGeppetto()
