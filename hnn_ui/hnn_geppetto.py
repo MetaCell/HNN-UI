@@ -2,26 +2,23 @@
 hnn_geppetto.py
 Initialise HNN Geppetto, this class contains methods to connect HNN with the Geppetto based UI
 """
-import os
-import sys
+import importlib
 import json
 import logging
-import importlib
+import os
+import sys
+from contextlib import redirect_stdout
 
-from pygeppetto import ui
-from netpyne import specs, sim, analysis
-from hnn_ui.netpyne_model_interpreter import NetPyNEModelInterpreter
-from pygeppetto.model.model_serializer import GeppettoModelSerializer
 from jupyter_geppetto import jupyter_geppetto, synchronization, utils
+from netpyne import sim
+from pygeppetto.model.model_serializer import GeppettoModelSerializer
 
-import hnn_ui.cfg as cfg
 import hnn_ui.model_utils as model_utils
-from contextlib import redirect_stdout, redirect_stderr
-
-from hnn_ui.netParams import set_netParams
 from hnn_ui.cellParams import set_cellParams
-
 from hnn_ui.constants import CANVAS_KEYS, PROXIMAL, DISTAL
+from hnn_ui.netParams import set_netParams
+from hnn_ui.netpyne_model_interpreter import NetPyNEModelInterpreter
+
 
 class HNNGeppetto():
 
@@ -99,6 +96,21 @@ class HNNGeppetto():
             if getattr(self.cfg, key) != self.last_cfg_snapshot[key]:
                 return True
         return False
+
+    def getDirList(self, dir=None, onlyDirs=False, filterFiles=False):
+        # Get Current dir
+        if dir is None or dir == '':
+            dir = os.getcwd()
+        dir_list = []
+        for f in sorted(os.listdir(str(dir)), key=str.lower):
+            ff = os.path.join(dir, f)
+            if os.path.isdir(ff):
+                dir_list.insert(0, {'title': f, 'path': ff, 'load': False, 'children': [{'title': 'Loading...'}]})
+            elif not onlyDirs:
+                if not filterFiles or os.path.isfile(ff) and ff.endswith(filterFiles):
+                    dir_list.append({'title': f, 'path': ff})
+        return dir_list
+
 
 logging.info("Initialising HNN UI")
 hnn_geppetto = HNNGeppetto()
