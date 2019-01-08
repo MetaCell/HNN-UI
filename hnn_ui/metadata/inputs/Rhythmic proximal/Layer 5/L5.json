@@ -1,6 +1,7 @@
 {
   "id": "layer5",
-  "label": "Set input connection weights to layer 5 cells",
+  "label": "layer 5",
+  "info": "Set input connection weights to layer 5 cells",
   "children": [
     {
       "label": "AMPA input connection weight to layer 5 pyr cells",

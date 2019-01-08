@@ -29,6 +29,9 @@ def load_metadata(directory):
         for name in files:
             if name.endswith((".json")):
                 keys = root.split('/')
+                for i, key in enumerate(keys):
+                    keys[i] = key.replace(":", "/")
+                    print(keys[i])
                 push_keys(meta, keys)
                 with open(f"{root}/{files[0]}") as file:
                     reduce(operator.getitem, keys[:-1], meta)[keys[-1]] = json.load(file)

@@ -1,6 +1,6 @@
 {
   "id": "geometry",
-  "label": "Geometric cell properties",
+  "label": "Geometry",
   "children": [
     {
       "label": "Soma length",

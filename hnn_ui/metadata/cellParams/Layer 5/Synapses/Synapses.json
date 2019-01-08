@@ -1,6 +1,6 @@
 {
   "id": "synapses",
-  "label": "Layer 5 synaptic cell properties",
+  "label": "Synapses",
   "children": [
     {
       "label": "AMPA reversal potencial",

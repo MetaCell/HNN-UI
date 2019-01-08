@@ -1,6 +1,6 @@
 {
   "id": "biophysics",
-  "label": "Biophysical cell properties",
+  "label": "Biophysics",
   "children": [            
     {
       "label": "Soma potassium channel capacitance density (Km)",

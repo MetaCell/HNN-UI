@@ -1,6 +1,7 @@
 {
   "id": "layer2/3",
-  "label": "Set input connection weights to layer 2/3 cells",
+  "label": "layer 2/3",
+  "info": "Set input connection weights to layer 2/3 cells",
   "children": [
     {
       "label": "AMPA input connection weight to layer 2/3 pyr cells",

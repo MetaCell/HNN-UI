@@ -1,6 +1,6 @@
 {
   "id": "biophysics",
-  "label": "Layer 5 biophysical cell properties",
+  "label": "Biophysics",
   "children": [
     {
       "label": "Soma voltage gated potassium channel capacitance density (kv)",

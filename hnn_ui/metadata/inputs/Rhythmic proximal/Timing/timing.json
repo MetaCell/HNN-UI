@@ -1,6 +1,7 @@
 {
   "id": "timing",
-  "label": "Set time related variables",
+  "label": "Timing",
+  "info": "Set time related variables",
   "children": [
     {
       "label": "Start time mean",
