@@ -1,0 +1,76 @@
+{
+  "id": "biophysics",
+  "label": "Biophysics",
+  "children": [
+    {
+      "label": "Soma voltage gated potassium channel capacitance density (kv)",
+      "id": "cfg.L5Pyr_soma_gkbar_hh2",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Channel capacitance density in S/cm2"
+    },
+    {
+      "label": "Soma voltage gated sodium channel capacitance density (Na)",
+      "id": "cfg.L5Pyr_soma_gnabar_hh2",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Channel capacitance density in S/cm2"
+    },
+    {
+      "label": "Soma leak current reversal potencial",
+      "id": "cfg.L5Pyr_soma_el_hh2",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Reversal potencial in mV"
+    },
+    {
+      "label": "Soma leak current channel capacitance density",
+      "id": "cfg.L5Pyr_soma_gl_hh2",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Channel capacitance density in S/cm2"
+    },
+    {
+      "label": "Soma voltage gated calcium channel capacitance density (Ca)",
+      "id": "cfg.L5Pyr_soma_gbar_ca",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Channel capacitance density in pS/micron2"
+    },
+    {
+      "label": "Soma calcium concentration decay channel time constant (Cad)",
+      "id": "cfg.L5Pyr_soma_taur_cad",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Channel time decay constant in ms"
+    },
+    {
+      "label": "Soma calcium dependant Potassium channel capacitance density (KCa)",
+      "id": "cfg.L5Pyr_soma_gbar_kca",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Channel capacitance density in pS/micron2"
+    },
+    {
+      "label": "Soma potassium channel capacitance density (Km)",
+      "id": "cfg.L5Pyr_soma_gbar_km",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Channel capacitance density in S/cm2"
+    },
+    {
+      "label": "Soma calcium low threshold channel capacitance density (CaT)",
+      "id": "cfg.L5Pyr_soma_gbar_cat",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Channel capacitance density in pS/micron2"
+    },
+    {
+      "label": "Soma anomalous rectifier current channel capacitance density (HCN)",
+      "id": "cfg.L5Pyr_soma_gbar_ar",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Channel capacitance density in pS/micron2"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "geometry",
+  "label": "Geometry",
+  "children": [
+    {
+      "label": "Basal dendrite 1 length",
+      "id": "cfg.L5Pyr_basal1_L",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Enter basal dendrite 1 length in microns"
+    },
+    {
+      "label": "Basal dendrite 1 diameter",
+      "id": "cfg.L5Pyr_basal1_diam",
+      "field_type": "float",
+      "default_value": 6.8,
+      "component": "TextField",
+      "hintText": "Enter basal dendrite 1 diameter in microns"
+    }
+  ]
+}

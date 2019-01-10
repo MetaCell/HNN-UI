@@ -1,0 +1,20 @@
+{
+  "id": "geometry",
+  "label": "Geometry",
+  "children": [
+    {
+      "Label": "Oblique apical dendrite length",
+      "id": "cfg.L2Pyr_apicaloblique_L",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Enter oblique apical dendrite length"
+    },
+    {
+      "label": "Oblique apical dendrite diameter",
+      "id": "cfg.L2Pyr_apicaloblique_diam",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Enter oblique apical dendrite diameter in microns"
+    }
+  ]
+}

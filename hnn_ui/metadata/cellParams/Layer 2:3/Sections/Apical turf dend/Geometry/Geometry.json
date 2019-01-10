@@ -1,0 +1,20 @@
+{
+  "id": "geometry",
+  "label": "Geometry",
+  "children": [
+    {
+      "label": "Apical dendrite turf length",
+      "id": "cfg.L2Pyr_apicaltuft_L",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Enter apical dendrite turf length"
+    },
+    {
+      "label": "Apical dendrite turf diameter",
+      "id": "cfg.L2Pyr_apicaltuft_diam",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Enter apical dendrite turf diameter in microns"
+    }
+  ]
+}
