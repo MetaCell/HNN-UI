@@ -13,11 +13,11 @@
       "hintText": "Whether evoked inputs arrive at same time to all cell"
     },
     {
-      "label": "Increment start time (ms)",
+      "label": "Increment start time [ms]",
       "id": "cfg.inc_evinput",
       "field_type": "float",
       "component": "TextField",
-      "hintText": "Increment start time (ms)"
+      "hintText": "Increment start time ms"
     },
     {
       "field_type": "proximalInput"

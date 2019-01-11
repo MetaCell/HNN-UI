@@ -4,35 +4,35 @@
   "info": "Set time related variables",
   "children": [
     {
-      "label": "Start time mean",
+      "label": "Start time mean [ms]",
       "id": "cfg.t0_input_prox",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Set start time mean in ms"
     },
     {
-      "label": "Start time standard deviation",
+      "label": "Start time standard deviation [ms]",
       "id": "cfg.t0_input_stdev_prox",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Set start time standard deviation in ms"
     },
     {
-      "label": "Stop time",
+      "label": "Stop time [ms]",
       "id": "cfg.tstop_input_prox",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Set stop time ms"
     },
     {
-      "label": "Set burst frequency",
+      "label": "Set burst frequency [Hz]",
       "id": "cfg.f_input_prox",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Set burst frequency in Hz"
     },
     {
-      "label": "Set burst standart deviation",
+      "label": "Set burst standart deviation [ms]",
       "id": "cfg.f_stdev_prox",
       "field_type": "float",
       "component": "TextField",

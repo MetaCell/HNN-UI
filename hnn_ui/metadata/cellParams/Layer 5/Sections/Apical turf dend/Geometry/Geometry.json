@@ -3,14 +3,14 @@
   "label": "Geometry",
   "children": [
     {
-      "label": "Apical dendrite turf length",
+      "label": "Apical dendrite turf length [um]",
       "id": "cfg.L5Pyr_apicaltuft_L",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Enter apical dendrite turf length in microns"
     },
     {
-      "label": "Apical dendrite turf diameter",
+      "label": "Apical dendrite turf diameter [um]",
       "id": "cfg.L5Pyr_apicaltuft_diam",
       "field_type": "float",
       "component": "TextField",

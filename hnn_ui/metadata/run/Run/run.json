@@ -3,21 +3,21 @@
   "label": "Simulation parameters",
   "children": [            
     {
-      "label": "Simulation duration (ms)",
+      "label": "Simulation duration [ms]",
       "id": "cfg.duration",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Total simulation time in miliseconds"
     },
     {
-      "label": "Integration timestep (ms)",
+      "label": "Integration timestep [ms]",
       "id": "cfg.dt",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Simulation integration timestep in miliseconds"
     },
     {
-      "label": "Temperature (C)",
+      "label": "Temperature [C]",
       "id": "cfg.celsius",
       "field_type": "float",
       "component": "TextField",
@@ -31,7 +31,7 @@
       "hintText": "Number of trials"
     },
     {
-      "label": "Firing threshold (mV)",
+      "label": "Firing threshold [mV]",
       "id": "cfg.threshold",
       "field_type": "float",
       "component": "TextField",

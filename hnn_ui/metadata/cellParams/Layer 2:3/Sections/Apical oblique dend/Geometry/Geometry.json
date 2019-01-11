@@ -3,14 +3,14 @@
   "label": "Geometry",
   "children": [
     {
-      "Label": "Oblique apical dendrite length",
+      "Label": "Oblique apical dendrite length [um]",
       "id": "cfg.L2Pyr_apicaloblique_L",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Enter oblique apical dendrite length"
     },
     {
-      "label": "Oblique apical dendrite diameter",
+      "label": "Oblique apical dendrite diameter [um]",
       "id": "cfg.L2Pyr_apicaloblique_diam",
       "field_type": "float",
       "component": "TextField",

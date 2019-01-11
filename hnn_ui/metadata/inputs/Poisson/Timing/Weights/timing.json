@@ -3,14 +3,14 @@
   "label": "Set input time parameters",
   "children": [
     {
-      "label": "Set starting time",
+      "label": "Set starting time [ms]",
       "id": "cfg.t0_pois",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Set input start time in ms"
     },
     {
-      "label": "Set stop time",
+      "label": "Set stop time [ms]",
       "id": "cfg.T_pois",
       "field_type": "float",
       "component": "TextField",

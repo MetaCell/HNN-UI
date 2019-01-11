@@ -3,14 +3,14 @@
   "label": "Geometry",
   "children": [
     {
-      "label": "Apical dendrite trunk length",
+      "label": "Apical dendrite trunk length [um]",
       "id": "cfg.L5Pyr_apicaltrunk_L",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Enter apical dendrite trunk length in microns"
     },
     {
-      "label": "Apical dendrite trunk diameter",
+      "label": "Apical dendrite trunk diameter [um]",
       "id": "cfg.L5Pyr_apicaltrunk_diam",
       "field_type": "float",
       "component": "TextField",

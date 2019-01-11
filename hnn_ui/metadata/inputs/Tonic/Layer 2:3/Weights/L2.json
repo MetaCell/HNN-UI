@@ -3,42 +3,42 @@
   "label": "Set input parameters for layer 2/3 cells",
   "children": [
     {
-      "label": "Set input current for pyramidal cells in nA",
+      "label": "Layer 2/3 pyramidal cell input current [nA]",
       "id": "cfg.Itonic_A_L2Pyr_soma",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Set input current for layer 2/3 pyramidal cells in nA"
     },
     {
-      "label": "Set input start time for pyr cells",
+      "label": "Layer 2/3 pyramidal cell input start time [ms]",
       "id": "cfg.Itonic_t0_L2Pyr_soma",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Set input start time for layer 2/3 pyramidal cells in ms"
     },
     {
-      "label": "Set input stop time for pyr cells",
+      "label": "Layer 2/3 pyramidal cell input stop time [ms]",
       "id": "cfg.Itonic_T_L2Pyr_soma",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Set input stop time for layer 2/3 pyramidal cells in ms"
     },
     {
-      "label": "Set input current for basket cells in nA",
+      "label": "Layer 2/3 basket cell input current [nA]",
       "id": "cfg.Itonic_A_L2Basket",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Set input current for layer 2/3 basket cells in nA"
     },
     {
-      "label": "Set input start time for basket cells",
+      "label": "Layer 2/3 basket cells input start [ms]",
       "id": "cfg.Itonic_t0_L2Basket",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Set input start time for layer 2/3 basket cells in ms"
     },
     {
-      "label": "Set input stop time for basket cells",
+      "label": "Layer 2/3 basket cell input stop time [ms]",
       "id": "cfg.Itonic_T_L2Basket",
       "field_type": "float",
       "component": "TextField",

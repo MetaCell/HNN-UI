@@ -3,28 +3,28 @@
   "label": "Biophysics",
   "children": [            
     {
-      "label": "Soma potassium channel capacitance density (Km)",
+      "label": "Soma potassium channel capacitance density (Km) [S/cm2]",
       "id": "cfg.L2Pyr_soma_gbar_km",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Channel capacitance density in S/cm2"
     },
     {
-      "label": "Soma voltage gated potassium channel capacitance density (Kv)",
+      "label": "Soma voltage gated potassium channel capacitance density (hh2) [S/cm2]",
       "id": "cfg.L2Pyr_soma_gkbar_hh2",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Channel capacitance density in S/cm2"
     },
     {
-      "label": "Soma voltage gated sodium channel capacitance density",
+      "label": "Soma voltage gated sodium channel capacitance density (hh2) [S/cm2]",
       "id": "cfg.L2Pyr_soma_gnabar_hh2",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Channel capacitance density in S/cm2"
     },
     {
-      "label": "Soma leak channel reversal potencial",
+      "label": "Soma leak channel reversal potencial (hh2) [mV]",
       "id": "cfg.L2Pyr_soma_el_hh2",
       "field_type": "float",
       "component": "TextField",
@@ -32,7 +32,7 @@
       "help": "Reversal potencial in mV"
     },
     {
-      "label": "Soma leak channel capacitance density",
+      "label": "Soma leak channel capacitance density (hh2) [S/cm2]",
       "id": "cfg.L2Pyr_soma_gl_hh2",
       "field_type": "float",
       "component": "TextField",

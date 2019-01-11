@@ -3,35 +3,35 @@
   "label": "Biophysics",
   "children": [            
     {
-      "label": "Dendrite potassium channel capacitance density (Km)",
+      "label": "Dendrite potassium channel capacitance density (Km) [S/cm2]",
       "id": "cfg.L2Pyr_dend_gbar_km",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Channel capacitance density in S/cm2"
     },
     {
-      "label": "Dendrites voltage gated potassium channel capacitance density (Kv)",
+      "label": "Dendrites voltage gated potassium channel capacitance density (hh2) [S/cm2]",
       "id": "cfg.L2Pyr_dend_gkbar_hh2",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Channel capacitance density in S/cm2"
     },
     {
-      "label": "Dendrites Voltage gated sodium channel capacitance density (Na)",
+      "label": "Dendrites Voltage gated sodium channel capacitance density (Na) [S/cm2]",
       "id": "cfg.L2Pyr_dend_gnabar_hh2",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Channel capacitance density in S/cm2"
     },
     {
-      "label": "Dendrites leak current reversal potencial",
+      "label": "Dendrites leak current reversal potencial (hh2) [mV]",
       "id": "cfg.L2Pyr_dend_el_hh2",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Reversal potencial in mV"
     },
     {
-      "label": "Dendrite leak current channel capacitance density",
+      "label": "Dendrite leak current channel capacitance density (hh2) [S/cm2]",
       "id": "cfg.L2Pyr_dend_gl_hh2",
       "field_type": "float",
       "component": "TextField",

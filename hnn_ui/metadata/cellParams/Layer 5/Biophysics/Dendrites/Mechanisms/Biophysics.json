@@ -3,70 +3,70 @@
   "label": "Biophysics",
   "children": [
     {
-      "label": "Dendrite voltage gated potassium channel capacitance density (Kv)",
+      "label": "Dendrite voltage gated potassium channel capacitance density (Kv) [S/cm2]",
       "id": "cfg.L5Pyr_dend_gkbar_hh2",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Channel capacitance density in S/cm2"
     },
     {
-      "label": "Dendrite voltage gated sodium channel capacitance density (Na)",
+      "label": "Dendrite voltage gated sodium channel capacitance density (Na) [S/cm2]",
       "id": "cfg.L5Pyr_dend_gnabar_hh2",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Channel capacitance density in S/cm2"
     },
     {
-      "label": "Dendrite leak current reversal potencial",
+      "label": "Dendrite leak current reversal potencial (hh2) [mV]",
       "id": "cfg.L5Pyr_dend_el_hh2",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Reversal potencial in mV"
     },
     {
-      "label": "Dendrite leak current channel capacitance density",
+      "label": "Dendrite leak current channel capacitance density [S/cm2]",
       "id": "cfg.L5Pyr_dend_gl_hh2",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Channel capacitance density in S/cm2"
     },
     {
-      "label": "Dendrite voltage gated calcium channel capacitance density (Ca)",
+      "label": "Dendrite voltage gated calcium channel capacitance density (Ca) [pS/um2]",
       "id": "cfg.L5Pyr_dend_gbar_ca",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Channel capacitance density in pS/micron2"
     },
     {
-      "label": "Dendrite calcium concentration decay channel time constant (Cad)",
+      "label": "Dendrite calcium concentration decay channel time constant (Cad) [ms]",
       "id": "cfg.L5Pyr_dend_taur_cad",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Channel time decay constant in ms"
     },
     {
-      "label": "Dendrite calcium dependant Potassium channel capacitance density (KCa)",
+      "label": "Dendrite calcium dependant Potassium channel capacitance density (KCa) [pS/um2]",
       "id": "cfg.L5Pyr_dend_gbar_kca",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Channel capacitance density in pS/micron2"
     },
     {
-      "label": "Dendrite potassium channel capacitance density (Km)",
+      "label": "Dendrite potassium channel capacitance density (Km) [S/cm2]",
       "id": "cfg.L5Pyr_dend_gbar_km",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Channel capacitance density in S/cm2"
     },
     {
-      "label": "Dendrite calcium low threshold channel capacitance density (CaT)",
+      "label": "Dendrite calcium low threshold channel capacitance density (CaT) [pS/um2]",
       "id": "cfg.L5Pyr_dend_gbar_cat",
       "field_type": "float",
       "component": "TextField",
       "hintText": "Channel capacitance density in pS/micron2"
     },
     {
-      "label": "Dendrite Anomalous rectifier current channel capacitance density (HCN)",
+      "label": "Dendrite Anomalous rectifier current channel capacitance density (HCN) [pS/um2]",
       "id": "cfg.L5Pyr_dend_gbar_ar",
       "field_type": "float",
       "component": "TextField",

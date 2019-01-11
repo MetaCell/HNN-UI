@@ -21,7 +21,7 @@
       "hintText": "Save spectral data"
     },
     {
-      "label": "Max spectra frequency (Hz)",
+      "label": "Max spectra frequency [Hz]",
       "id": "cfg.f_max_spec",
       "field_type": "float",
       "component": "TextField",
@@ -35,7 +35,7 @@
       "hintText": "Dipole scaling"
     },
     {
-      "label": "Dipole smooth window (ms)",
+      "label": "Dipole smooth window [ms]",
       "id": "cfg.dipole_smooth_win",
       "field_type": "float",
       "component": "TextField",

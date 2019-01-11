@@ -4,14 +4,14 @@
   "component": "item",
   "children": [
     {
-      "label": "Start time mean (ms)",
+      "label": "Start time mean [ms]",
       "id": "cfg.evoked['{}']['startTimeMean']",
       "hintText": "Start time mean (ms)",
       "component": "TextField",
       "field_type": "float"
     },
     {
-      "label": "Stop time stddev (ms)",
+      "label": "Stop time stddev [ms]",
       "id": "cfg.evoked['{}']['stopTimeStd']",
       "hintText": "Stop time stddev (ms)",
       "component": "TextField",
