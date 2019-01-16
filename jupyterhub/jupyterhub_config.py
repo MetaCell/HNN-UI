@@ -24,7 +24,7 @@ c.JupyterHub.spawner_class = 'dockerspawner.DockerSpawner'
 from jupyter_client.localinterfaces import public_ips
 ip = public_ips()[0]
 c.JupyterHub.hub_ip = ip
-c.DockerSpawner.image = 'netpyne_ui_jupyterspawner'
+c.DockerSpawner.image = 'hnn_ui_jupyterspawner'
 c.DockerSpawner.remove_containers = True
 c.DockerSpawner.remove = True
 c.DockerSpawner.debug = True
@@ -35,4 +35,4 @@ c.DockerSpawner.network_name='jupyterhub_network'
 #  Some spawners allow shell-style expansion here, allowing you to use
 #  environment variables here. Most, including the default, do not. Consult the
 #  documentation for your spawner to verify!
-# c.Spawner.args = ['--library=netpyne_ui', '--NotebookApp.default_url=/geppetto', '--NotebookApp.token=''']
+# c.Spawner.args = ['--library=hnn_ui', '--NotebookApp.default_url=/geppetto', '--NotebookApp.token=''']
