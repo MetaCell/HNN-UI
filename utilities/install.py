@@ -87,4 +87,4 @@ subprocess.call(['jupyter', 'serverextension', 'enable', '--py', 'jupyter_geppet
                 cwd='./org.geppetto.frontend.jupyter')
 
 print("Installing HNN UI python package ...")
-subprocess.call(['pip', 'install', '-e', '.'], cwd='.')
+subprocess.call(['pip', 'install', '-e', '.', '--no-deps', '--ignore-requires-python'], cwd='.')
