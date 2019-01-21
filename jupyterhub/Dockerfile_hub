@@ -1,7 +1,7 @@
 FROM jupyterhub/jupyterhub:latest
 
 # feature_jupyterhub
-ARG hnnuiBranch=feature_jupyterhub 
+ARG hnnuiBranch=feature-jupyterhub_hnn
 ENV hnnuiBranch=${hnnuiBranch}  
 RUN echo "$hnnuiBranch";
 
