@@ -14,6 +14,7 @@
 #c.JupyterHub.authenticator_class = 'jupyterhub.auth.PAMAuthenticator'
 # c.JupyterHub.authenticator_class = 'dummyauthenticator.DummyAuthenticator'
 # c.DummyAuthenticator.password = "dummypassword"
+c.JupyterHub.extra_log_file = '/var/log/jupyterhub.log'
 c.JupyterHub.authenticator_class = 'tmpauthenticator.TmpAuthenticator'
 
 ## The class to use for spawning single-user servers.
