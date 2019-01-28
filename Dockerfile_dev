@@ -1,4 +1,4 @@
-FROM metacell/jupyter-neuron:latest
+FROM frodriguez4600/jupyter-neuron:final
 
 ARG hnnuiBranch=feature-jupyterhub_hnn
 
@@ -11,4 +11,4 @@ RUN git clone --depth 1 -b $hnnuiBranch https://github.com/MetaCell/HNN-UI &&\
 
 WORKDIR $HOME/HNN-UI
 
-CMD /bin/bash -c "jupyter notebook --debug --NotebookApp.default_url=/geppetto --NotebookApp.token='' --library=hnn_ui"
+CMD jupyter notebook --debug --NotebookApp.default_url=/geppetto --NotebookApp.token='' --library=hnn_ui
