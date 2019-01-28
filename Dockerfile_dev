@@ -11,4 +11,4 @@ RUN git clone --depth 1 -b $hnnuiBranch https://github.com/MetaCell/HNN-UI &&\
 
 WORKDIR $HOME/HNN-UI
 
-CMD jupyter notebook --debug --NotebookApp.default_url=/geppetto --NotebookApp.token='' --library=hnn_ui
+CMD jupyter notebook --debug --NotebookApp.default_url=/geppetto --NotebookApp.token='' --library=hnn_ui 
