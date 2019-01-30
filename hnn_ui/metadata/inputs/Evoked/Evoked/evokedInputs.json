@@ -1,0 +1,29 @@
+{
+  "id": "evokedInputs",
+  "label": "Set evoked inputs",
+  "help": "",
+  "hintText": "",
+  "component": "To be define",
+  "children": [
+    {
+      "label": "Synchronous inputs",
+      "id": "cfg.sync_evinput",
+      "field_type": "bool",
+      "component": "Checkbox",
+      "hintText": "Whether evoked inputs arrive at same time to all cell"
+    },
+    {
+      "label": "Increment start time [ms]",
+      "id": "cfg.inc_evinput",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Increment start time ms"
+    },
+    {
+      "field_type": "proximalInput"
+    },
+    {
+      "field_type": "distalInput"
+    }
+  ]
+}

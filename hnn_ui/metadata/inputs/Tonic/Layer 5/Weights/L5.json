@@ -1,0 +1,48 @@
+{
+  "id": "layer5",
+  "label": "Set input parameters for layer 5 cells",
+  "children": [
+    {
+      "label": "Layer 5 pyramidal cell input current [nA]",
+      "id": "cfg.Itonic_A_L5Pyr_soma",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Set input current for layer 5 pyramidal cells in nA"
+    },
+    {
+      "label": "Layer 5 pyramidal cell input start time [ms]",
+      "id": "cfg.Itonic_t0_L5Pyr_soma",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Set input start time for layer 5 pyramidal cells in ms"
+    },
+    {
+      "label": "Layer 5 pyramidal cell input stop time [ms]",
+      "id": "cfg.Itonic_T_L5Pyr_soma",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Set input stop time for layer 5 pyramidal cells in ms"
+    },
+    {
+      "label": "Layer 5 basket cell input current [nA]",
+      "id": "cfg.Itonic_A_L5Basket",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Set input current for layer 5 basket cells in nA"
+    },
+    {
+      "label": "Layer 5 basket cell input start time [ms]",
+      "id": "cfg.Itonic_t0_L5Basket",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Set input start time for layer 5 basket cells in ms"
+    },
+    {
+      "label": "Layer 5 basket cell input stop time [ms]",
+      "id": "cfg.Itonic_T_L5Basket",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Set input stop time for layer 5 basket cells in ms"
+    }
+  ]
+}

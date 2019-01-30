@@ -1,0 +1,48 @@
+{
+  "id": "layer2/3",
+  "label": "Set input parameters for layer 2/3 cells",
+  "children": [
+    {
+      "label": "Layer 2/3 pyr AMPA connection weight [uS]",
+      "id": "cfg.L2Pyr_Pois_A_weight_ampa",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Set input AMPA connection weight for Layer 2/3 pyramidal cells in uS"
+    },
+    {
+      "label": "Layer 2/3 pyr NMDA connection weight [uS]",
+      "id": "cfg.L2Pyr_Pois_A_weight_nmda",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Set input NMDA connection weight for Layer 2/3 pyramidal cells in uS"
+    },
+    {
+      "label": "Layer 2/3 pyr frequency [Hz]",
+      "id": "cfg.L2Pyr_Pois_lamtha",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Set frequency of poisson distribution for Layer 2/3 pyramidal cells in Hz"
+    },
+    {
+      "label": "Layer 2/3 basket AMPA connection weight  [uS]",
+      "id": "cfg.L2Basket_Pois_A_weight_ampa",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Set input AMPA connection weight for Layer 2/3 basket cells in uS"
+    },
+    {
+      "label": "Layer 2/3 basket NMDA connection weight  [uS]",
+      "id": "cfg.L2Basket_Pois_A_weight_nmda",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Set input NMDA connection weight for Layer 2/3 basket cells in uS"
+    },
+    {
+      "label": "Layer 2/3 basket frequency [Hz]",
+      "id": "cfg.L2Basket_Pois_lamtha",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Set frequency of poisson distribution for Layer 2/3 basket cells in Hz"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "id": "layer5",
+  "label": "Set input parameters for layer 5 cells",
+  "children": [
+    {
+      "label": "Layer 5 pyr AMPA connection weight [uS]",
+      "id": "cfg.L5Pyr_Pois_A_weight_ampa",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Set input AMPA connection weight for Layer 5 pyramidal cells in uS"
+    },
+    {
+      "label": "Layer 5 pyr NMDA connection weight [uS]",
+      "id": "cfg.L5Pyr_Pois_A_weight_nmda",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Set input NMDA connection weight for Layer 5 pyramidal cells in uS"
+    },
+    {
+      "label": "Layer 5 pyr frequency [Hz]",
+      "id": "cfg.L5Pyr_Pois_lamtha",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Set frequency of poisson distribution for Layer 5 pyramidal cells in Hz"
+    },
+    {
+      "label": "Layer 5 basket AMPA connection weight [uS]",
+      "id": "cfg.L5Basket_Pois_A_weight_ampa",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Set input AMPA connection weight for Layer 5 basket cells in uS"
+    },
+    {
+      "label": "Layer 5 basket NMDA connection weight [uS]",
+      "id": "cfg.L5Basket_Pois_A_weight_nmda",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Set input NMDA connection weight for Layer 5 basket cells in uS"
+    },
+    {
+      "label": "Layer 5 basket frequency [Hz]",
+      "id": "cfg.L5Basket_Pois_lamtha",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Set frequency of poisson distribution for Layer 5 basket cells in Hz"
+    }
+  ]
+}

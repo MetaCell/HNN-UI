@@ -1,0 +1,27 @@
+{
+  "id": "synapses",
+  "label": "Synapses",
+  "children": [
+    {
+      "label": "GABAA reversal potencial [mV]",
+      "id": "cfg.L5Pyr_gabaa_e",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Reversal potencial in mV"
+    },
+    {
+      "label": "GABAA raise time [ms]",
+      "id": "cfg.L5Pyr_gabaa_tau1",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Rise time in ms"
+    },
+    {
+      "label": "GABAA decay time [ms]",
+      "id": "cfg.L5Pyr_gabaa_tau2",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Decay time"
+    }
+  ]
+}

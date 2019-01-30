@@ -1,0 +1,20 @@
+{
+  "id": "geometry",
+  "label": "Geometry",
+  "children": [
+    {
+      "label": "Apical dendrite 2 length [um]",
+      "id": "cfg.L5Pyr_apical2_L",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Enter apical dendrite 2 length in microns"
+    },
+    {
+      "label": "Apical dendrite 2 diameter [um]",
+      "id": "cfg.L5Pyr_apical2_diam",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Enter apical dendrite 2 diameter in microns"
+    }
+  ]
+}

@@ -88,4 +88,5 @@ class NetPyNEModelInterpreter():
         instance = pygeppetto.Variable(id='network')
         instance.types.append(netpyne_geppetto_library.types[0])
         geppetto_model.variables.append(instance)
+
         pass

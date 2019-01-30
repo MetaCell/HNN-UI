@@ -9,3 +9,4 @@ init.py
 .idea/
 netpyne/
 *.log
+.python-version

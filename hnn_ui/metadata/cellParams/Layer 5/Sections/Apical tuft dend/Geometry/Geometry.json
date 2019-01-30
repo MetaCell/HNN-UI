@@ -1,0 +1,20 @@
+{
+  "id": "geometry",
+  "label": "Geometry",
+  "children": [
+    {
+      "label": "Apical dendrite tuft length [um]",
+      "id": "cfg.L5Pyr_apicaltuft_L",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Enter apical dendrite tuft length in microns"
+    },
+    {
+      "label": "Apical dendrite tuft diameter [um]",
+      "id": "cfg.L5Pyr_apicaltuft_diam",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Enter apical dendrite tuft diameter in microns"
+    }
+  ]
+}

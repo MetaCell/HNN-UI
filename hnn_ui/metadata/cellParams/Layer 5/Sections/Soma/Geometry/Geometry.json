@@ -1,0 +1,34 @@
+{
+  "id": "geometry",
+  "label": "Geometry",
+  "children": [
+    {
+      "label": "Soma length [um]",
+      "id": "cfg.L5Pyr_soma_L",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Enter soma length in microns"
+    },
+    {
+      "label": "Soma diameter [um]",
+      "id": "cfg.L5Pyr_soma_diam",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Enter soma diameter in microns"
+    },
+    {
+      "label": "Soma resistivity [ohm-cm]",
+      "id": "cfg.L5Pyr_soma_Ra",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Enter soma resistivity in ohm-cm"
+    },
+    {
+      "label": "Soma capacitive density [F/cm2]",
+      "id": "cfg.L5Pyr_soma_cm",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Enter soma capacitive density in F/cm2"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "distalInput",
+  "label": "Distal input",
+  "component": "item",
+  "children": [
+    {
+      "label": "Layer 2/3 pyramidal cell AMPA weight [uS]",
+      "id": "cfg.evoked['{}']['L2PyrAMPAWeight']",
+      "hintText": "Layer 2/3 pyramidal cell AMPA weight (uS)",
+      "component": "TextField",
+      "field_type": "float"
+    },
+    {
+      "label": "Layer 2/3 pyramidal cell NMDA weight [uS]",
+      "id": "cfg.evoked['{}']['L2PyrNMDAWeight']",
+      "hintText": "Layer 2/3 pyramidal cell NMDA weight (uS)",
+      "component": "TextField",
+      "field_type": "float"
+    },
+    {
+      "label": "Layer 2/3 basket cell AMPA weight [uS]",
+      "id": "cfg.evoked['{}']['L2BasketAMPAWeight']",
+      "hintText": "Layer 2/3 basket cell AMPA weight (uS)",
+      "component": "TextField",
+      "field_type": "float"
+    },
+    {
+      "label": "Layer 2/3 basket cell NMDA weight [uS]",
+      "id": "cfg.evoked['{}']['L2BasketNMDAWeight']",
+      "hintText": "Layer 2/3 basket cell NMDA weight (uS)",
+      "component": "TextField",
+      "field_type": "float"
+    },
+    {
+      "label": "Layer 5 pyramidal cell AMPA weight [uS]",
+      "id": "cfg.evoked['{}']['L5PyrAMPAWeight']",
+      "hintText": "Layer 5 pyramidal cell AMPA weight (uS)",
+      "component": "TextField",
+      "field_type": "float"
+    },
+    {
+      "label": "Layer 5 pyramidal cell NMDA weight [uS]",
+      "id": "cfg.evoked['{}']['L5PyrNMDAWeight']",
+      "hintText": "Layer 5 pyramidal cell NMDA weight (uS)",
+      "component": "TextField",
+      "field_type": "float"
+    }
+  ]
+}
