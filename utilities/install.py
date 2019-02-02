@@ -55,7 +55,7 @@ subprocess.call(['pip', 'install', '-e', '.'], cwd='./pygeppetto/')
 clone('https://github.com/Neurosim-lab/netpyne.git', 'netpyne', 'ui')
 subprocess.call(['pip', 'install', '-e', '.'], cwd='./netpyne/')
 
-clone('https://github.com/openworm/org.geppetto.frontend.jupyter.git', 'org.geppetto.frontend.jupyter', 'refactor-sync')
+clone('https://github.com/openworm/org.geppetto.frontend.jupyter.git', 'org.geppetto.frontend.jupyter', 'development')
 subprocess.call(['npm', 'install'], cwd='./org.geppetto.frontend.jupyter/js')
 subprocess.call(['npm', 'run', 'build-dev'], cwd='./org.geppetto.frontend.jupyter/js')
 
