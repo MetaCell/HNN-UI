@@ -65,6 +65,7 @@ subprocess.call(['pip', 'install', '-e', '.'], cwd='./netpyne/')
 clone(repository=JUPYTER, 
     folder='org.geppetto.frontend.jupyter', 
     default_branch='refactor-sync')
+
 subprocess.call(['npm', 'install'], cwd='./org.geppetto.frontend.jupyter/js')
 subprocess.call(['npm', 'run', 'build-dev'], cwd='./org.geppetto.frontend.jupyter/js')
 
@@ -75,6 +76,7 @@ clone(repository=FRONTEND,
     cwdp='hnn_ui/', 
     recursive=False, 
     destination_folder='geppetto')
+    
 # checkout('geppetto', 'development','org.geppetto.frontend.jupyter/src/jupyter_geppetto/')
 clone(repository=EXTENSION, 
     folder='geppetto-hnn', 

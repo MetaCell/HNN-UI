@@ -1,4 +1,4 @@
-FROM frodriguez4600/jupyter-neuron:final
+FROM metacell/jupyter-neuron:development
 
 ARG hnnuiBranch=feature-jupyterhub_hnn
 
