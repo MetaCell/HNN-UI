@@ -62,10 +62,10 @@ clone(repository=NETPYNE,
     default_branch='ui')
 subprocess.call(['pip', 'install', '-e', '.'], cwd='./netpyne/')
 
+
 clone(repository=JUPYTER, 
     folder='org.geppetto.frontend.jupyter', 
     default_branch='refactor-sync')
-
 subprocess.call(['npm', 'install'], cwd='./org.geppetto.frontend.jupyter/js')
 subprocess.call(['npm', 'run', 'build-dev'], cwd='./org.geppetto.frontend.jupyter/js')
 
