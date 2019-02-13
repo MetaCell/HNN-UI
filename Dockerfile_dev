@@ -1,15 +1,14 @@
-FROM metacell/jupyter-neuron:latest
-USER $NB_USER
+FROM metacell/jupyter-neuron:development
 
 ARG hnnuiBranch=development
-ENV hnnuiBranch=${hnnuiBranch}
-RUN echo "$hnnuiBranch";
+
+RUN echo $hnnuiBranch
 
 # Clone HNN-UI and install the development version
-RUN wget https://github.com/MetaCell/HNN-UI/archive/$hnnuiBranch.zip
-RUN unzip $hnnuiBranch.zip
-WORKDIR HNN-UI-$hnnuiBranch/utilities
-RUN /bin/bash -c "source activate snakes && python --version"
-RUN /bin/bash -c "source activate snakes && exec python install.py branch $hnnuiBranch"
-WORKDIR ../
-CMD /bin/bash -c "source activate snakes && exec jupyter notebook --debug --NotebookApp.default_url=/geppetto --NotebookApp.token='' --library=hnn_ui"
+RUN git clone -b $hnnuiBranch https://github.com/MetaCell/HNN-UI &&\
+  cd HNN-UI/utilities &&\
+  python install.py branch $hnnuiBranch
+
+WORKDIR $HOME/HNN-UI
+
+CMD jupyter notebook --debug --NotebookApp.default_url=/geppetto --NotebookApp.token='' --library=hnn_ui 
