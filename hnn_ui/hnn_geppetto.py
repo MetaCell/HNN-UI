@@ -97,6 +97,11 @@ class HNNGeppetto():
                 return True
         return False
 
+
+    def get_dipole_plot(self):
+        holoviews_plots.get_dipole()
+
+
     def getDirList(self, dir=None, onlyDirs=False, filterFiles=False):
         # Get Current dir
         if dir is None or dir == '':
