@@ -1,9 +1,11 @@
 import numpy as np
+from bokeh.resources import CDN
+from bokeh.embed import file_html
 import holoviews as hv
 hv.extension('bokeh')
 
+
 def get_dipole():
-    print("Holoviews")
     x = np.linspace(0, 4*np.pi, 100)
     y = np.sin(x)
 
@@ -19,5 +21,8 @@ def get_dipole():
     example = scatter1 *  curve1 * curve2 * scatter4 * curve3
 
     example.relabel("Dipole Dummy Example")
-
-    hv.renderer('bokeh').save(example, "./geppetto/extensions/geppetto-hnn/plots/dipole")
+    
+    renderer = hv.renderer('bokeh')
+    hvplot = renderer.get_plot(example)
+    html = renderer._figure_data(hvplot)
+    return html

@@ -18,6 +18,7 @@ from hnn_ui.cellParams import set_cellParams
 from hnn_ui.constants import CANVAS_KEYS, PROXIMAL, DISTAL
 from hnn_ui.netParams import set_netParams
 from hnn_ui.netpyne_model_interpreter import NetPyNEModelInterpreter
+import hnn_ui.holoviews_plots as holoviews_plots
 
 
 class HNNGeppetto():
@@ -99,7 +100,7 @@ class HNNGeppetto():
 
 
     def get_dipole_plot(self):
-        holoviews_plots.get_dipole()
+        return holoviews_plots.get_dipole()
 
 
     def getDirList(self, dir=None, onlyDirs=False, filterFiles=False):
