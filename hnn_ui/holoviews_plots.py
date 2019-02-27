@@ -1,11 +1,11 @@
 import numpy as np
+import holoviews as hv
 from bokeh.resources import CDN
 from bokeh.embed import file_html
-import holoviews as hv
 hv.extension('bokeh')
 
-
 def get_dipole():
+    
     x = np.linspace(0, 4*np.pi, 100)
     y = np.sin(x)
 
@@ -21,8 +21,8 @@ def get_dipole():
     example = scatter1 *  curve1 * curve2 * scatter4 * curve3
 
     example.relabel("Dipole Dummy Example")
-    
-    renderer = hv.renderer('bokeh')
-    hvplot = renderer.get_plot(example)
-    html = renderer._figure_data(hvplot)
+
+    bokeh_plot =  hv.renderer('bokeh').get_plot(example).state
+    html = file_html(bokeh_plot, CDN, "my plot")
+
     return html

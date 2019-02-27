@@ -100,7 +100,8 @@ class HNNGeppetto():
 
 
     def get_dipole_plot(self):
-        return holoviews_plots.get_dipole()
+        plot_html = holoviews_plots.get_dipole()
+        return plot_html
 
 
     def getDirList(self, dir=None, onlyDirs=False, filterFiles=False):
