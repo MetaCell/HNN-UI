@@ -2,7 +2,9 @@ import numpy as np
 import holoviews as hv
 from bokeh.resources import CDN
 from bokeh.embed import file_html
+from bokeh.layouts import layout
 hv.extension('bokeh')
+
 
 def get_dipole():
     
@@ -22,7 +24,8 @@ def get_dipole():
 
     example.relabel("Dipole Dummy Example")
 
-    bokeh_plot =  hv.renderer('bokeh').get_plot(example).state
-    html = file_html(bokeh_plot, CDN, "my plot")
+    bokeh_plot = hv.renderer('bokeh').get_plot(example)
+    plot_layout = layout(bokeh_plot.state, sizing_mode='scale_width')
+    html = file_html(plot_layout, CDN, "my plot")
 
     return html
