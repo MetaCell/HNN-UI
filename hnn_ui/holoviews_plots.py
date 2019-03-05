@@ -25,7 +25,7 @@ def get_dipole():
     example.relabel("Dipole Dummy Example")
 
     bokeh_plot = hv.renderer('bokeh').get_plot(example)
-    plot_layout = layout(bokeh_plot.state, sizing_mode='scale_width')
+    plot_layout = layout(bokeh_plot.state, sizing_mode='scale_both')
     html = file_html(plot_layout, CDN, "my plot")
 
     return html
