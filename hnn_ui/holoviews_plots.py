@@ -1,5 +1,7 @@
 import numpy as np
 import holoviews as hv
+from holoviews import opts, dim
+import pandas as pd
 from bokeh.resources import CDN
 from bokeh.embed import file_html
 from bokeh.layouts import layout
@@ -26,6 +28,23 @@ def get_dipole():
 
     bokeh_plot = hv.renderer('bokeh').get_plot(example)
     plot_layout = layout(bokeh_plot.state, sizing_mode='scale_both')
-    html = file_html(plot_layout, CDN, "my plot")
+    html = file_html(plot_layout, CDN, "dipole")
 
     return html
+
+
+def get_traces():
+
+    return get_dipole()
+
+
+def get_psd():
+    return get_dipole()
+
+
+def get_raster():
+    return get_dipole()
+
+
+def get_spectrogram():
+    return get_dipole()

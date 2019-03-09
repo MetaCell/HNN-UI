@@ -98,11 +98,25 @@ class HNNGeppetto():
                 return True
         return False
 
-
     def get_dipole_plot(self):
         plot_html = holoviews_plots.get_dipole()
         return plot_html
 
+    def get_traces_plot(self):
+        plot_html = holoviews_plots.get_traces()
+        return plot_html
+
+    def get_psd_plot(self):
+        plot_html = holoviews_plots.get_psd()
+        return plot_html
+
+    def get_raster_plot(self):
+        plot_html = holoviews_plots.get_raster()
+        return plot_html
+
+    def get_spectrogram_plot(self):
+        plot_html = holoviews_plots.get_spectrogram()
+        return plot_html
 
     def getDirList(self, dir=None, onlyDirs=False, filterFiles=False):
         # Get Current dir
