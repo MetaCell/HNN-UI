@@ -51,6 +51,8 @@ if __name__ == "__main__":
     main(sys.argv[1:])
 
 os.chdir(os.getcwd() + "/../")
+subprocess.call(['pip', 'install', '-r', 'requirements.txt'])
+
 # Cloning Repos
 clone(repository=PYGEPPETTO, 
     folder='pygeppetto', 
