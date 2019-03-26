@@ -107,18 +107,18 @@ class HNNGeppetto():
         return False
 
     def get_dipole_plot(self):
-            TOOLS = "pan,wheel_zoom,box_zoom,reset,save,box_select"
-            fig = figure(title="HNN Diple Plot", tools=TOOLS)
-            try:
-                spkt = sim.allSimData['spkt']
-                spkid = sim.allSimData['spkid']
-            except:
-                return ""
-            fig.scatter(spkt, spkid, size=1, legend="all spikes")
-            bokeh_plot = hv.renderer('bokeh').get_plot(fig)
-            plot_layout = layout(bokeh_plot.state, sizing_mode='scale_both')
-            html = file_html(plot_layout, CDN, "dipole")
-            return html
+        TOOLS = "pan,wheel_zoom,box_zoom,reset,save,box_select"
+        fig = figure(title="HNN Diple Plot", tools=TOOLS)
+        try:
+            spkt = sim.allSimData['spkt']
+            spkid = sim.allSimData['spkid']
+        except:
+            return ""
+
+        fig.scatter(spkt, spkid, size=1, legend="all spikes")
+        plot_layout = layout(fig, sizing_mode='scale_both')
+        html = file_html(plot_layout, CDN, "dipole")
+        return html
 
     def get_traces_plot(self):
         plot_html = holoviews_plots.get_traces()
