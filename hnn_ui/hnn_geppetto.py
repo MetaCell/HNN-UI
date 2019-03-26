@@ -20,6 +20,14 @@ from hnn_ui.netParams import set_netParams
 from hnn_ui.netpyne_model_interpreter import NetPyNEModelInterpreter
 import hnn_ui.holoviews_plots as holoviews_plots
 
+from bokeh.plotting import figure
+import holoviews as hv
+from bokeh.resources import CDN
+from bokeh.embed import file_html
+from bokeh.layouts import layout
+
+hv.extension('bokeh')
+
 
 class HNNGeppetto():
 
@@ -31,7 +39,7 @@ class HNNGeppetto():
         synchronization.startSynchronization(self.__dict__)
         logging.debug("Initializing the original model")
 
-        jupyter_geppetto.context = { 'hnn_geppetto': self }
+        jupyter_geppetto.context = {'hnn_geppetto': self}
 
     def getData(self):
         with redirect_stdout(sys.__stdout__):
@@ -44,13 +52,13 @@ class HNNGeppetto():
     def load_cfg(self):
         cfg_module = importlib.import_module("hnn_ui.cfg")
         return getattr(cfg_module, "cfg")
-    
+
     def instantiateModelInGeppetto(self):
         try:
             with redirect_stdout(sys.__stdout__):
                 netpyne_model = self.instantiateModel()
                 self.geppetto_model = self.model_interpreter.getGeppettoModel(netpyne_model)
-                
+
                 return json.loads(GeppettoModelSerializer().serialize(self.geppetto_model))
         except:
             return utils.getJSONError("Error while instantiating the NetPyNE model", sys.exc_info())
@@ -70,11 +78,11 @@ class HNNGeppetto():
 
     # waiting for evoked input model (this is tentative)
     def addEvokedInput(self, input_type):
-        evoked_indices = [int(key[key.index("_")+1:]) for key in self.cfg.evoked.keys() if input_type in key]
+        evoked_indices = [int(key[key.index("_") + 1:]) for key in self.cfg.evoked.keys() if input_type in key]
         index = str(max(evoked_indices) + 1) if len(evoked_indices) > 0 else 1
-        self.cfg.evoked[f"{input_type}_{index}"] = DISTAL if input_type=="distal" else PROXIMAL
-        return { 'inputs': self.getEvokedInputs(), 'selected_input': f'{input_type}_{index}' }
-    
+        self.cfg.evoked[f"{input_type}_{index}"] = DISTAL if input_type == "distal" else PROXIMAL
+        return {'inputs': self.getEvokedInputs(), 'selected_input': f'{input_type}_{index}'}
+
     def removeEvokedInput(self, name):
         del self.cfg.evoked[name]
         return self.getEvokedInputs()
@@ -99,8 +107,18 @@ class HNNGeppetto():
         return False
 
     def get_dipole_plot(self):
-        plot_html = holoviews_plots.get_dipole()
-        return plot_html
+            TOOLS = "pan,wheel_zoom,box_zoom,reset,save,box_select"
+            fig = figure(title="HNN Diple Plot", tools=TOOLS)
+            try:
+                spkt = sim.allSimData['spkt']
+                spkid = sim.allSimData['spkid']
+            except:
+                return ""
+            fig.scatter(spkt, spkid, size=1, legend="all spikes")
+            bokeh_plot = hv.renderer('bokeh').get_plot(fig)
+            plot_layout = layout(bokeh_plot.state, sizing_mode='scale_both')
+            html = file_html(plot_layout, CDN, "dipole")
+            return html
 
     def get_traces_plot(self):
         plot_html = holoviews_plots.get_traces()
