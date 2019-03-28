@@ -108,13 +108,14 @@ class HNNGeppetto():
 
     def get_dipole_plot(self):
         TOOLS = "pan,wheel_zoom,box_zoom,reset,save,box_select"
-        fig = figure(title="HNN Diple Plot", tools=TOOLS)
+        fig = figure(title="HNN Dipole Plot", tools=TOOLS)
         try:
             spkt = sim.allSimData['spkt']
             spkid = sim.allSimData['spkid']
         except:
             return ""
 
+        #return json.dumps(spkid)
         fig.scatter(spkt, spkid, size=1, legend="all spikes")
         plot_layout = layout(fig, sizing_mode='scale_both')
         html = file_html(plot_layout, CDN, "dipole")
