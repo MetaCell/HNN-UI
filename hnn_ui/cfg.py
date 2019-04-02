@@ -1,7 +1,14 @@
-# cfg.py  - Simulation configuration 
+"""
+cfg.py
+
+Simulationg configuration for NetPyNE-based HNN network model
+
+Contributors: salvadordura@gmail.com
+"""
+
 from netpyne import specs
 
-cfg = specs.SimConfig()  
+cfg = specs.SimConfig()
 
 cfg.checkErrors = False # True # leave as False to avoid extra printouts
 
@@ -21,19 +28,20 @@ cfg.checkErrors = False # True # leave as False to avoid extra printouts
 # ----------------------------------------------------------------------------
 # Run parameters
 # ----------------------------------------------------------------------------
-cfg.seeds = {'conn': 4321, 'stim': 1234, 'loc': 4321} 
-cfg.hParams['v_init'] = -80  
+cfg.duration = 250
+cfg.seeds = {'conn': 4321, 'stim': 1234, 'loc': 4321}
+cfg.hParams['v_init'] = -80
 cfg.verbose = 0
 cfg.cvode_active = False
 cfg.printRunTime = 0.1
 cfg.printPopAvgRates = True
 
 # ----------------------------------------------------------------------------
-# Recording 
+# Recording
 # ----------------------------------------------------------------------------
 cfg.recordTraces = {'V_soma': {'sec': 'soma', 'loc': 0.5, 'var': 'v'}}
-cfg.recordStims = False  
-cfg.recordStep = 0.1 
+cfg.recordStims = False
+cfg.recordStep = 0.1
 
 # ----------------------------------------------------------------------------
 # Saving
@@ -43,25 +51,28 @@ cfg.sim_prefix = cfg.simLabel = 'default'
 cfg.saveFolder = 'data'
 cfg.savePickle = False
 cfg.saveJson = True
-cfg.saveDataInclude = ['simData', 'simConfig', 'netParams', 'net']
+cfg.saveDataInclude = ['simData', 'simConfig'] #, 'netParams', 'net']
 
 # ----------------------------------------------------------------------------
-# Analysis and plotting 
+# Analysis and plotting
 # ----------------------------------------------------------------------------
-cfg.analysis['plotTraces'] = {
-    'include': ['L2Pyr','L5Pyr'], 
-    'oneFigPer': 'cell', 
-    'saveFig': True, 
-	'showFig': False, 
-    'figSize': (10,8), 
-    'timeRange': [0,cfg.duration]
-}
+cfg.analysis['plotTraces'] = {'include': [('L2Pyr',0), ('L5Pyr',0),('L2Basket',0), ('L5Basket',0) ], 'oneFigPer': 'trace', 'overlay': True, 'saveFig': False,
+                              'showFig': False, 'figSize': (10, 8), 'timeRange': [0, cfg.duration]}
+cfg.analysis['plotRaster'] = {'include': ['all'], 'popRates': True, 'orderInverse': True}
+cfg.analysis['plotConn'] = {'includePre': ['L2Pyr', 'L2Basket', 'L5Pyr', 'L5Basket'], 'includePost': ['L2Pyr', 'L2Basket', 'L5Pyr', 'L5Basket'], 'feature': 'numConns'}
+#cfg.analysis['plotDipole'] = True
+
 
 # ----------------------------------------------------------------------------
 # Network parameters
 # ----------------------------------------------------------------------------
-cfg.gridSpacing = 50
+cfg.gridSpacing = 50 # 50
 cfg.sizeY = 1000
+cfg.localConn = True
+cfg.rhythmicInputs = True
+cfg.evokedInputs = True
+cfg.poissonInputs = True
+cfg.gaussInputs = True
 
 
 # ----------------------------------------------------------------------------
@@ -73,11 +84,11 @@ cfg.sizeY = 1000
 # ----------------------------------------------------------------------------
 # Run parameters
 # ----------------------------------------------------------------------------
-cfg.duration = cfg.tstop  = 250                                                 #  <-- DONE
-cfg.dt = 0.025                                                                  #  <-- DONE
-cfg.celsius = 37.0                                                              #  <-- DONE
-cfg.hParams['celsius'] = cfg.celsius = 37                                       #  ???
-cfg.threshold = 0.0 # firing threshold (sets netParams.defaultThreshold)        #  ???
+cfg.tstop = cfg.duration
+cfg.dt = 0.025
+cfg.celsius = 37.0
+cfg.hParams['celsius'] = cfg.celsius = 37
+cfg.threshold = 0.0 # firing threshold (sets netParams.defaultThreshold)
 
 
 # ----------------------------------------------------------------------------
@@ -384,15 +395,15 @@ cfg.Itonic_T_L5Basket = -1.
 # ----------------------------------------------------------------------------
 # Analysis parameters
 # ----------------------------------------------------------------------------
-cfg.save_spec_data = False
+cfg.save_spec_data = 0
 cfg.f_max_spec = 40.
 cfg.dipole_scalefctr = 30e3, # scale factor for dipole - default at 30e
 #based on scaling needed to match model ongoing rhythms from jones 2009 - for ERPs can use 300
 # for ongoing rhythms + ERPs ... use ... ?
 cfg.dipole_smooth_win = 15.0, # window for smoothing (box filter) - 15 ms from jones 2009; shorte
 # in case want to look at higher frequency activity
-cfg.save_figs = False
-cfg.save_vsoma = False, # whether to record/save somatic voltag
+cfg.save_figs = 0
+cfg.save_vsoma = 0, # whether to record/save somatic voltag
 
 # ----------------------------------------------------------------------------
 # Trials/seeding parameters
