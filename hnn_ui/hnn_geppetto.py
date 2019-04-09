@@ -59,6 +59,9 @@ class HNNGeppetto:
                 netpyne_model = self.instantiateModel()
                 self.geppetto_model = self.model_interpreter.getGeppettoModel(netpyne_model)
 
+                logging.debug('Running single thread simulation')
+                netpyne_model = self.simulateModel()
+
                 return json.loads(GeppettoModelSerializer().serialize(self.geppetto_model))
         except:
             return utils.getJSONError("Error while instantiating the NetPyNE model", sys.exc_info())
@@ -71,6 +74,13 @@ class HNNGeppetto:
             sim.gatherData(gatherLFP=False)
             self.last_cfg_snapshot = self.cfg.__dict__.copy()
 
+        return sim
+    
+    def simulateModel(self):
+        with redirect_stdout(sys.__stdout__):
+            sim.setupRecording() 
+            sim.simulate()
+            sim.saveData()
         return sim
 
     def getEvokedInputs(self):
