@@ -384,7 +384,7 @@ cfg.Itonic_A_L2Basket = 0.0
 cfg.Itonic_t0_L2Basket = 0.0
 cfg.Itonic_T_L2Basket = -1.0
 
-# IClamp params for L5Pyr
+# IClamp params for L5PyrG
 cfg.Itonic_A_L5Pyr_soma = 0.0
 cfg.Itonic_t0_L5Pyr_soma = 0.0
 cfg.Itonic_T_L5Pyr_soma = -1.0
@@ -435,40 +435,40 @@ cfg.ii = 1
 
 cfg.evoked = {
     "Proximal_1": {
-        "startTimeMean": 26.61,
-        "stopTimeStd": 2.47,
+        "startTimeMean": 25.0,
+        "stopTimeStd": 2.5,
         "numberOfSpikes": 1,
-        "L2PyrAMPAWeight": 0.01525,
-        "L2PyrNMDAWeight": 0.,
-        "L2BasketAMPAWeight": 0.08831,
-        "L2BasketNMDAWeight": 0.,
-        "L5PyrAMPAWeight": 0.00865,
-        "L5PyrNMDAWeight": 0.,
-        "L5BasketAMPAWeight": 0.19934,
-        "L5BasketNMDAWeight": 0.
+        "L2PyrAMPAWeight": 0.009,
+        "L2PyrNMDAWeight": 0.0,
+        "L2BasketAMPAWeight": 0.09,
+        "L2BasketNMDAWeight": 0.0,
+        "L5PyrAMPAWeight": 0.0005,
+        "L5PyrNMDAWeight": 0.0,
+        "L5BasketAMPAWeight": 0.2,
+        "L5BasketNMDAWeight": 0.0
     },
     "Distal_1": {
-        "startTimeMean": 63.53,
-        "stopTimeStd": 3.85,
+        "startTimeMean": 65.0,
+        "stopTimeStd": 5.0,
         "numberOfSpikes": 1,
-        "L2PyrAMPAWeight": 0.000007,
-        "L2PyrNMDAWeight": 0.004317,
-        "L2BasketAMPAWeight": 0.006562,
-        "L2BasketNMDAWeight": 0.019482,
-        "L5PyrAMPAWeight": 0.1423,
-        "L5PyrNMDAWeight": 0.080074
+        "L2PyrAMPAWeight": 0.00034,
+        "L2PyrNMDAWeight": 0.00426,
+        "L2BasketAMPAWeight": 0.01229,
+        "L2BasketNMDAWeight": 0.02043,
+        "L5PyrAMPAWeight": 0.07104,
+        "L5PyrNMDAWeight": 0.10104
     },
     "Proximal_2": {
-        "startTimeMean": 137.12,
-        "stopTimeStd": 8.33,
+        "startTimeMean": 132.7,
+        "stopTimeStd": 14.1,
         "numberOfSpikes": 1,
-        "L2PyrAMPAWeight": 1.438840,
-        "L2PyrNMDAWeight": 0.,
-        "L2BasketAMPAWeight": 0.000003,
-        "L2BasketNMDAWeight": 0.,
-        "L5PyrAMPAWeight": 0.684013,
-        "L5PyrNMDAWeight": 0.,
-        "L5BasketAMPAWeight": 0.008958,
-        "L5BasketNMDAWeight": 0.
+        "L2PyrAMPAWeight": 0.73344,
+        "L2PyrNMDAWeight": 0.0,
+        "L2BasketAMPAWeight": 0.00002,
+        "L2BasketNMDAWeight": 0.0,
+        "L5PyrAMPAWeight": 0.64200,
+        "L5PyrNMDAWeight": 0.0,
+        "L5BasketAMPAWeight": 0.01496,
+        "L5BasketNMDAWeight": 0.0
     }
 }
