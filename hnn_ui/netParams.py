@@ -28,11 +28,11 @@ def set_netParams(cfg):
     netParams.sizeZ = (cfg.N_pyr_y * cfg.gridSpacing) - 1  # z-dimension (horizontal depth) size in um
     netParams.shape = 'cuboid'
 
-    # ----------------------------------------------------------------------------
-    # Cell parameters
-    # ----------------------------------------------------------------------------
-    from hnn_ui.cellParams import cellParams  # defined in separate module for clarity
-    netParams.cellParams = cellParams
+    # # ----------------------------------------------------------------------------
+    # # Cell parameters
+    # # ----------------------------------------------------------------------------
+    # from hnn_ui.cellParams import cellParams  # defined in separate module for clarity
+    # netParams.cellParams = cellParams
 
     # ----------------------------------------------------------------------------
     # Population parameters
@@ -717,3 +717,5 @@ def set_netParams(cfg):
 
     if cfg.gaussInputs:
         pass
+
+    return netParams

@@ -331,3 +331,5 @@ def set_cellParams(cfg):
                             'gnabar': 0.12}},
                 'topol': {}
             }}}
+
+    return cellParams

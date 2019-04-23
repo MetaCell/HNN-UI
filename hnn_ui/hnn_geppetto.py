@@ -81,6 +81,7 @@ class HNNGeppetto:
             sim.setupRecording() 
             sim.simulate()
             sim.saveData()
+            print("Here3")
         return sim
 
     def getEvokedInputs(self):
