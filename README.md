@@ -4,7 +4,7 @@ This repository hosts the User Interface for [HNN](https://hnn.brown.edu/). HNN 
 
 ## Install HNN User Interface from sources (for developers)
 
-Make sure you have [neuron installed](https://github.com/MetaCell/NetPyNE-UI/wiki/Installing-NEURON-crxd-Version) and then:
+Make sure you have [NEURON installed](https://github.com/MetaCell/NetPyNE-UI/wiki/Installing-NEURON-crxd-Version) and then:
 
 ```
 git clone https://github.com/MetaCell/HNN-UI

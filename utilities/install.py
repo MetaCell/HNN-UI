@@ -61,7 +61,7 @@ subprocess.call(['pip', 'install', '-e', '.'], cwd='./pygeppetto/')
 
 clone(repository=NETPYNE, 
     folder='netpyne', 
-    default_branch='ui'
+    default_branch='dipole'
 )
 subprocess.call(['pip', 'install', '-e', '.'], cwd='./netpyne/')
 
