@@ -74,7 +74,7 @@ subprocess.call(['npm', 'run', 'build-dev'], cwd='./org.geppetto.frontend.jupyte
 
 clone(repository=APPLICATION, 
     folder='geppetto-hnn', 
-    default_branch='update-infra-merge'
+    default_branch='infra-merge'
 )
 print("NPM Install and build for Geppetto Frontend  ...")
 os.chdir(os.getcwd() + "/geppetto-hnn")
