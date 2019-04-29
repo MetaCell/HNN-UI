@@ -7,7 +7,7 @@ RUN echo $hnnuiBranch
 # Clone HNN-UI and install the development version
 RUN git clone -b $hnnuiBranch https://github.com/MetaCell/HNN-UI &&\
   cd HNN-UI/utilities &&\
-  python install.py branch $hnnuiBranch
+  python install.py
 
 WORKDIR $HOME/HNN-UI
 
