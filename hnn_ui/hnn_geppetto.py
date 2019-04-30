@@ -20,14 +20,6 @@ from hnn_ui.netParams import set_netParams
 from hnn_ui.netpyne_model_interpreter import NetPyNEModelInterpreter
 import hnn_ui.holoviews_plots as holoviews_plots
 
-from bokeh.plotting import figure
-import holoviews as hv
-from bokeh.resources import CDN
-from bokeh.embed import file_html
-from bokeh.layouts import layout
-
-hv.extension('bokeh')
-
 
 class HNNGeppetto:
 
@@ -144,19 +136,13 @@ class HNNGeppetto:
         return False
 
     def get_dipole_plot(self):
-        TOOLS = "pan,wheel_zoom,box_zoom,reset,save,box_select"
-        fig = figure(title="HNN Dipole Plot", tools=TOOLS)
+        exp_data = {}
         try:
-            spkt = sim.allSimData['spkt']
-            spkid = sim.allSimData['spkid']
+            exp_data['x'] = range(5)
+            exp_data['y'] = [x * 2 for x in range(5)]
         except:
             return ""
-
-        #return json.dumps(spkid)
-        fig.scatter(spkt, spkid, size=1, legend="all spikes")
-        plot_layout = layout(fig, sizing_mode='scale_both')
-        html = file_html(plot_layout, CDN, "dipole")
-        return html
+        return sim.analysis.iplotDipole(exp_data)
 
     def get_traces_plot(self):
         plot_html = holoviews_plots.get_traces()
