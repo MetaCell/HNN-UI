@@ -34,6 +34,7 @@ class HNNGeppetto:
     def __init__(self):
         self.model_interpreter = NetPyNEModelInterpreter()
         self.cfg = self.load_cfg()
+        self.get_evoked_dict()
         # use to decide wheter or not to update the canvas in the front end
         self.last_cfg_snapshot = self.cfg.__dict__.copy()
         synchronization.startSynchronization(self.__dict__)
@@ -82,6 +83,32 @@ class HNNGeppetto:
             sim.simulate()
             sim.saveData()
         return sim
+
+    def get_evoked_dict(self):
+        cfg_dict = {}
+        for att in dir(self.cfg):
+            if "evprox_" in att:
+                ev_index = att.index("evprox_")
+                len_prox = len("evprox_")
+                x = att[ev_index + len_prox]
+                key = "evprox_" + x
+                inner_key = att[0:ev_index-1]+att[ev_index+len_prox+1:]
+                if key in cfg_dict.keys():
+                    cfg_dict[key][inner_key] = getattr(self.cfg, att)
+                else:
+                    cfg_dict[key] = {inner_key: getattr(self.cfg, att)}
+            elif "evdist_" in att:
+                ev_index = att.index("evdist_")
+                len_dist = len("evdist_")
+                x = att[ev_index + len_dist]
+                key = "evdist_" + x
+                inner_key = att[0:ev_index-1]+att[ev_index+len_dist+1:]
+                if key in cfg_dict.keys():
+                    cfg_dict[key][inner_key] = getattr(self.cfg, att)
+                else:
+                    cfg_dict[key] = {inner_key: getattr(self.cfg, att)}
+
+        setattr(self.cfg, "evoked", cfg_dict)
 
     def getEvokedInputs(self):
         return list(self.cfg.evoked.keys())
@@ -165,3 +192,4 @@ class HNNGeppetto:
 logging.info("Initialising HNN UI")
 hnn_geppetto = HNNGeppetto()
 logging.info("HNN UI initialised")
+hnn_geppetto.getEvokedInputs()
