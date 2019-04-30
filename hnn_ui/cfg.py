@@ -424,51 +424,39 @@ cfg.prng_seedcore_extpois = 4
 cfg.prng_seedcore_extgauss = 4
 
 
-# ----------------------------------------------------------------------------
-# PENDING TO BE RESOLVED
-# ----------------------------------------------------------------------------
 cfg.ee = 1
 cfg.ei = 1
 cfg.ie = 1
 cfg.ii = 1
 
-
-cfg.evoked = {
-    "Proximal_1": {
-        "startTimeMean": 25.0,
-        "stopTimeStd": 2.5,
-        "numberOfSpikes": 1,
-        "L2PyrAMPAWeight": 0.009,
-        "L2PyrNMDAWeight": 0.0,
-        "L2BasketAMPAWeight": 0.09,
-        "L2BasketNMDAWeight": 0.0,
-        "L5PyrAMPAWeight": 0.0005,
-        "L5PyrNMDAWeight": 0.0,
-        "L5BasketAMPAWeight": 0.2,
-        "L5BasketNMDAWeight": 0.0
-    },
-    "Distal_1": {
-        "startTimeMean": 65.0,
-        "stopTimeStd": 5.0,
-        "numberOfSpikes": 1,
-        "L2PyrAMPAWeight": 0.00034,
-        "L2PyrNMDAWeight": 0.00426,
-        "L2BasketAMPAWeight": 0.01229,
-        "L2BasketNMDAWeight": 0.02043,
-        "L5PyrAMPAWeight": 0.07104,
-        "L5PyrNMDAWeight": 0.10104
-    },
-    "Proximal_2": {
-        "startTimeMean": 132.7,
-        "stopTimeStd": 14.1,
-        "numberOfSpikes": 1,
-        "L2PyrAMPAWeight": 0.73344,
-        "L2PyrNMDAWeight": 0.0,
-        "L2BasketAMPAWeight": 0.00002,
-        "L2BasketNMDAWeight": 0.0,
-        "L5PyrAMPAWeight": 0.64200,
-        "L5PyrNMDAWeight": 0.0,
-        "L5BasketAMPAWeight": 0.01496,
-        "L5BasketNMDAWeight": 0.0
-    }
-}
+cfg.t_evprox_1 = 25
+cfg.sigma_t_evprox_1 = 2.5
+cfg.numspikes_evprox_1 = 1
+cfg.gbar_evprox_1_L2Pyr_ampa = 0.009
+cfg.gbar_evprox_1_L2Pyr_nmda = 0
+cfg.gbar_evprox_1_L2Basket_ampa = 0.09
+cfg.gbar_evprox_1_L2Basket_nmda = 0
+cfg.gbar_evprox_1_L5Pyr_ampa = 0.0005
+cfg.gbar_evprox_1_L5Pyr_nmda = 0
+cfg.gbar_evprox_1_L5Basket_ampa = 0.2
+cfg.gbar_evprox_1_L5Basket_nmda = 0
+cfg.t_evdist_1 = 65
+cfg.sigma_t_evdist_1 = 5
+cfg.numspikes_evdist_1 = 1
+cfg.gbar_evdist_1_L2Pyr_ampa = 0.00034
+cfg.gbar_evdist_1_L2Pyr_nmda = 0.00426
+cfg.gbar_evdist_1_L2Basket_ampa = 0.01229
+cfg.gbar_evdist_1_L2Basket_nmda = 0.02043
+cfg.gbar_evdist_1_L5Pyr_ampa = 0.07104
+cfg.gbar_evdist_1_L5Pyr_nmda = 0.10104
+cfg.t_evprox_2 = 132.7
+cfg.sigma_t_evprox_2 = 14.1
+cfg.numspikes_evprox_2 = 1
+cfg.gbar_evprox_2_L2Pyr_ampa = 0.73344
+cfg.gbar_evprox_2_L2Pyr_nmda = 0
+cfg.gbar_evprox_2_L2Basket_ampa = 0.00002
+cfg.gbar_evprox_2_L2Basket_nmda = 0
+cfg.gbar_evprox_2_L5Pyr_ampa = 0.642
+cfg.gbar_evprox_2_L5Pyr_nmda = 0
+cfg.gbar_evprox_2_L5Basket_ampa = 0.01496
+cfg.gbar_evprox_2_L5Basket_nmda = 0
