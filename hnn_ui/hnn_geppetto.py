@@ -101,6 +101,7 @@ class HNNGeppetto:
                     cfg_dict[key] = {inner_key: getattr(self.cfg, att)}
 
         setattr(self.cfg, "evoked", cfg_dict)
+        return
 
     def getEvokedInputs(self):
         return list(self.cfg.evoked.keys())
