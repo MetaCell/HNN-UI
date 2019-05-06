@@ -7,6 +7,7 @@ import json
 import logging
 import os
 import sys
+import re
 from contextlib import redirect_stdout
 
 from jupyter_geppetto import jupyter_geppetto, synchronization, utils
@@ -68,10 +69,10 @@ class HNNGeppetto:
             self.last_cfg_snapshot = self.cfg.__dict__.copy()
 
         return sim
-    
+
     def simulateModel(self):
         with redirect_stdout(sys.__stdout__):
-            sim.setupRecording() 
+            sim.setupRecording()
             sim.simulate()
             sim.saveData()
         return sim
@@ -82,9 +83,9 @@ class HNNGeppetto:
             if "evprox_" in att:
                 ev_index = att.index("evprox_")
                 len_prox = len("evprox_")
-                x = att[ev_index + len_prox]
-                key = "evprox_" + x
-                inner_key = att[0:ev_index-1]+att[ev_index+len_prox+1:]
+                ev_id = re.findall(r'\d+', att)[0]
+                key = "evprox_" + ev_id
+                inner_key = att[0:ev_index - 1] + att[ev_index + len_prox + 1:]
                 if key in cfg_dict.keys():
                     cfg_dict[key][inner_key] = getattr(self.cfg, att)
                 else:
@@ -92,9 +93,9 @@ class HNNGeppetto:
             elif "evdist_" in att:
                 ev_index = att.index("evdist_")
                 len_dist = len("evdist_")
-                x = att[ev_index + len_dist]
-                key = "evdist_" + x
-                inner_key = att[0:ev_index-1]+att[ev_index+len_dist+1:]
+                ev_id = re.findall(r'\d+', att)[0]
+                key = "evdist_" + ev_id
+                inner_key = att[0:ev_index - 1] + att[ev_index + len_dist + 1:]
                 if key in cfg_dict.keys():
                     cfg_dict[key][inner_key] = getattr(self.cfg, att)
                 else:
@@ -103,10 +104,11 @@ class HNNGeppetto:
         setattr(self.cfg, "evoked", cfg_dict)
         return
 
+
     def getEvokedInputs(self):
         return list(self.cfg.evoked.keys())
 
-    # waiting for evoked input model (this is tentative)
+
     def addEvokedInput(self, input_type):
         evoked_indices = [int(key[key.index("_") + 1:]) for key in self.cfg.evoked.keys() if input_type in key]
         index = str(max(evoked_indices) + 1) if len(evoked_indices) > 0 else 1
@@ -179,3 +181,4 @@ class HNNGeppetto:
 logging.info("Initialising HNN UI")
 hnn_geppetto = HNNGeppetto()
 logging.info("HNN UI initialised")
+
