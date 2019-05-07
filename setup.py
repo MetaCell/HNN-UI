@@ -42,6 +42,7 @@ setuptools.setup(
         'jupyter_geppetto==0.4.2',
         'netpyne-py3==0.7.9',
         'holoviews==1.11.2',
-        'bokeh==1.0.4'
+        'bokeh==1.0.4',
+        'jsonpickle==1.1'
     ],
 )

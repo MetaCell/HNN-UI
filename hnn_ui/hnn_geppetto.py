@@ -8,6 +8,8 @@ import os
 import sys
 import re
 import json
+import copy
+import jsonpickle
 
 from contextlib import redirect_stdout
 from jupyter_geppetto import jupyter_geppetto, synchronization, utils
@@ -48,21 +50,41 @@ class HNNGeppetto:
         cfg = getattr(cfg_module, "cfg")
         return self.get_evoked_dict(cfg)
 
-    def load_cfg_from_file(self, file):
-        with redirect_stdout(sys.__stdout__):
-            file_list = json.loads(file)
-            file_bytes = bytes(file_list)
-            cfg = set_cfg_from_params(file_bytes, specs.SimConfig())
-            self.cfg = self.get_evoked_dict(cfg)
+    def load_cfg_from_json(self, file):
+        file_list = json.loads(file)
+        file_bytes = bytes(file_list)
+        cfg = jsonpickle.decode(json.loads(file_bytes.decode('utf-8')))
+        self.cfg = self.get_evoked_dict(cfg)
+
+    def load_cfg_from_param(self, file):
+        file_list = json.loads(file)
+        file_bytes = bytes(file_list)
+        cfg = set_cfg_from_params(file_bytes, specs.SimConfig())
+        self.cfg = self.get_evoked_dict(cfg)
+
+    def dict_to_flat(self):
+        flat_cfg = copy.copy(self.cfg)
+        for evk in flat_cfg.evoked:
+            for key in flat_cfg.evoked[evk]:
+                if 'gbar' in key:
+                    setattr(flat_cfg, 'gbar_' + evk + key.replace('gbar', ''), self.cfg.evoked[evk][key])
+                else:
+                    setattr(flat_cfg, key + '_' + evk, self.cfg.evoked[evk][key])
+        delattr(flat_cfg, 'evoked')
+        return flat_cfg
+
+    def save_model(self, file):
+        flat_cfg = self.dict_to_flat()
+        with open(file + '.json', 'w') as f:
+            json.dump(jsonpickle.encode(flat_cfg), f)
 
     def instantiateModelInGeppetto(self):
         try:
             with redirect_stdout(sys.__stdout__):
                 netpyne_model = self.instantiateModel()
                 self.geppetto_model = self.model_interpreter.getGeppettoModel(netpyne_model)
-
                 logging.debug('Running single thread simulation')
-                netpyne_model = self.simulateModel()
+                self.simulateModel()
 
                 return json.loads(GeppettoModelSerializer().serialize(self.geppetto_model))
         except:
