@@ -223,3 +223,12 @@ Itonic_T_L5Pyr_soma: -1.0
 Itonic_A_L5Basket: 0.0
 Itonic_t0_L5Basket: 0.0
 Itonic_T_L5Basket: -1.0
+gridSpacing: 50
+sizeY: 1000
+localConn: True
+rhythmicInputs: True
+distribution_prox: normal
+distribution_dist: normal
+evokedInputs: True
+poissonInputs: True
+gaussInputs: True
