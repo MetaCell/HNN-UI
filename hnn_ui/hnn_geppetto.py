@@ -3,23 +3,24 @@ hnn_geppetto.py
 Initialise HNN Geppetto, this class contains methods to connect HNN with the Geppetto based UI
 """
 import importlib
-import json
 import logging
 import os
 import sys
 import re
-from contextlib import redirect_stdout
+import json
 
+from contextlib import redirect_stdout
 from jupyter_geppetto import jupyter_geppetto, synchronization, utils
 from netpyne import sim
 from pygeppetto.model.model_serializer import GeppettoModelSerializer
-
 import hnn_ui.model_utils as model_utils
 from hnn_ui.cellParams import set_cellParams
 from hnn_ui.constants import CANVAS_KEYS, PROXIMAL, DISTAL
 from hnn_ui.netParams import set_netParams
 from hnn_ui.netpyne_model_interpreter import NetPyNEModelInterpreter
 import hnn_ui.holoviews_plots as holoviews_plots
+from hnn_ui.utils import set_cfg_from_params
+from netpyne import specs
 
 
 class HNNGeppetto:
@@ -27,8 +28,7 @@ class HNNGeppetto:
     def __init__(self):
         self.model_interpreter = NetPyNEModelInterpreter()
         self.cfg = self.load_cfg()
-        self.get_evoked_dict()
-        # use to decide wheter or not to update the canvas in the front end
+        # use to decide whether or not to update the canvas in the front end
         self.last_cfg_snapshot = self.cfg.__dict__.copy()
         synchronization.startSynchronization(self.__dict__)
         logging.debug("Initializing the original model")
@@ -45,7 +45,15 @@ class HNNGeppetto:
 
     def load_cfg(self):
         cfg_module = importlib.import_module("hnn_ui.cfg")
-        return getattr(cfg_module, "cfg")
+        cfg = getattr(cfg_module, "cfg")
+        return self.get_evoked_dict(cfg)
+
+    def load_cfg_from_file(self, file):
+        with redirect_stdout(sys.__stdout__):
+            file_list = json.loads(file)
+            file_bytes = bytes(file_list)
+            cfg = set_cfg_from_params(file_bytes, specs.SimConfig())
+            self.cfg = self.get_evoked_dict(cfg)
 
     def instantiateModelInGeppetto(self):
         try:
@@ -77,37 +85,37 @@ class HNNGeppetto:
             sim.saveData()
         return sim
 
-    def get_evoked_dict(self):
+    @staticmethod
+    def get_evoked_dict_aux(str_, word):
+        if str_ in word:
+            ev_index = word.index(str_)
+            len_str = len(str_)
+            ev_id = re.findall(r'\d+', word)[0]
+            key = str_ + ev_id
+            inner_key = word[0:ev_index - 1] + word[ev_index + len_str + 1:]
+            return key, inner_key
+
+    def get_evoked_dict(self, cfg):
         cfg_dict = {}
-        for att in dir(self.cfg):
+        for att in dir(cfg):
             if "evprox_" in att:
-                ev_index = att.index("evprox_")
-                len_prox = len("evprox_")
-                ev_id = re.findall(r'\d+', att)[0]
-                key = "evprox_" + ev_id
-                inner_key = att[0:ev_index - 1] + att[ev_index + len_prox + 1:]
+                key, inner_key = self.get_evoked_dict_aux("evprox_", att)
                 if key in cfg_dict.keys():
-                    cfg_dict[key][inner_key] = getattr(self.cfg, att)
+                    cfg_dict[key][inner_key] = getattr(cfg, att)
                 else:
-                    cfg_dict[key] = {inner_key: getattr(self.cfg, att)}
+                    cfg_dict[key] = {inner_key: getattr(cfg, att)}
             elif "evdist_" in att:
-                ev_index = att.index("evdist_")
-                len_dist = len("evdist_")
-                ev_id = re.findall(r'\d+', att)[0]
-                key = "evdist_" + ev_id
-                inner_key = att[0:ev_index - 1] + att[ev_index + len_dist + 1:]
+                key, inner_key = self.get_evoked_dict_aux("evdist_", att)
                 if key in cfg_dict.keys():
-                    cfg_dict[key][inner_key] = getattr(self.cfg, att)
+                    cfg_dict[key][inner_key] = getattr(cfg, att)
                 else:
-                    cfg_dict[key] = {inner_key: getattr(self.cfg, att)}
+                    cfg_dict[key] = {inner_key: getattr(cfg, att)}
 
-        setattr(self.cfg, "evoked", cfg_dict)
-        return
-
+        setattr(cfg, "evoked", cfg_dict)
+        return cfg
 
     def getEvokedInputs(self):
         return list(self.cfg.evoked.keys())
-
 
     def addEvokedInput(self, input_type):
         evoked_indices = [int(key[key.index("_") + 1:]) for key in self.cfg.evoked.keys() if input_type in key]
@@ -181,4 +189,3 @@ class HNNGeppetto:
 logging.info("Initialising HNN UI")
 hnn_geppetto = HNNGeppetto()
 logging.info("HNN UI initialised")
-
