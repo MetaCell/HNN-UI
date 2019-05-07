@@ -112,7 +112,7 @@ class HNNGeppetto:
         if str_ in word:
             ev_index = word.index(str_)
             len_str = len(str_)
-            ev_id = re.findall(r'\d+', word)[0]
+            ev_id = re.findall(r'(?<=_)\d+', word)[0]
             key = str_ + ev_id
             inner_key = word[0:ev_index - 1] + word[ev_index + len_str + 1:]
             return key, inner_key
@@ -211,3 +211,4 @@ class HNNGeppetto:
 logging.info("Initialising HNN UI")
 hnn_geppetto = HNNGeppetto()
 logging.info("HNN UI initialised")
+print(hnn_geppetto.cfg.evoked)
