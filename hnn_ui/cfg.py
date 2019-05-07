@@ -455,4 +455,3 @@ cfg.gbar_evprox_2_L5Basket_nmda = 0
 cfg.prng_seedcore_evprox_1 = 4
 cfg.prng_seedcore_evdist_1 = 4
 cfg.prng_seedcore_evprox_2 = 4
-cfg.prng_seedcore_evdist_2 = 0
