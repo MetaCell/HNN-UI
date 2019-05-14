@@ -12,8 +12,11 @@ import copy
 import jsonpickle
 
 from contextlib import redirect_stdout
+
+import netpyne
 from jupyter_geppetto import jupyter_geppetto, synchronization, utils
 from netpyne import sim
+from netpyne.specs import SimConfig
 from pygeppetto.model.model_serializer import GeppettoModelSerializer
 import hnn_ui.model_utils as model_utils
 from hnn_ui.cellParams import set_cellParams
@@ -73,10 +76,9 @@ class HNNGeppetto:
         delattr(flat_cfg, 'evoked')
         return flat_cfg
 
-    def save_model(self, file):
+    def save_model(self):
         flat_cfg = self.dict_to_flat()
-        with open(file + '.json', 'w') as f:
-            json.dump(jsonpickle.encode(flat_cfg), f)
+        return jsonpickle.encode(flat_cfg)
 
     def instantiateModelInGeppetto(self):
         try:
