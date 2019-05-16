@@ -28,4 +28,5 @@ def set_cfg_from_params(fn, cfg):
     for k, v in d.items():
         setattr(cfg, k, v)
 
+    cfg.duration = cfg.tstop
     return cfg

@@ -191,7 +191,12 @@ class HNNGeppetto:
         return False
 
     def get_dipole_plot(self):
-        return sim.analysis.iplotDipole(self.experimental_data)
+        with redirect_stdout(sys.__stdout__):
+            print("Plotting")
+            plot_html = sim.analysis.iplotDipole(self.experimental_data)
+        if plot_html != -1:
+            return plot_html
+        return ""
 
     def get_traces_plot(self):
         plot_html = holoviews_plots.get_traces()
@@ -227,3 +232,6 @@ class HNNGeppetto:
 logging.info("Initialising HNN UI")
 hnn_geppetto = HNNGeppetto()
 logging.info("HNN UI initialised")
+# hnn_geppetto.instantiateModel()
+# hnn_geppetto.get_dipole_plot()
+# print("Debug")
