@@ -10,8 +10,7 @@ from netpyne import specs
 
 cfg = specs.SimConfig()
 
-cfg.checkErrors = False # True # leave as False to avoid extra printouts
-
+cfg.checkErrors = False  # True # leave as False to avoid extra printouts
 
 # ############################################################################
 #
@@ -41,7 +40,7 @@ cfg.distributeSynsUniformly = True  # one syn per section in list of sections
 # Recording
 # ----------------------------------------------------------------------------
 cfg.recordTraces = {'V_soma': {'sec': 'soma', 'loc': 0.5, 'var': 'v'}}
-cfg.recordCells = [('L2Basket',0), ('L2Pyr',0), ('L5Basket',0), ('L5Pyr',0)]
+cfg.recordCells = [('L2Basket', 0), ('L2Pyr', 0), ('L5Basket', 0), ('L5Pyr', 0)]
 cfg.recordStims = False
 cfg.recordStep = 0.025
 
@@ -53,7 +52,7 @@ cfg.sim_prefix = cfg.simLabel = 'default'
 cfg.saveFolder = '.'
 cfg.savePickle = False
 cfg.saveJson = False
-cfg.saveDataInclude = ['simData', 'simConfig'] #, 'netParams', 'net']
+cfg.saveDataInclude = ['simData', 'simConfig']  # , 'netParams', 'net']
 
 # ----------------------------------------------------------------------------
 # Analysis and plotting
@@ -62,9 +61,11 @@ pops = ['L2Basket', 'L2Pyr', 'L5Basket', 'L5Pyr']
 evprox = ['evokedProximal_1_L2Basket', 'evokedProximal_1_L2Pyr', 'evokedProximal_1_L5Basket', 'evokedProximal_1_L5Pyr',
           'evokedProximal_2_L2Basket', 'evokedProximal_2_L2Pyr', 'evokedProximal_2_L5Basket', 'evokedProximal_2_L5Pyr']
 evdist = ['evokedDistal_1_L2Basket', 'evokedDistal_1_L2Pyr', 'evokedDistal_1_L5Basket', 'evokedDistal_1_L5Pyr']
-popColors = {'L2Basket': [1.0, 1.0, 1.0], 'L2Pyr': [0.0, 1.0, 0.0], 'L5Basket': [0.0, 0.0, 1.0], 'L5Pyr': [1.0, 0.0, 0.0]}
+popColors = {'L2Basket': [1.0, 1.0, 1.0], 'L2Pyr': [0.0, 1.0, 0.0], 'L5Basket': [0.0, 0.0, 1.0],
+             'L5Pyr': [1.0, 0.0, 0.0]}
 
-cfg.analysis['iplotTraces'] = {'include': [('L2Basket',0), ('L2Pyr',0), ('L5Basket',0), ('L5Pyr',0) ], 'oneFigPer': 'cell', 'saveFig': False,
+cfg.analysis['iplotTraces'] = {'include': [('L2Basket', 0), ('L2Pyr', 0), ('L5Basket', 0), ('L5Pyr', 0)],
+                               'oneFigPer': 'cell', 'saveFig': False,
                                'showFig': True, 'timeRange': [0, cfg.duration]}
 
 cfg.analysis['iplotRaster'] = {'include': pops, 'showFig': True}  # 'popColors': popColors, 'orderInverse': True,
@@ -74,7 +75,6 @@ cfg.analysis['iplotSpikeHist'] = {'include': pops + evprox + evdist, 'showFig': 
 cfg.analysis['iplotDipole'] = {'showFig': True}
 
 cfg.analysis['plotConn'] = {'includePre': pops, 'includePost': pops, 'feature': 'strength'}
-
 
 # ----------------------------------------------------------------------------
 # Network parameters
@@ -91,7 +91,6 @@ cfg.tonicInputs = True
 cfg.poissonInputs = True
 cfg.gaussInputs = True
 
-
 # ----------------------------------------------------------------------------
 #
 # HNN parameters in original GUI but not in config files (adapted to NetPyNE)
@@ -102,7 +101,6 @@ cfg.EEgain = 1.0
 cfg.EIgain = 1.0
 cfg.IEgain = 1.0
 cfg.IIgain = 1.0
-
 
 # ----------------------------------------------------------------------------
 #
@@ -117,8 +115,7 @@ cfg.tstop = cfg.duration
 cfg.dt = 0.025
 cfg.celsius = 37.0
 cfg.hParams['celsius'] = cfg.celsius = 37
-cfg.threshold = 0.0 # firing threshold (sets netParams.defaultThreshold)
-
+cfg.threshold = 0.0  # firing threshold (sets netParams.defaultThreshold)
 
 # ----------------------------------------------------------------------------
 # Connectivity/synaptic parameters
@@ -185,7 +182,6 @@ cfg.L2Pyr_dend_gnabar_hh2 = 0.15
 cfg.L2Pyr_dend_el_hh2 = -65.
 cfg.L2Pyr_dend_gl_hh2 = 4.26e-5
 cfg.L2Pyr_dend_gbar_km = 250.
-
 
 # L5 cells
 # Soma
@@ -263,15 +259,12 @@ cfg.L5Pyr_dend_gbar_km = 200.
 cfg.L5Pyr_dend_gbar_cat = 2e-4
 cfg.L5Pyr_dend_gbar_ar = 1e-6
 
-
-
 # ----------------------------------------------------------------------------
 # Network size parameters
 # ----------------------------------------------------------------------------
 # numbers of cells making up the pyramidal grids
 cfg.N_pyr_x = 10
 cfg.N_pyr_y = 10
-
 
 # ----------------------------------------------------------------------------
 # Connectivity/synaptic parameters
@@ -340,7 +333,6 @@ cfg.L5Basket_Pois_lamtha = 0.
 cfg.t0_pois = 0.
 cfg.T_pois = -1
 
-
 # ----------------------------------------------------------------------------
 # Rhythmic inputs parameters
 # ----------------------------------------------------------------------------
@@ -393,10 +385,10 @@ cfg.input_dist_A_delay_L5 = 5.
 # Evoked responses parameters
 # ----------------------------------------------------------------------------
 # times and stdevs for evoked responses
-cfg.dt_evprox0_evdist = -1, # not used in GU
-cfg.dt_evprox0_evprox1 = -1, # not used in GU
-cfg.sync_evinput = 1, # whether evoked inputs arrive at same time to all cell
-cfg.inc_evinput = 0.0, # increment (ms) for avg evoked input start (for trial n, avg start time is n * evinputin
+cfg.dt_evprox0_evdist = -1  # not used in GU
+cfg.dt_evprox0_evprox1 = -1  # not used in GU
+cfg.sync_evinput = 1  # whether evoked inputs arrive at same time to all cell
+cfg.inc_evinput = 0.0  # increment (ms) for avg evoked input start (for trial n, avg start time is n * evinputin
 
 # ----------------------------------------------------------------------------
 # Current clamp parameters
@@ -426,13 +418,13 @@ cfg.Itonic_T_L5Basket = -1.
 # ----------------------------------------------------------------------------
 cfg.save_spec_data = 0
 cfg.f_max_spec = 40.
-cfg.dipole_scalefctr = 30e3, # scale factor for dipole - default at 30e
-#based on scaling needed to match model ongoing rhythms from jones 2009 - for ERPs can use 300
+cfg.dipole_scalefctr = 30e3  # scale factor for dipole - default at 30e
+# based on scaling needed to match model ongoing rhythms from jones 2009 - for ERPs can use 300
 # for ongoing rhythms + ERPs ... use ... ?
-cfg.dipole_smooth_win = 15.0, # window for smoothing (box filter) - 15 ms from jones 2009; shorte
+cfg.dipole_smooth_win = 15.0  # window for smoothing (box filter) - 15 ms from jones 2009; shorte
 # in case want to look at higher frequency activity
 cfg.save_figs = 0
-cfg.save_vsoma = 0, # whether to record/save somatic voltag
+cfg.save_vsoma = 0  # whether to record/save somatic voltag
 
 # ----------------------------------------------------------------------------
 # Trials/seeding parameters
@@ -449,5 +441,3 @@ cfg.prng_seedcore_input_prox = 0
 cfg.prng_seedcore_input_dist = 0
 cfg.prng_seedcore_extpois = 0
 cfg.prng_seedcore_extgauss = 0
-
-

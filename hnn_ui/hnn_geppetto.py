@@ -4,20 +4,21 @@ Initialise HNN Geppetto, this class contains methods to connect HNN with the Gep
 """
 import copy
 import importlib
+import io
 import json
 import logging
 import os
 import re
 import sys
-import io
-import jsonpickle
 from contextlib import redirect_stdout
+import hnn_ui.holoviews_plots as holoviews_plots
+
+import jsonpickle
 from jupyter_geppetto import jupyter_geppetto, synchronization, utils
 from netpyne import sim
 from netpyne import specs
 from pygeppetto.model.model_serializer import GeppettoModelSerializer
 
-import hnn_ui.holoviews_plots as holoviews_plots
 import hnn_ui.model_utils as model_utils
 from hnn_ui.cellParams import set_cellParams
 from hnn_ui.constants import CANVAS_KEYS, PROXIMAL, DISTAL
@@ -65,7 +66,7 @@ class HNNGeppetto:
         self.cfg = self.get_evoked_dict(cfg)
 
     def load_experimental_from_file(self):
-        d = {'x': [], 'y': []}
+        d = {'x': [], 'y': [], 'label': 'Experiment'}
         with open("load_examples/hnn_test.txt") as f:
             for line in f:
                 x, y = line.split()
@@ -191,27 +192,25 @@ class HNNGeppetto:
         return False
 
     def get_dipole_plot(self):
-        with redirect_stdout(sys.__stdout__):
-            print("Plotting")
-            plot_html = sim.analysis.iplotDipole(self.experimental_data)
+        plot_html = sim.analysis.iplotDipole(self.experimental_data, figSize=(40, 8))
         if plot_html != -1:
             return plot_html
-        return ""
+        return holoviews_plots.get_experimental_plot(self.experimental_data, fig_size=(40, 8))
 
     def get_traces_plot(self):
-        plot_html = holoviews_plots.get_traces()
+        plot_html = sim.analysis.iplotTraces()
         return plot_html
 
     def get_psd_plot(self):
-        plot_html = holoviews_plots.get_psd()
+        plot_html = sim.analysis.iplotRatePSD()
         return plot_html
 
     def get_raster_plot(self):
-        plot_html = holoviews_plots.get_raster()
+        plot_html = sim.analysis.iplotRaster()
         return plot_html
 
     def get_spectrogram_plot(self):
-        plot_html = holoviews_plots.get_spectrogram()
+        plot_html = sim.analysis.iplotSpikeHist()
         return plot_html
 
     def getDirList(self, dir=None, onlyDirs=False, filterFiles=False):
@@ -232,6 +231,3 @@ class HNNGeppetto:
 logging.info("Initialising HNN UI")
 hnn_geppetto = HNNGeppetto()
 logging.info("HNN UI initialised")
-# hnn_geppetto.instantiateModel()
-# hnn_geppetto.get_dipole_plot()
-# print("Debug")
