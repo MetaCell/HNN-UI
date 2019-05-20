@@ -1,16 +1,13 @@
-'''
-utils.py 
+import io
 
-Helper functions for NetPyNE implementationf of HNN
-'''
 
 # Set cfg params from .param file
-def setCfgFromFile (fn, cfg):
+def set_cfg_from_params(fn, cfg):
     d = {}
-    with open(fn,'r') as fp:
+    with io.BytesIO(fn) as fp:
         ln = fp.readlines()
         for l in ln:
-            s = l.strip()
+            s = l.decode('utf-8').strip()
             if s.startswith('#'): continue
             sp = s.split(':')
             sp[1] = sp[1].strip()
@@ -25,7 +22,7 @@ def setCfgFromFile (fn, cfg):
                         value = int(sp[1])
                     except:
                         value = str(sp[1])
-            
+
                 d[sp[0].strip()] = value
 
     for k, v in d.items():
