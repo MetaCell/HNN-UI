@@ -10,8 +10,7 @@ from netpyne import specs
 
 cfg = specs.SimConfig()
 
-cfg.checkErrors = False # True # leave as False to avoid extra printouts
-
+cfg.checkErrors = False  # True # leave as False to avoid extra printouts
 
 # ############################################################################
 #
@@ -51,29 +50,30 @@ cfg.sim_prefix = cfg.simLabel = 'default'
 cfg.saveFolder = 'data'
 cfg.savePickle = False
 cfg.saveJson = True
-cfg.saveDataInclude = ['simData', 'simConfig'] #, 'netParams', 'net']
+cfg.saveDataInclude = ['simData', 'simConfig']  # , 'netParams', 'net']
 
 # ----------------------------------------------------------------------------
 # Analysis and plotting
 # ----------------------------------------------------------------------------
-cfg.analysis['plotTraces'] = {'include': [('L2Pyr',0), ('L5Pyr',0),('L2Basket',0), ('L5Basket',0) ], 'oneFigPer': 'trace', 'overlay': True, 'saveFig': False,
+cfg.analysis['plotTraces'] = {'include': [('L2Pyr', 0), ('L5Pyr', 0), ('L2Basket', 0), ('L5Basket', 0)],
+                              'oneFigPer': 'trace', 'overlay': True, 'saveFig': False,
                               'showFig': False, 'figSize': (10, 8), 'timeRange': [0, cfg.duration]}
 cfg.analysis['plotRaster'] = {'include': ['all'], 'popRates': True, 'orderInverse': True}
-cfg.analysis['plotConn'] = {'includePre': ['L2Pyr', 'L2Basket', 'L5Pyr', 'L5Basket'], 'includePost': ['L2Pyr', 'L2Basket', 'L5Pyr', 'L5Basket'], 'feature': 'numConns'}
-#cfg.analysis['plotDipole'] = True
+cfg.analysis['plotConn'] = {'includePre': ['L2Pyr', 'L2Basket', 'L5Pyr', 'L5Basket'],
+                            'includePost': ['L2Pyr', 'L2Basket', 'L5Pyr', 'L5Basket'], 'feature': 'numConns'}
+# cfg.analysis['plotDipole'] = True
 
 
 # ----------------------------------------------------------------------------
 # Network parameters
 # ----------------------------------------------------------------------------
-cfg.gridSpacing = 50 # 50
+cfg.gridSpacing = 50  # 50
 cfg.sizeY = 1000
 cfg.localConn = True
 cfg.rhythmicInputs = True
 cfg.evokedInputs = True
 cfg.poissonInputs = True
 cfg.gaussInputs = True
-
 
 # ----------------------------------------------------------------------------
 #
@@ -88,8 +88,7 @@ cfg.tstop = cfg.duration
 cfg.dt = 0.025
 cfg.celsius = 37.0
 cfg.hParams['celsius'] = cfg.celsius = 37
-cfg.threshold = 0.0 # firing threshold (sets netParams.defaultThreshold)
-
+cfg.threshold = 0.0  # firing threshold (sets netParams.defaultThreshold)
 
 # ----------------------------------------------------------------------------
 # Connectivity/synaptic parameters
@@ -156,7 +155,6 @@ cfg.L2Pyr_dend_gnabar_hh2 = 0.15
 cfg.L2Pyr_dend_el_hh2 = -65.
 cfg.L2Pyr_dend_gl_hh2 = 4.26e-5
 cfg.L2Pyr_dend_gbar_km = 250.
-
 
 # L5 cells
 # Soma
@@ -234,15 +232,12 @@ cfg.L5Pyr_dend_gbar_km = 200.
 cfg.L5Pyr_dend_gbar_cat = 2e-4
 cfg.L5Pyr_dend_gbar_ar = 1e-6
 
-
-
 # ----------------------------------------------------------------------------
 # Network size parameters
 # ----------------------------------------------------------------------------
 # numbers of cells making up the pyramidal grids
 cfg.N_pyr_x = 10
 cfg.N_pyr_y = 10
-
 
 # ----------------------------------------------------------------------------
 # Connectivity/synaptic parameters
@@ -271,7 +266,6 @@ cfg.gbar_L5Basket_L5Pyr_gabab = 0.025
 cfg.gbar_L2Pyr_L5Basket = 0.00025
 cfg.gbar_L5Pyr_L5Basket = 0.0005
 cfg.gbar_L5Basket_L5Basket = 0.02
-
 
 # ----------------------------------------------------------------------------
 # Random Inputs parameters
@@ -312,7 +306,6 @@ cfg.L5Basket_Pois_lamtha = 0.0
 # default end time for pois inputs
 cfg.t0_pois = 0.
 cfg.T_pois = -1
-
 
 # ----------------------------------------------------------------------------
 # Rhythmic inputs parameters
@@ -366,10 +359,10 @@ cfg.input_dist_A_delay_L5 = 5.0
 # Evoked responses parameters
 # ----------------------------------------------------------------------------
 # times and stdevs for evoked responses
-cfg.dt_evprox0_evdist = -1, # not used in GU
-cfg.dt_evprox0_evprox1 = -1, # not used in GU
-cfg.sync_evinput = 0, # whether evoked inputs arrive at same time to all cell
-cfg.inc_evinput = 0.0, # increment (ms) for avg evoked input start (for trial n, avg start time is n * evinputin
+cfg.dt_evprox0_evdist = [-1],  # not used in GU
+cfg.dt_evprox0_evprox1 = [-1],  # not used in GU
+cfg.sync_evinput = 0,  # whether evoked inputs arrive at same time to all cell
+cfg.inc_evinput = 0.0,  # increment (ms) for avg evoked input start (for trial n, avg start time is n * evinputin
 
 # ----------------------------------------------------------------------------
 # Current clamp parameters
@@ -399,13 +392,13 @@ cfg.Itonic_T_L5Basket = -1.0
 # ----------------------------------------------------------------------------
 cfg.save_spec_data = 0
 cfg.f_max_spec = 100.
-cfg.dipole_scalefctr = 3000, # scale factor for dipole - default at 30e
-#based on scaling needed to match model ongoing rhythms from jones 2009 - for ERPs can use 300
+cfg.dipole_scalefctr = 3000,  # scale factor for dipole - default at 30e
+# based on scaling needed to match model ongoing rhythms from jones 2009 - for ERPs can use 300
 # for ongoing rhythms + ERPs ... use ... ?
-cfg.dipole_smooth_win = 30, # window for smoothing (box filter) - 15 ms from jones 2009; shorte
+cfg.dipole_smooth_win = 30,  # window for smoothing (box filter) - 15 ms from jones 2009; shorte
 # in case want to look at higher frequency activity
 cfg.save_figs = 0
-cfg.save_vsoma = 0, # whether to record/save somatic voltag
+cfg.save_vsoma = 0,  # whether to record/save somatic voltag
 
 # ----------------------------------------------------------------------------
 # Trials/seeding parameters
@@ -423,52 +416,42 @@ cfg.prng_seedcore_input_dist = 4
 cfg.prng_seedcore_extpois = 4
 cfg.prng_seedcore_extgauss = 4
 
-
-# ----------------------------------------------------------------------------
-# PENDING TO BE RESOLVED
-# ----------------------------------------------------------------------------
 cfg.ee = 1
 cfg.ei = 1
 cfg.ie = 1
 cfg.ii = 1
 
-
-cfg.evoked = {
-    "Proximal_1": {
-        "startTimeMean": 25.0,
-        "stopTimeStd": 2.5,
-        "numberOfSpikes": 1,
-        "L2PyrAMPAWeight": 0.009,
-        "L2PyrNMDAWeight": 0.0,
-        "L2BasketAMPAWeight": 0.09,
-        "L2BasketNMDAWeight": 0.0,
-        "L5PyrAMPAWeight": 0.0005,
-        "L5PyrNMDAWeight": 0.0,
-        "L5BasketAMPAWeight": 0.2,
-        "L5BasketNMDAWeight": 0.0
-    },
-    "Distal_1": {
-        "startTimeMean": 65.0,
-        "stopTimeStd": 5.0,
-        "numberOfSpikes": 1,
-        "L2PyrAMPAWeight": 0.00034,
-        "L2PyrNMDAWeight": 0.00426,
-        "L2BasketAMPAWeight": 0.01229,
-        "L2BasketNMDAWeight": 0.02043,
-        "L5PyrAMPAWeight": 0.07104,
-        "L5PyrNMDAWeight": 0.10104
-    },
-    "Proximal_2": {
-        "startTimeMean": 132.7,
-        "stopTimeStd": 14.1,
-        "numberOfSpikes": 1,
-        "L2PyrAMPAWeight": 0.73344,
-        "L2PyrNMDAWeight": 0.0,
-        "L2BasketAMPAWeight": 0.00002,
-        "L2BasketNMDAWeight": 0.0,
-        "L5PyrAMPAWeight": 0.64200,
-        "L5PyrNMDAWeight": 0.0,
-        "L5BasketAMPAWeight": 0.01496,
-        "L5BasketNMDAWeight": 0.0
-    }
-}
+cfg.t_evprox_1 = 25
+cfg.sigma_t_evprox_1 = 2.5
+cfg.numspikes_evprox_1 = 1
+cfg.gbar_evprox_1_L2Pyr_ampa = 0.009
+cfg.gbar_evprox_1_L2Pyr_nmda = 0
+cfg.gbar_evprox_1_L2Basket_ampa = 0.09
+cfg.gbar_evprox_1_L2Basket_nmda = 0
+cfg.gbar_evprox_1_L5Pyr_ampa = 0.0005
+cfg.gbar_evprox_1_L5Pyr_nmda = 0
+cfg.gbar_evprox_1_L5Basket_ampa = 0.2
+cfg.gbar_evprox_1_L5Basket_nmda = 0
+cfg.t_evdist_1 = 65
+cfg.sigma_t_evdist_1 = 5
+cfg.numspikes_evdist_1 = 1
+cfg.gbar_evdist_1_L2Pyr_ampa = 0.00034
+cfg.gbar_evdist_1_L2Pyr_nmda = 0.00426
+cfg.gbar_evdist_1_L2Basket_ampa = 0.01229
+cfg.gbar_evdist_1_L2Basket_nmda = 0.02043
+cfg.gbar_evdist_1_L5Pyr_ampa = 0.07104
+cfg.gbar_evdist_1_L5Pyr_nmda = 0.10104
+cfg.t_evprox_2 = 132.7
+cfg.sigma_t_evprox_2 = 14.1
+cfg.numspikes_evprox_2 = 1
+cfg.gbar_evprox_2_L2Pyr_ampa = 0.73344
+cfg.gbar_evprox_2_L2Pyr_nmda = 0
+cfg.gbar_evprox_2_L2Basket_ampa = 0.00002
+cfg.gbar_evprox_2_L2Basket_nmda = 0
+cfg.gbar_evprox_2_L5Pyr_ampa = 0.642
+cfg.gbar_evprox_2_L5Pyr_nmda = 0
+cfg.gbar_evprox_2_L5Basket_ampa = 0.01496
+cfg.gbar_evprox_2_L5Basket_nmda = 0
+cfg.prng_seedcore_evprox_1 = 4
+cfg.prng_seedcore_evdist_1 = 4
+cfg.prng_seedcore_evprox_2 = 4

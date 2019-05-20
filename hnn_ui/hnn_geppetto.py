@@ -7,6 +7,7 @@ import json
 import logging
 import os
 import sys
+import re
 from contextlib import redirect_stdout
 
 from jupyter_geppetto import jupyter_geppetto, synchronization, utils
@@ -20,20 +21,13 @@ from hnn_ui.netParams import set_netParams
 from hnn_ui.netpyne_model_interpreter import NetPyNEModelInterpreter
 import hnn_ui.holoviews_plots as holoviews_plots
 
-from bokeh.plotting import figure
-import holoviews as hv
-from bokeh.resources import CDN
-from bokeh.embed import file_html
-from bokeh.layouts import layout
-
-hv.extension('bokeh')
-
 
 class HNNGeppetto:
 
     def __init__(self):
         self.model_interpreter = NetPyNEModelInterpreter()
         self.cfg = self.load_cfg()
+        self.get_evoked_dict()
         # use to decide wheter or not to update the canvas in the front end
         self.last_cfg_snapshot = self.cfg.__dict__.copy()
         synchronization.startSynchronization(self.__dict__)
@@ -75,18 +69,46 @@ class HNNGeppetto:
             self.last_cfg_snapshot = self.cfg.__dict__.copy()
 
         return sim
-    
+
     def simulateModel(self):
         with redirect_stdout(sys.__stdout__):
-            sim.setupRecording() 
+            sim.setupRecording()
             sim.simulate()
             sim.saveData()
         return sim
 
+    def get_evoked_dict(self):
+        cfg_dict = {}
+        for att in dir(self.cfg):
+            if "evprox_" in att:
+                ev_index = att.index("evprox_")
+                len_prox = len("evprox_")
+                ev_id = re.findall(r'\d+', att)[0]
+                key = "evprox_" + ev_id
+                inner_key = att[0:ev_index - 1] + att[ev_index + len_prox + 1:]
+                if key in cfg_dict.keys():
+                    cfg_dict[key][inner_key] = getattr(self.cfg, att)
+                else:
+                    cfg_dict[key] = {inner_key: getattr(self.cfg, att)}
+            elif "evdist_" in att:
+                ev_index = att.index("evdist_")
+                len_dist = len("evdist_")
+                ev_id = re.findall(r'\d+', att)[0]
+                key = "evdist_" + ev_id
+                inner_key = att[0:ev_index - 1] + att[ev_index + len_dist + 1:]
+                if key in cfg_dict.keys():
+                    cfg_dict[key][inner_key] = getattr(self.cfg, att)
+                else:
+                    cfg_dict[key] = {inner_key: getattr(self.cfg, att)}
+
+        setattr(self.cfg, "evoked", cfg_dict)
+        return
+
+
     def getEvokedInputs(self):
         return list(self.cfg.evoked.keys())
 
-    # waiting for evoked input model (this is tentative)
+
     def addEvokedInput(self, input_type):
         evoked_indices = [int(key[key.index("_") + 1:]) for key in self.cfg.evoked.keys() if input_type in key]
         index = str(max(evoked_indices) + 1) if len(evoked_indices) > 0 else 1
@@ -117,19 +139,13 @@ class HNNGeppetto:
         return False
 
     def get_dipole_plot(self):
-        TOOLS = "pan,wheel_zoom,box_zoom,reset,save,box_select"
-        fig = figure(title="HNN Dipole Plot", tools=TOOLS)
+        exp_data = {}
         try:
-            spkt = sim.allSimData['spkt']
-            spkid = sim.allSimData['spkid']
+            exp_data['x'] = range(5)
+            exp_data['y'] = [x * 2 for x in range(5)]
         except:
             return ""
-
-        #return json.dumps(spkid)
-        fig.scatter(spkt, spkid, size=1, legend="all spikes")
-        plot_layout = layout(fig, sizing_mode='scale_both')
-        html = file_html(plot_layout, CDN, "dipole")
-        return html
+        return sim.analysis.iplotDipole(exp_data)
 
     def get_traces_plot(self):
         plot_html = holoviews_plots.get_traces()
@@ -165,3 +181,4 @@ class HNNGeppetto:
 logging.info("Initialising HNN UI")
 hnn_geppetto = HNNGeppetto()
 logging.info("HNN UI initialised")
+
