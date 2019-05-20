@@ -2,30 +2,28 @@
 hnn_geppetto.py
 Initialise HNN Geppetto, this class contains methods to connect HNN with the Geppetto based UI
 """
+import copy
 import importlib
+import json
 import logging
 import os
-import sys
 import re
-import json
-import copy
+import sys
+import io
 import jsonpickle
-
 from contextlib import redirect_stdout
-
-import netpyne
 from jupyter_geppetto import jupyter_geppetto, synchronization, utils
 from netpyne import sim
-from netpyne.specs import SimConfig
+from netpyne import specs
 from pygeppetto.model.model_serializer import GeppettoModelSerializer
+
+import hnn_ui.holoviews_plots as holoviews_plots
 import hnn_ui.model_utils as model_utils
 from hnn_ui.cellParams import set_cellParams
 from hnn_ui.constants import CANVAS_KEYS, PROXIMAL, DISTAL
 from hnn_ui.netParams import set_netParams
 from hnn_ui.netpyne_model_interpreter import NetPyNEModelInterpreter
-import hnn_ui.holoviews_plots as holoviews_plots
 from hnn_ui.utils import set_cfg_from_params
-from netpyne import specs
 
 
 class HNNGeppetto:
@@ -33,6 +31,7 @@ class HNNGeppetto:
     def __init__(self):
         self.model_interpreter = NetPyNEModelInterpreter()
         self.cfg = self.load_cfg()
+        self.experimental_data = self.load_experimental_from_file()
         # use to decide whether or not to update the canvas in the front end
         self.last_cfg_snapshot = self.cfg.__dict__.copy()
         synchronization.startSynchronization(self.__dict__)
@@ -64,6 +63,27 @@ class HNNGeppetto:
         file_bytes = bytes(file_list)
         cfg = set_cfg_from_params(file_bytes, specs.SimConfig())
         self.cfg = self.get_evoked_dict(cfg)
+
+    def load_experimental_from_file(self):
+        d = {'x': [], 'y': []}
+        with open("load_examples/hnn_test.txt") as f:
+            for line in f:
+                x, y = line.split()
+                d['x'].append(float(x))
+                d['y'].append(float(y))
+        return d
+
+    def load_experimental(self, file):
+        file_list = json.loads(file)
+        file_bytes = bytes(file_list)
+        d = {'x': [], 'y': []}
+        with io.BytesIO(file_bytes) as fp:
+            ln = fp.readlines()
+            for l in ln:
+                x, y = l.split()
+                d['x'].append(float(x.decode("utf-8")))
+                d['y'].append(float(y.decode("utf-8")))
+        self.experimental_data = d
 
     def dict_to_flat(self):
         flat_cfg = copy.copy(self.cfg)
@@ -171,13 +191,7 @@ class HNNGeppetto:
         return False
 
     def get_dipole_plot(self):
-        exp_data = {}
-        try:
-            exp_data['x'] = range(5)
-            exp_data['y'] = [x * 2 for x in range(5)]
-        except:
-            return ""
-        return sim.analysis.iplotDipole(exp_data)
+        return sim.analysis.iplotDipole(self.experimental_data)
 
     def get_traces_plot(self):
         plot_html = holoviews_plots.get_traces()
@@ -213,4 +227,3 @@ class HNNGeppetto:
 logging.info("Initialising HNN UI")
 hnn_geppetto = HNNGeppetto()
 logging.info("HNN UI initialised")
-print(hnn_geppetto.cfg.evoked)
