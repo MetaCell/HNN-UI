@@ -1,4 +1,6 @@
 import io
+import ast
+
 
 
 # Set cfg params from .param file
@@ -12,11 +14,17 @@ def set_cfg_from_params(fn, cfg):
             sp = s.split(':')
             sp[1] = sp[1].strip()
             if len(sp[1]) > 0:
-                if '.' in sp[1] or 'e' in sp[1]:
+                if '[' in sp[1] and ']' in sp[1]:
+                    try:
+                        value = ast.literal_eval(sp[1])
+                    except:
+                        value = str(sp[1])
+                elif '.' in sp[1] or 'e' in sp[1]:
                     try:
                         value = float(sp[1])
                     except:
                         value = str(sp[1])
+
                 else:
                     try:
                         value = int(sp[1])
