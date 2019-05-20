@@ -27,53 +27,80 @@ cfg.checkErrors = False  # True # leave as False to avoid extra printouts
 # ----------------------------------------------------------------------------
 # Run parameters
 # ----------------------------------------------------------------------------
-cfg.duration = 170
+cfg.duration = 250
 cfg.seeds = {'conn': 4321, 'stim': 1234, 'loc': 4321}
-cfg.hParams['v_init'] = -80
+cfg.hParams['v_init'] = -65
 cfg.verbose = 0
 cfg.cvode_active = False
 cfg.printRunTime = 0.1
 cfg.printPopAvgRates = True
+cfg.distributeSynsUniformly = True  # one syn per section in list of sections
 
 # ----------------------------------------------------------------------------
 # Recording
 # ----------------------------------------------------------------------------
 cfg.recordTraces = {'V_soma': {'sec': 'soma', 'loc': 0.5, 'var': 'v'}}
+cfg.recordCells = [('L2Basket', 0), ('L2Pyr', 0), ('L5Basket', 0), ('L5Pyr', 0)]
 cfg.recordStims = False
-cfg.recordStep = 0.1
+cfg.recordStep = 0.025
 
 # ----------------------------------------------------------------------------
 # Saving
 # ----------------------------------------------------------------------------
 cfg.sim_prefix = cfg.simLabel = 'default'
 
-cfg.saveFolder = 'data'
+cfg.saveFolder = '.'
 cfg.savePickle = False
-cfg.saveJson = True
+cfg.saveJson = False
 cfg.saveDataInclude = ['simData', 'simConfig']  # , 'netParams', 'net']
 
 # ----------------------------------------------------------------------------
 # Analysis and plotting
 # ----------------------------------------------------------------------------
-cfg.analysis['plotTraces'] = {'include': [('L2Pyr', 0), ('L5Pyr', 0), ('L2Basket', 0), ('L5Basket', 0)],
-                              'oneFigPer': 'trace', 'overlay': True, 'saveFig': False,
-                              'showFig': False, 'figSize': (10, 8), 'timeRange': [0, cfg.duration]}
-cfg.analysis['plotRaster'] = {'include': ['all'], 'popRates': True, 'orderInverse': True}
-cfg.analysis['plotConn'] = {'includePre': ['L2Pyr', 'L2Basket', 'L5Pyr', 'L5Basket'],
-                            'includePost': ['L2Pyr', 'L2Basket', 'L5Pyr', 'L5Basket'], 'feature': 'numConns'}
-# cfg.analysis['plotDipole'] = True
+pops = ['L2Basket', 'L2Pyr', 'L5Basket', 'L5Pyr']
+evprox = ['evokedProximal_1_L2Basket', 'evokedProximal_1_L2Pyr', 'evokedProximal_1_L5Basket', 'evokedProximal_1_L5Pyr',
+          'evokedProximal_2_L2Basket', 'evokedProximal_2_L2Pyr', 'evokedProximal_2_L5Basket', 'evokedProximal_2_L5Pyr']
+evdist = ['evokedDistal_1_L2Basket', 'evokedDistal_1_L2Pyr', 'evokedDistal_1_L5Basket', 'evokedDistal_1_L5Pyr']
+popColors = {'L2Basket': [1.0, 1.0, 1.0], 'L2Pyr': [0.0, 1.0, 0.0], 'L5Basket': [0.0, 0.0, 1.0],
+             'L5Pyr': [1.0, 0.0, 0.0]}
 
+cfg.analysis['iplotTraces'] = {'include': [('L2Basket', 0), ('L2Pyr', 0), ('L5Basket', 0), ('L5Pyr', 0)],
+                               'oneFigPer': 'cell', 'saveFig': False,
+                               'showFig': True, 'timeRange': [0, cfg.duration]}
+
+cfg.analysis['iplotRaster'] = {'include': pops, 'showFig': True}  # 'popColors': popColors, 'orderInverse': True,
+
+cfg.analysis['iplotSpikeHist'] = {'include': pops + evprox + evdist, 'showFig': True}
+
+cfg.analysis['iplotDipole'] = {'showFig': True}
+
+cfg.analysis['plotConn'] = {'includePre': pops, 'includePost': pops, 'feature': 'strength'}
 
 # ----------------------------------------------------------------------------
 # Network parameters
 # ----------------------------------------------------------------------------
-cfg.gridSpacing = 50  # 50
-cfg.sizeY = 1000
+cfg.gridSpacingPyr = 1  # 50
+cfg.gridSpacingBasket = [1, 1, 3]
+cfg.xzScaling = 50
+cfg.sizeY = 2000
+
 cfg.localConn = True
 cfg.rhythmicInputs = True
 cfg.evokedInputs = True
+cfg.tonicInputs = True
 cfg.poissonInputs = True
 cfg.gaussInputs = True
+
+# ----------------------------------------------------------------------------
+#
+# HNN parameters in original GUI but not in config files (adapted to NetPyNE)
+#
+# ----------------------------------------------------------------------------
+
+cfg.EEgain = 1.0
+cfg.EIgain = 1.0
+cfg.IEgain = 1.0
+cfg.IIgain = 1.0
 
 # ----------------------------------------------------------------------------
 #
@@ -244,28 +271,27 @@ cfg.N_pyr_y = 10
 # ----------------------------------------------------------------------------
 # maximal conductances for all synapses
 # max conductances TO L2Pyrs
-cfg.gbar_L2Pyr_L2Pyr_ampa = 0.0005
-cfg.gbar_L2Pyr_L2Pyr_nmda = 0.0005
-cfg.gbar_L2Basket_L2Pyr_gabaa = 0.05
-cfg.gbar_L2Basket_L2Pyr_gabab = 0.05
+cfg.gbar_L2Pyr_L2Pyr_ampa = 0.
+cfg.gbar_L2Pyr_L2Pyr_nmda = 0.
+cfg.gbar_L2Basket_L2Pyr_gabaa = 0.
+cfg.gbar_L2Basket_L2Pyr_gabab = 0.
 
 # max conductances TO L2Baskets
-cfg.gbar_L2Pyr_L2Basket = 0.0005
-cfg.gbar_L2Basket_L2Basket = 0.02
+cfg.gbar_L2Pyr_L2Basket = 0.
+cfg.gbar_L2Basket_L2Basket = 0.
 
 # max conductances TO L5Pyr
-
-cfg.gbar_L2Pyr_L5Pyr = 0.00025
-cfg.gbar_L2Basket_L5Pyr = 0.001
-cfg.gbar_L5Pyr_L5Pyr_ampa = 0.0005
-cfg.gbar_L5Pyr_L5Pyr_nmda = 0.0005
-cfg.gbar_L5Basket_L5Pyr_gabaa = 0.025
-cfg.gbar_L5Basket_L5Pyr_gabab = 0.025
+cfg.gbar_L5Pyr_L5Pyr_ampa = 0.
+cfg.gbar_L5Pyr_L5Pyr_nmda = 0.
+cfg.gbar_L2Pyr_L5Pyr = 0.
+cfg.gbar_L2Basket_L5Pyr = 0.
+cfg.gbar_L5Basket_L5Pyr_gabaa = 0.
+cfg.gbar_L5Basket_L5Pyr_gabab = 0.
 
 # max conductances TO L5Baskets
-cfg.gbar_L2Pyr_L5Basket = 0.00025
-cfg.gbar_L5Pyr_L5Basket = 0.0005
-cfg.gbar_L5Basket_L5Basket = 0.02
+cfg.gbar_L5Basket_L5Basket = 0.
+cfg.gbar_L5Pyr_L5Basket = 0.
+cfg.gbar_L2Pyr_L5Basket = 0.
 
 # ----------------------------------------------------------------------------
 # Random Inputs parameters
@@ -275,33 +301,33 @@ cfg.gbar_L5Basket_L5Basket = 0.02
 cfg.L2Basket_Gauss_A_weight = 0.
 cfg.L2Basket_Gauss_mu = 2000.
 cfg.L2Basket_Gauss_sigma = 3.6
-cfg.L2Basket_Pois_A_weight_ampa = 0.0
-cfg.L2Basket_Pois_A_weight_nmda = 0.0
+cfg.L2Basket_Pois_A_weight_ampa = 0.
+cfg.L2Basket_Pois_A_weight_nmda = 0.
 cfg.L2Basket_Pois_lamtha = 0.
 
 # L2 Pyr params
 cfg.L2Pyr_Gauss_A_weight = 0.
 cfg.L2Pyr_Gauss_mu = 2000.
 cfg.L2Pyr_Gauss_sigma = 3.6
-cfg.L2Pyr_Pois_A_weight_ampa = 0.0
-cfg.L2Pyr_Pois_A_weight_nmda = 0.0
-cfg.L2Pyr_Pois_lamtha = 0.0
+cfg.L2Pyr_Pois_A_weight_ampa = 0.
+cfg.L2Pyr_Pois_A_weight_nmda = 0.
+cfg.L2Pyr_Pois_lamtha = 0.
 
 # L5 Pyr params
 cfg.L5Pyr_Gauss_A_weight = 0.
 cfg.L5Pyr_Gauss_mu = 2000.
 cfg.L5Pyr_Gauss_sigma = 4.8
-cfg.L5Pyr_Pois_A_weight_ampa = 0.0
-cfg.L5Pyr_Pois_A_weight_nmda = 0.0
-cfg.L5Pyr_Pois_lamtha = 0.0
+cfg.L5Pyr_Pois_A_weight_ampa = 0.
+cfg.L5Pyr_Pois_A_weight_nmda = 0.
+cfg.L5Pyr_Pois_lamtha = 0.
 
 # L5 Basket params
 cfg.L5Basket_Gauss_A_weight = 0.
 cfg.L5Basket_Gauss_mu = 2000.
 cfg.L5Basket_Gauss_sigma = 2.
-cfg.L5Basket_Pois_A_weight_ampa = 0.0
-cfg.L5Basket_Pois_A_weight_nmda = 0.0
-cfg.L5Basket_Pois_lamtha = 0.0
+cfg.L5Basket_Pois_A_weight_ampa = 0.
+cfg.L5Basket_Pois_A_weight_nmda = 0.
+cfg.L5Basket_Pois_lamtha = 0.
 
 # default end time for pois inputs
 cfg.t0_pois = 0.
@@ -312,93 +338,93 @@ cfg.T_pois = -1
 # ----------------------------------------------------------------------------
 # Ongoing proximal alpha rhythm
 cfg.distribution_prox = 'normal'
-cfg.t0_input_prox = 10.
+cfg.t0_input_prox = 1000.
 cfg.tstop_input_prox = 250.
 cfg.f_input_prox = 10.
 cfg.f_stdev_prox = 20.
 cfg.events_per_cycle_prox = 2
 cfg.repeats_prox = 10
-cfg.t0_input_stdev_prox = 5.0
+cfg.t0_input_stdev_prox = 0.0
 
 # Ongoing distal alpha rhythm
 cfg.distribution_dist = 'normal'
-cfg.t0_input_dist = 30.
+cfg.t0_input_dist = 1000.
 cfg.tstop_input_dist = 250.
-cfg.f_input_dist = 15.
+cfg.f_input_dist = 10.
 cfg.f_stdev_dist = 20.
 cfg.events_per_cycle_dist = 2
 cfg.repeats_dist = 10
-cfg.t0_input_stdev_dist = 10.0
+cfg.t0_input_stdev_dist = 0.0
 
 # ----------------------------------------------------------------------------
 # Thalamic inputs parameters
 # ----------------------------------------------------------------------------
 # thalamic input amplitudes and delays
-cfg.input_prox_A_weight_L2Pyr_ampa = 0.0005
-cfg.input_prox_A_weight_L2Pyr_nmda = 0.0005
-cfg.input_prox_A_weight_L5Pyr_ampa = 0.0002
-cfg.input_prox_A_weight_L5Pyr_nmda = 0.0002
-cfg.input_prox_A_weight_L2Basket_ampa = 0.0002
-cfg.input_prox_A_weight_L2Basket_nmda = 0.0002
-cfg.input_prox_A_weight_L5Basket_ampa = 0.0002
-cfg.input_prox_A_weight_L5Basket_nmda = 0.0002
+cfg.input_prox_A_weight_L2Pyr_ampa = 0.
+cfg.input_prox_A_weight_L2Pyr_nmda = 0.
+cfg.input_prox_A_weight_L5Pyr_ampa = 0.
+cfg.input_prox_A_weight_L5Pyr_nmda = 0.
+cfg.input_prox_A_weight_L2Basket_ampa = 0.
+cfg.input_prox_A_weight_L2Basket_nmda = 0.
+cfg.input_prox_A_weight_L5Basket_ampa = 0.
+cfg.input_prox_A_weight_L5Basket_nmda = 0.
 cfg.input_prox_A_delay_L2 = 0.1
 cfg.input_prox_A_delay_L5 = 1.0
 
 # current values, not sure where these distal values come from, need to check
-cfg.input_dist_A_weight_L2Pyr_ampa = 0.0005
-cfg.input_dist_A_weight_L2Pyr_nmda = 0.0005
-cfg.input_dist_A_weight_L5Pyr_ampa = 0.0005
-cfg.input_dist_A_weight_L5Pyr_nmda = 0.0005
-cfg.input_dist_A_weight_L2Basket_ampa = 0.0001
-cfg.input_dist_A_weight_L2Basket_nmda = 0.0001
-cfg.input_dist_A_delay_L2 = 5.0
-cfg.input_dist_A_delay_L5 = 5.0
+cfg.input_dist_A_weight_L2Pyr_ampa = 0.
+cfg.input_dist_A_weight_L2Pyr_nmda = 0.
+cfg.input_dist_A_weight_L5Pyr_ampa = 0.
+cfg.input_dist_A_weight_L5Pyr_nmda = 0.
+cfg.input_dist_A_weight_L2Basket_ampa = 0.
+cfg.input_dist_A_weight_L2Basket_nmda = 0.
+cfg.input_dist_A_delay_L2 = 5.
+cfg.input_dist_A_delay_L5 = 5.
 
 # ----------------------------------------------------------------------------
 # Evoked responses parameters
 # ----------------------------------------------------------------------------
 # times and stdevs for evoked responses
-cfg.dt_evprox0_evdist = [-1],  # not used in GU
-cfg.dt_evprox0_evprox1 = [-1],  # not used in GU
-cfg.sync_evinput = 0,  # whether evoked inputs arrive at same time to all cell
-cfg.inc_evinput = 0.0,  # increment (ms) for avg evoked input start (for trial n, avg start time is n * evinputin
+cfg.dt_evprox0_evdist = -1  # not used in GU
+cfg.dt_evprox0_evprox1 = -1  # not used in GU
+cfg.sync_evinput = 1  # whether evoked inputs arrive at same time to all cell
+cfg.inc_evinput = 0.0  # increment (ms) for avg evoked input start (for trial n, avg start time is n * evinputin
 
 # ----------------------------------------------------------------------------
 # Current clamp parameters
 # ----------------------------------------------------------------------------
 # IClamp params for L2Pyr
-cfg.Itonic_A_L2Pyr_soma = 0.0
-cfg.Itonic_t0_L2Pyr_soma = 0.0
-cfg.Itonic_T_L2Pyr_soma = -1.0
+cfg.Itonic_A_L2Pyr_soma = 0.
+cfg.Itonic_t0_L2Pyr_soma = 0.
+cfg.Itonic_T_L2Pyr_soma = -1.
 
 # IClamp param for L2Basket
-cfg.Itonic_A_L2Basket = 0.0
-cfg.Itonic_t0_L2Basket = 0.0
-cfg.Itonic_T_L2Basket = -1.0
+cfg.Itonic_A_L2Basket = 0.
+cfg.Itonic_t0_L2Basket = 0.
+cfg.Itonic_T_L2Basket = -1.
 
-# IClamp params for L5PyrG
-cfg.Itonic_A_L5Pyr_soma = 0.0
-cfg.Itonic_t0_L5Pyr_soma = 0.0
-cfg.Itonic_T_L5Pyr_soma = -1.0
+# IClamp params for L5Pyr
+cfg.Itonic_A_L5Pyr_soma = 0.
+cfg.Itonic_t0_L5Pyr_soma = 0.
+cfg.Itonic_T_L5Pyr_soma = -1.
 
 # IClamp param for L5Basket
-cfg.Itonic_A_L5Basket = 0.0
-cfg.Itonic_t0_L5Basket = 0.0
-cfg.Itonic_T_L5Basket = -1.0
+cfg.Itonic_A_L5Basket = 0.
+cfg.Itonic_t0_L5Basket = 0.
+cfg.Itonic_T_L5Basket = -1.
 
 # ----------------------------------------------------------------------------
 # Analysis parameters
 # ----------------------------------------------------------------------------
 cfg.save_spec_data = 0
-cfg.f_max_spec = 100.
-cfg.dipole_scalefctr = 3000,  # scale factor for dipole - default at 30e
+cfg.f_max_spec = 40.
+cfg.dipole_scalefctr = 30e3  # scale factor for dipole - default at 30e
 # based on scaling needed to match model ongoing rhythms from jones 2009 - for ERPs can use 300
 # for ongoing rhythms + ERPs ... use ... ?
-cfg.dipole_smooth_win = 30,  # window for smoothing (box filter) - 15 ms from jones 2009; shorte
+cfg.dipole_smooth_win = 15.0  # window for smoothing (box filter) - 15 ms from jones 2009; shorte
 # in case want to look at higher frequency activity
 cfg.save_figs = 0
-cfg.save_vsoma = 0,  # whether to record/save somatic voltag
+cfg.save_vsoma = 0  # whether to record/save somatic voltag
 
 # ----------------------------------------------------------------------------
 # Trials/seeding parameters
@@ -411,47 +437,7 @@ cfg.N_trials = 1
 # prng seed cores are the base integer seed for the specific
 # prng object for a specific random number stream
 cfg.prng_state = None
-cfg.prng_seedcore_input_prox = 4
-cfg.prng_seedcore_input_dist = 4
-cfg.prng_seedcore_extpois = 4
-cfg.prng_seedcore_extgauss = 4
-
-cfg.ee = 1
-cfg.ei = 1
-cfg.ie = 1
-cfg.ii = 1
-
-cfg.t_evprox_1 = 25
-cfg.sigma_t_evprox_1 = 2.5
-cfg.numspikes_evprox_1 = 1
-cfg.gbar_evprox_1_L2Pyr_ampa = 0.009
-cfg.gbar_evprox_1_L2Pyr_nmda = 0
-cfg.gbar_evprox_1_L2Basket_ampa = 0.09
-cfg.gbar_evprox_1_L2Basket_nmda = 0
-cfg.gbar_evprox_1_L5Pyr_ampa = 0.0005
-cfg.gbar_evprox_1_L5Pyr_nmda = 0
-cfg.gbar_evprox_1_L5Basket_ampa = 0.2
-cfg.gbar_evprox_1_L5Basket_nmda = 0
-cfg.t_evdist_1 = 65
-cfg.sigma_t_evdist_1 = 5
-cfg.numspikes_evdist_1 = 1
-cfg.gbar_evdist_1_L2Pyr_ampa = 0.00034
-cfg.gbar_evdist_1_L2Pyr_nmda = 0.00426
-cfg.gbar_evdist_1_L2Basket_ampa = 0.01229
-cfg.gbar_evdist_1_L2Basket_nmda = 0.02043
-cfg.gbar_evdist_1_L5Pyr_ampa = 0.07104
-cfg.gbar_evdist_1_L5Pyr_nmda = 0.10104
-cfg.t_evprox_2 = 132.7
-cfg.sigma_t_evprox_2 = 14.1
-cfg.numspikes_evprox_2 = 1
-cfg.gbar_evprox_2_L2Pyr_ampa = 0.73344
-cfg.gbar_evprox_2_L2Pyr_nmda = 0
-cfg.gbar_evprox_2_L2Basket_ampa = 0.00002
-cfg.gbar_evprox_2_L2Basket_nmda = 0
-cfg.gbar_evprox_2_L5Pyr_ampa = 0.642
-cfg.gbar_evprox_2_L5Pyr_nmda = 0
-cfg.gbar_evprox_2_L5Basket_ampa = 0.01496
-cfg.gbar_evprox_2_L5Basket_nmda = 0
-cfg.prng_seedcore_evprox_1 = 4
-cfg.prng_seedcore_evdist_1 = 4
-cfg.prng_seedcore_evprox_2 = 4
+cfg.prng_seedcore_input_prox = 0
+cfg.prng_seedcore_input_dist = 0
+cfg.prng_seedcore_extpois = 0
+cfg.prng_seedcore_extgauss = 0

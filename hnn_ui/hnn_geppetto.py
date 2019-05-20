@@ -4,20 +4,21 @@ Initialise HNN Geppetto, this class contains methods to connect HNN with the Gep
 """
 import copy
 import importlib
+import io
 import json
 import logging
 import os
 import re
 import sys
-import io
-import jsonpickle
 from contextlib import redirect_stdout
+import hnn_ui.holoviews_plots as holoviews_plots
+
+import jsonpickle
 from jupyter_geppetto import jupyter_geppetto, synchronization, utils
 from netpyne import sim
 from netpyne import specs
 from pygeppetto.model.model_serializer import GeppettoModelSerializer
 
-import hnn_ui.holoviews_plots as holoviews_plots
 import hnn_ui.model_utils as model_utils
 from hnn_ui.cellParams import set_cellParams
 from hnn_ui.constants import CANVAS_KEYS, PROXIMAL, DISTAL
@@ -64,8 +65,15 @@ class HNNGeppetto:
         cfg = set_cfg_from_params(file_bytes, specs.SimConfig())
         self.cfg = self.get_evoked_dict(cfg)
 
+    def load_cfg_from_param_debug(self, file):
+        fh = open(file, 'rb')
+        file_bytes = bytearray(fh.read())
+        cfg = set_cfg_from_params(file_bytes, specs.SimConfig())
+        self.cfg = self.get_evoked_dict(cfg)
+
+
     def load_experimental_from_file(self):
-        d = {'x': [], 'y': []}
+        d = {'x': [], 'y': [], 'label': 'Experiment'}
         with open("load_examples/hnn_test.txt") as f:
             for line in f:
                 x, y = line.split()
@@ -76,7 +84,7 @@ class HNNGeppetto:
     def load_experimental(self, file):
         file_list = json.loads(file)
         file_bytes = bytes(file_list)
-        d = {'x': [], 'y': []}
+        d = {'x': [], 'y': [], 'label': 'Experiment'}
         with io.BytesIO(file_bytes) as fp:
             ln = fp.readlines()
             for l in ln:
@@ -191,23 +199,34 @@ class HNNGeppetto:
         return False
 
     def get_dipole_plot(self):
-        return sim.analysis.iplotDipole(self.experimental_data)
+        plot_html = sim.analysis.iplotDipole(self.experimental_data)
+        if plot_html != -1:
+            return plot_html
+        return holoviews_plots.get_experimental_plot(self.experimental_data)
 
     def get_traces_plot(self):
-        plot_html = holoviews_plots.get_traces()
-        return plot_html
+        plot_html = sim.analysis.iplotTraces()
+        if plot_html != -1:
+            return plot_html
+        return ""
 
     def get_psd_plot(self):
-        plot_html = holoviews_plots.get_psd()
-        return plot_html
+        plot_html = sim.analysis.iplotRatePSD()
+        if plot_html != -1:
+            return plot_html
+        return ""
 
     def get_raster_plot(self):
-        plot_html = holoviews_plots.get_raster()
-        return plot_html
+        plot_html = sim.analysis.iplotRaster()
+        if plot_html != -1:
+            return plot_html
+        return ""
 
     def get_spectrogram_plot(self):
-        plot_html = holoviews_plots.get_spectrogram()
-        return plot_html
+        plot_html = sim.analysis.iplotSpikeHist()
+        if plot_html != -1:
+            return plot_html
+        return ""
 
     def getDirList(self, dir=None, onlyDirs=False, filterFiles=False):
         # Get Current dir
@@ -227,3 +246,5 @@ class HNNGeppetto:
 logging.info("Initialising HNN UI")
 hnn_geppetto = HNNGeppetto()
 logging.info("HNN UI initialised")
+
+
