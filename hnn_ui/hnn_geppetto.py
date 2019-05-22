@@ -206,19 +206,19 @@ class HNNGeppetto:
         return holoviews_plots.get_experimental_plot(self.experimental_data)
 
     def get_traces_plot(self):
-        plot_html = sim.analysis.iplotTraces()
+        plot_html = sim.analysis.iplotTraces(**self.cfg.analysis['iplotTraces'])
         if plot_html != -1:
             return plot_html
         return ""
 
     def get_psd_plot(self):
-        plot_html = sim.analysis.iplotRatePSD()
+        plot_html = sim.analysis.iplotRatePSD(**self.cfg.analysis['iplotRatePSD'])
         if plot_html != -1:
             return plot_html
         return ""
 
     def get_raster_plot(self):
-        plot_html = sim.analysis.iplotRaster()
+        plot_html = sim.analysis.iplotRaster(**self.cfg.analysis['iplotRaster'])
         if plot_html != -1:
             return plot_html
         return ""
@@ -230,7 +230,7 @@ class HNNGeppetto:
         return ""
 
     def get_spikehistogram_plot(self):
-        plot_html = sim.analysis.iplotSpikeHist()
+        plot_html = sim.analysis.iplotSpikeHist(**self.cfg.analysis['iplotSpikeHist'])
         if plot_html != -1:
             return plot_html
         return ""
