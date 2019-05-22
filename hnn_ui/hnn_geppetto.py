@@ -24,14 +24,15 @@ from hnn_ui.cellParams import set_cellParams
 from hnn_ui.constants import CANVAS_KEYS, PROXIMAL, DISTAL
 from hnn_ui.netParams import set_netParams
 from hnn_ui.netpyne_model_interpreter import NetPyNEModelInterpreter
-from hnn_ui.utils import set_cfg_from_params
+from hnn_ui.utils import set_cfg_from_params, setCfgFromFile
 
 
 class HNNGeppetto:
 
     def __init__(self):
         self.model_interpreter = NetPyNEModelInterpreter()
-        self.cfg = self.load_cfg()
+        # loads the param file on top of the cfg contained in cfg.py
+        self.cfg = setCfgFromFile('load_examples/ERPYes100Trials.param', self.load_cfg())
         self.experimental_data = self.load_experimental_from_file()
         # use to decide whether or not to update the canvas in the front end
         self.last_cfg_snapshot = self.cfg.__dict__.copy()
@@ -62,13 +63,13 @@ class HNNGeppetto:
     def load_cfg_from_param(self, file):
         file_list = json.loads(file)
         file_bytes = bytes(file_list)
-        cfg = set_cfg_from_params(file_bytes, specs.SimConfig())
+        cfg = set_cfg_from_params(file_bytes, self.cfg)
         self.cfg = self.get_evoked_dict(cfg)
 
     def load_cfg_from_param_debug(self, file):
         fh = open(file, 'rb')
         file_bytes = bytearray(fh.read())
-        cfg = set_cfg_from_params(file_bytes, specs.SimConfig())
+        cfg = set_cfg_from_params(file_bytes, self.cfg)
         self.cfg = self.get_evoked_dict(cfg)
 
 
@@ -223,6 +224,12 @@ class HNNGeppetto:
         return ""
 
     def get_spectrogram_plot(self):
+        plot_html = sim.analysis.iplotLFP(plots=['spectrogram'])
+        if plot_html != -1:
+            return plot_html
+        return ""
+
+    def get_spikehistogram_plot(self):
         plot_html = sim.analysis.iplotSpikeHist()
         if plot_html != -1:
             return plot_html
