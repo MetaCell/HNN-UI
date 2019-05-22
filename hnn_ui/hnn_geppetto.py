@@ -24,15 +24,15 @@ from hnn_ui.cellParams import set_cellParams
 from hnn_ui.constants import CANVAS_KEYS, PROXIMAL, DISTAL
 from hnn_ui.netParams import set_netParams
 from hnn_ui.netpyne_model_interpreter import NetPyNEModelInterpreter
-from hnn_ui.utils import set_cfg_from_params
+from hnn_ui.utils import set_cfg_from_params, setCfgFromFile
 
 
 class HNNGeppetto:
 
     def __init__(self):
         self.model_interpreter = NetPyNEModelInterpreter()
-        self.cfg = self.load_cfg()
-        self.load_cfg_from_param_debug("load_examples/ERPYes100Trials.param")
+        # loads the param file on top of the cfg contained in cfg.py
+        self.cfg = setCfgFromFile('load_examples/ERPYes100Trials.param', self.load_cfg())
         self.experimental_data = self.load_experimental_from_file()
         # use to decide whether or not to update the canvas in the front end
         self.last_cfg_snapshot = self.cfg.__dict__.copy()
