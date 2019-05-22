@@ -69,16 +69,16 @@ popColors = {'L2Basket': [0.0, 0.0, 0.0], 'L2Pyr': [0.0, 0.6, 0.0], 'L5Basket': 
     'Evoked proximal': [0.0, 1.0, 1.0], 'Evoked distal': [1.0, 1.0, 0.0]}
 
 cfg.analysis['iplotTraces'] = {'include': [('L5Pyr',0) ], 'oneFigPer': 'cell', 'saveFig': False, 
-							  'showFig': True, 'timeRange': [0, cfg.duration]}
+							  'showFig': False, 'timeRange': [0, cfg.duration]}
 
-cfg.analysis['iplotRaster'] = {'include': pops, 'showFig': True, 'popColors': popColors, 'markerSize': 6, 'orderInverse': True}
+cfg.analysis['iplotRaster'] = {'include': pops, 'showFig': False, 'popColors': popColors, 'markerSize': 6, 'orderInverse': True}
 
 cfg.analysis['iplotSpikeHist'] = {'include': [*pops, evprox, evdist], 'legendLabels': pops + ['Evoked proximal', 'Evoked distal'],
-    'popColors': popColors, 'yaxis': 'count', 'showFig': True}
+    'popColors': popColors, 'yaxis': 'count', 'showFig': False}
 
-cfg.analysis['iplotRatePSD'] = {'include': pops, 'showFig': True}
+cfg.analysis['iplotRatePSD'] = {'include': pops, 'showFig': False}
 
-cfg.analysis['iplotDipole'] = {'showFig': True}
+cfg.analysis['iplotDipole'] = {'showFig': False}
 
 # cfg.analysis['iplotLFP'] = {'showFig': True}
 
