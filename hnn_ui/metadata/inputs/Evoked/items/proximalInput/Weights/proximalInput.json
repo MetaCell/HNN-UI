@@ -7,56 +7,56 @@
   "children": [
     {
       "label": "Layer 2/3 pyramidal cell AMPA weight [uS]",
-      "id": "cfg.evoked['{}']['gbar_L2Pyr_ampa']",
+      "id": "cfg.gbar_{}_L2Pyr_ampa",
       "hintText": "Layer 2/3 pyramidal cell AMPA weight (uS)",
       "component": "TextField",
       "field_type": "float"
     },
     {
       "label": "Layer 2/3 pyramidal cell NMDA weight [uS]",
-      "id": "cfg.evoked['{}']['gbar_L2Pyr_nmda']",
+      "id": "cfg.gbar_{}_L2Pyr_nmda",
       "hintText": "Layer 2/3 pyramidal cell NMDA weight (uS)",
       "component": "TextField",
       "field_type": "float"
     },
     {
       "label": "Layer 2/3 basket cell AMPA weight [uS]",
-      "id": "cfg.evoked['{}']['gbar_L2Basket_ampa']",
+      "id": "cfg.gbar_{}_L2Basket_ampa",
       "hintText": "Layer 2/3 basket cell AMPA weight (uS)",
       "component": "TextField",
       "field_type": "float"
     },
     {
       "label": "Layer 2/3 basket cell NMDA weight [uS]",
-      "id": "cfg.evoked['{}']['gbar_L2Basket_nmda']",
+      "id": "cfg.gbar_{}_L2Basket_nmda",
       "hintText": "Layer 2/3 basket cell NMDA weight (uS)",
       "component": "TextField",
       "field_type": "float"
     },
     {
       "label": "Layer 5 pyramidal cell AMPA weight [uS]",
-      "id": "cfg.evoked['{}']['gbar_L5Pyr_ampa']",
+      "id": "cfg.gbar_{}_L5Pyr_ampa",
       "hintText": "Layer 5 pyramidal cell AMPA weight (uS)",
       "component": "TextField",
       "field_type": "float"
     },
     {
       "label": "Layer 5 pyramidal cell NMDA weight [uS]",
-      "id": "cfg.evoked['{}']['gbar_L5Pyr_nmda']",
+      "id": "cfg.gbar_{}_L5Pyr_nmda",
       "hintText": "Layer 5 pyramidal cell NMDA weight (uS)",
       "component": "TextField",
       "field_type": "float"
     },
     {
       "label": "Layer 5 basket cell AMPA weight [uS]",
-      "id": "cfg.evoked['{}']['gbar_L5Basket_ampa']",
+      "id": "cfg.gbar_{}_L5Basket_ampa",
       "hintText": "Layer 5 basket cell AMPA weight (uS)",
       "component": "TextField",
       "field_type": "float"
     },
     {
       "label": "Layer 5 basket cell NMDA weight [uS]",
-      "id": "cfg.evoked['{}']['gbar_L5Basket_nmda']",
+      "id": "cfg.gbar_{}_L5Basket_nmda",
       "hintText": "Layer 5 basket cell NMDA weight (uS)",
       "component": "TextField",
       "field_type": "float"
