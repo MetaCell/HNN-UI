@@ -55,10 +55,13 @@ class HNNGeppetto:
         return cfg
 
     def load_cfg_from_json(self, file):
-        file_list = json.loads(file)
-        file_bytes = bytes(file_list)
-        self.cfg = jsonpickle.decode(json.loads(file_bytes.decode('utf-8')))
-        self.evoked_dict = self.get_evoked_dict(self.cfg)
+        with redirect_stdout(sys.__stdout__):
+            file_list = json.loads(file)
+            file_bytes = bytes(file_list)
+            self.cfg = jsonpickle.decode(json.loads(file_bytes.decode('utf-8')))
+            self.evoked_dict = self.get_evoked_dict(self.cfg)
+            for i in self.evoked_dict.keys():
+                print(i)
 
     def load_cfg_from_param(self, file):
         file_list = json.loads(file)
@@ -183,19 +186,19 @@ class HNNGeppetto:
             else:
                 setattr(self.cfg, att + '_' + key, attributes[att])
 
-    def removeEvokedInput(self, name):
-        with redirect_stdout(sys.__stdout__):
-            print(name)
-            del self.evoked_dict[name]
-        # TODO: Also delete flat
+    def removeEvokedInput(self, key):
+        del self.evoked_dict[key]
+        self.delete_from_cfg(key)
         return self.getEvokedInputs()
 
-    def delete_from_cfg(self, key, attributes):
-        for att in attributes:
-            if 'gbar' in att:
-                setattr(self.cfg, 'gbar_' + key + att.replace('gbar', ''), attributes[att])
-            else:
-                setattr(self.cfg, att + '_' + key, attributes[att])
+    def delete_from_cfg(self, key):
+        to_del = []
+        for item in self.cfg.__dict__.items():
+            att = item[0]
+            if key in att:
+                to_del.append(att)
+        for att in to_del:
+            delattr(self.cfg, att)
 
     def compare_cfg_to_last_snapshot(self):
         return {
@@ -270,4 +273,3 @@ class HNNGeppetto:
 logging.info("Initialising HNN UI")
 hnn_geppetto = HNNGeppetto()
 logging.info("HNN UI initialised")
-hnn_geppetto.getEvokedInputs()
