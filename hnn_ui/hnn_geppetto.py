@@ -66,13 +66,6 @@ class HNNGeppetto:
         cfg = set_cfg_from_params(file_bytes, self.cfg)
         self.cfg = self.get_evoked_dict(cfg)
 
-    def load_cfg_from_param_debug(self, file):
-        fh = open(file, 'rb')
-        file_bytes = bytearray(fh.read())
-        cfg = set_cfg_from_params(file_bytes, self.cfg)
-        self.cfg = self.get_evoked_dict(cfg)
-
-
     def load_experimental_from_file(self):
         d = {'x': [], 'y': [], 'label': 'Experiment'}
         with open("load_examples/hnn_test.txt") as f:
