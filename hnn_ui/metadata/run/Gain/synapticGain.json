@@ -4,7 +4,7 @@
   "children": [
     {
       "label": "Excitatory to Excitatory synaptic gain",
-      "id": "cfg.ee",
+      "id": "cfg.EEgain",
       "field_type": "float",
       "default_value": 1,
       "component": "TextField",
@@ -12,7 +12,7 @@
     },
     {
       "label": "Excitatory to inhibitory synaptic gain",
-      "id": "cfg.ei",
+      "id": "cfg.EIgain",
       "field_type": "float",
       "default_value": 1,
       "component": "TextField",
@@ -20,7 +20,7 @@
     },
     {
       "label": "Inhibitory to Excitatory synaptic gain",
-      "id": "cfg.ie",
+      "id": "cfg.IEgain",
       "field_type": "float",
       "default_value": 1,
       "component": "TextField",
@@ -28,7 +28,7 @@
     },
     {
       "label": "Inhibitory to inhibitory synaptic gain",
-      "id": "cfg.ii",
+      "id": "cfg.IIgain",
       "field_type": "float",
       "default_value": 1,
       "component": "TextField",
