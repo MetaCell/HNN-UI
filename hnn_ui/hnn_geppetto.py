@@ -16,7 +16,6 @@ import hnn_ui.holoviews_plots as holoviews_plots
 import jsonpickle
 from jupyter_geppetto import jupyter_geppetto, synchronization, utils
 from netpyne import sim
-from netpyne import specs
 from pygeppetto.model.model_serializer import GeppettoModelSerializer
 
 import hnn_ui.model_utils as model_utils
@@ -33,6 +32,7 @@ class HNNGeppetto:
         self.model_interpreter = NetPyNEModelInterpreter()
         # loads the param file on top of the cfg contained in cfg.py
         self.cfg = setCfgFromFile('load_examples/ERPYes100Trials.param', self.load_cfg())
+        self.evoked_dict = self.get_evoked_dict(self.cfg)
         self.experimental_data = self.load_experimental_from_file()
         # use to decide whether or not to update the canvas in the front end
         self.last_cfg_snapshot = self.cfg.__dict__.copy()
@@ -52,19 +52,19 @@ class HNNGeppetto:
     def load_cfg(self):
         cfg_module = importlib.import_module("hnn_ui.cfg")
         cfg = getattr(cfg_module, "cfg")
-        return self.get_evoked_dict(cfg)
+        return cfg
 
     def load_cfg_from_json(self, file):
         file_list = json.loads(file)
         file_bytes = bytes(file_list)
-        cfg = jsonpickle.decode(json.loads(file_bytes.decode('utf-8')))
-        self.cfg = self.get_evoked_dict(cfg)
+        self.cfg = jsonpickle.decode(json.loads(file_bytes.decode('utf-8')))
+        self.evoked_dict = self.get_evoked_dict(self.cfg)
 
     def load_cfg_from_param(self, file):
         file_list = json.loads(file)
         file_bytes = bytes(file_list)
-        cfg = set_cfg_from_params(file_bytes, self.cfg)
-        self.cfg = self.get_evoked_dict(cfg)
+        self.cfg = set_cfg_from_params(file_bytes, self.cfg)
+        self.evoked_dict = self.get_evoked_dict(self.cfg)
 
     def load_experimental_from_file(self):
         d = {'x': [], 'y': [], 'label': 'Experiment'}
@@ -87,20 +87,8 @@ class HNNGeppetto:
                 d['y'].append(float(y.decode("utf-8")))
         self.experimental_data = d
 
-    def dict_to_flat(self):
-        flat_cfg = copy.copy(self.cfg)
-        for evk in flat_cfg.evoked:
-            for key in flat_cfg.evoked[evk]:
-                if 'gbar' in key:
-                    setattr(flat_cfg, 'gbar_' + evk + key.replace('gbar', ''), self.cfg.evoked[evk][key])
-                else:
-                    setattr(flat_cfg, key + '_' + evk, self.cfg.evoked[evk][key])
-        delattr(flat_cfg, 'evoked')
-        return flat_cfg
-
     def save_model(self):
-        flat_cfg = self.dict_to_flat()
-        return jsonpickle.encode(flat_cfg)
+        return jsonpickle.encode(self.cfg)
 
     def instantiateModelInGeppetto(self):
         try:
@@ -133,6 +121,13 @@ class HNNGeppetto:
 
     @staticmethod
     def get_evoked_dict_aux(str_, word):
+        """
+        Returns both the evoked key and inner key from cfg an attribute:
+        Assumes @word with the following format: {inner_key-begin}{str_}_id{inner_key-end}
+        given f.e. evdist_, gbar_evdist_1_L2Basket_ampa
+        returns evdist_1, gbar_L2Basket_ampa
+
+        """
         if str_ in word:
             ev_index = word.index(str_)
             len_str = len(str_)
@@ -142,6 +137,16 @@ class HNNGeppetto:
             return key, inner_key
 
     def get_evoked_dict(self, cfg):
+        """
+        Returns a dictionary of evoked inputs as follow:
+            evdist_1:
+                gbar_L2Basket_ampa: 0.001229
+                gbar_L2Basket_nmda: 0.002043
+            evprox_1:
+                gbar_L2Basket_ampa: 0.001229
+                gbar_L2Basket_nmda: 0.002043
+        """
+
         cfg_dict = {}
         for att in dir(cfg):
             if "evprox_" in att:
@@ -157,21 +162,40 @@ class HNNGeppetto:
                 else:
                     cfg_dict[key] = {inner_key: getattr(cfg, att)}
 
-        setattr(cfg, "evoked", cfg_dict)
-        return cfg
+        return cfg_dict
 
     def getEvokedInputs(self):
-        return list(self.cfg.evoked.keys())
+        return list(self.evoked_dict.keys())
 
     def addEvokedInput(self, input_type):
-        evoked_indices = [int(key[key.index("_") + 1:]) for key in self.cfg.evoked.keys() if input_type in key]
+        evoked_indices = [int(key[key.index("_") + 1:]) for key in self.evoked_dict.keys() if input_type in key]
         index = str(max(evoked_indices) + 1) if len(evoked_indices) > 0 else 1
-        self.cfg.evoked[f"{input_type}_{index}"] = DISTAL if input_type == "distal" else PROXIMAL
+        dict_attributes = DISTAL if input_type == "distal" else PROXIMAL
+        key = f"{input_type}_{index}"
+        self.evoked_dict[key] = dict_attributes
+        self.add_to_cfg(key, dict_attributes)
         return {'inputs': self.getEvokedInputs(), 'selected_input': f'{input_type}_{index}'}
 
+    def add_to_cfg(self, key, attributes):
+        for att in attributes:
+            if 'gbar' in att:
+                setattr(self.cfg, 'gbar_' + key + att.replace('gbar', ''), attributes[att])
+            else:
+                setattr(self.cfg, att + '_' + key, attributes[att])
+
     def removeEvokedInput(self, name):
-        del self.cfg.evoked[name]
+        with redirect_stdout(sys.__stdout__):
+            print(name)
+            del self.evoked_dict[name]
+        # TODO: Also delete flat
         return self.getEvokedInputs()
+
+    def delete_from_cfg(self, key, attributes):
+        for att in attributes:
+            if 'gbar' in att:
+                setattr(self.cfg, 'gbar_' + key + att.replace('gbar', ''), attributes[att])
+            else:
+                setattr(self.cfg, att + '_' + key, attributes[att])
 
     def compare_cfg_to_last_snapshot(self):
         return {
@@ -246,5 +270,4 @@ class HNNGeppetto:
 logging.info("Initialising HNN UI")
 hnn_geppetto = HNNGeppetto()
 logging.info("HNN UI initialised")
-
-
+hnn_geppetto.getEvokedInputs()
