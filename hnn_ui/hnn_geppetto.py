@@ -72,6 +72,16 @@ class HNNGeppetto:
         }
 
     def load_cfg(self):
+        """
+
+        Creates a cfg SimConfig from cfg.py file
+
+        Returns
+        -------
+        SimConfg
+            cfg SimConfig
+
+        """
         cfg_module = importlib.import_module("hnn_ui.cfg")
         cfg = getattr(cfg_module, "cfg")
         return cfg
@@ -79,7 +89,7 @@ class HNNGeppetto:
     def load_cfg_from_json(self, file):
         """
 
-        Creates a cfg dict from .json file
+        Creates a cfg SimConfig from .json file
 
         Parameters
         ----------
@@ -95,7 +105,7 @@ class HNNGeppetto:
     def load_cfg_from_param(self, file):
         """
 
-        Creates a cfg dict from .param file
+        Creates a cfg SimConfig from .param file
 
         Parameters
         ----------
@@ -160,12 +170,12 @@ class HNNGeppetto:
     def save_model(self):
         """
 
-        Serializes the cfg dictionary to JSON
+        Serializes the cfg SimConfig to JSON
 
         Returns
         -------
         JSON
-            serialized cfg dict
+            serialized cfg SimConfig
 
         """
         return jsonpickle.encode(self.cfg)
