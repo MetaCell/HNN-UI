@@ -222,6 +222,20 @@ class HNNGeppetto:
         self.last_cfg_snapshot = self.cfg.__dict__.copy()
         return sim
 
+
+    def getModelInGeppetto(self):
+        """
+
+        Gets model in geppetto
+
+        Returns
+        -------
+        JSON
+            serialized geppetto model
+
+        """
+        return json.loads(GeppettoModelSerializer().serialize(self.geppetto_model))
+
     def simulateModel(self):
         """
 
