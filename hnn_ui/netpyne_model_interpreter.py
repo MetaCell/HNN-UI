@@ -6,9 +6,10 @@ import logging
 import pygeppetto.model as pygeppetto
 from pygeppetto.model.model_factory import GeppettoModelFactory
 from pygeppetto.model.values import Point, ArrayElement, ArrayValue
+from hnn_ui.cfg import cfg
 
 
-class NetPyNEModelInterpreter():
+class NetPyNEModelInterpreter:
 
     def __init__(self):
         self.factory = GeppettoModelFactory()
@@ -40,18 +41,18 @@ class NetPyNEModelInterpreter():
                 # Create CellType, VisualType, ArrayType, ArrayVariable and append to netpyne library
                 if 'cellType' in cell['tags']:
                     composite_id = cell['tags']['cellType']
-                else: 
+                else:
                     composite_id = cell['tags']['pop'] + "_cell"
 
-                cellType = pygeppetto.CompositeType(id=str(composite_id), name=str(composite_id), abstract= False)
+                cellType = pygeppetto.CompositeType(id=str(composite_id), name=str(composite_id), abstract=False)
                 visualType = pygeppetto.CompositeVisualType(id='cellMorphology', name='cellMorphology')
                 cellType.visualType = visualType
                 defaultValue = ArrayValue(elements=[])
                 arrayType = pygeppetto.ArrayType(size=0,
-                                                    arrayType=cellType,
-                                                    id=str(cell['tags']['pop']),
-                                                    name=str(cell['tags']['pop']),
-                                                    defaultValue= defaultValue)
+                                                 arrayType=cellType,
+                                                 id=str(cell['tags']['pop']),
+                                                 name=str(cell['tags']['pop']),
+                                                 defaultValue=defaultValue)
                 arrayVariable = pygeppetto.Variable(id=str(cell['tags']['pop']))
                 arrayVariable.types.append(arrayType)
                 network.variables.append(arrayVariable)
@@ -63,9 +64,10 @@ class NetPyNEModelInterpreter():
                 # Save in intermediate structure
                 populations[cell['tags']['pop']] = arrayType
 
-                # Note: no need to check if pt3d since already done via netpyne sim.net.defineCellShapes() in instantiateNetPyNEModel
+                # Note: no need to check if pt3d since already done via
+                # netpyne sim.net.defineCellShapes() in instantiateNetPyNEModel
                 secs = cell['secs']
-                
+
                 # Iterate sections creating spheres and cylinders
                 if hasattr(secs, 'items'):
                     for sec_name, sec in list(secs.items()):
@@ -74,16 +76,27 @@ class NetPyNEModelInterpreter():
                             for i in range(len(points) - 1):
                                 # draw soma as a cylinder, not as a sphere (more accurate representation of 3d pts)  
                                 visualType.variables.append(self.factory.createCylinder(str(sec_name),
-                                                                                            bottomRadius=float(points[i][3] / 2),
-                                                                                            topRadius=float(points[i + 1][3] / 2),
-                                                                                            position=Point(x=float(points[i][0]),y=float(points[i][1]), z=float(points[i][2])),
-                                                                                            distal=Point(x=float(points[i + 1][0]), y=float(points[i + 1][1]), z=float(points[i + 1][2]))))
-                    
+                                                                                        bottomRadius=float(
+                                                                                            points[i][3] / 2),
+                                                                                        topRadius=float(
+                                                                                            points[i + 1][3] / 2),
+                                                                                        position=Point(
+                                                                                            x=float(points[i][0]),
+                                                                                            y=float(points[i][1]),
+                                                                                            z=float(points[i][2])),
+                                                                                        distal=Point(
+                                                                                            x=float(points[i + 1][0]),
+                                                                                            y=float(points[i + 1][1]),
+                                                                                            z=float(points[i + 1][2]))))
 
             # Save the cell position and update elements in defaultValue and size
             populations[cell['tags']['pop']].size = populations[cell['tags']['pop']].size + 1
-            populations[cell['tags']['pop']].defaultValue.elements.append(ArrayElement(index=len(populations[cell['tags']['pop']].defaultValue.elements) , position=Point(x=float(cell['tags']['x'])*50, y=-float(cell['tags']['y']), z=float(cell['tags']['z'])*50)))
-            
+            populations[cell['tags']['pop']].defaultValue.elements \
+                .append(ArrayElement(index=len(populations[cell['tags']['pop']].defaultValue.elements),
+                                     position=Point(x=float(cell['tags']['x']) * cfg.xzScaling,
+                                                    y=-float(cell['tags']['y']),
+                                                    z=float(cell['tags']['z']) * cfg.xzScaling)))
+
     def extractInstances(self, netpyne_model, netpyne_geppetto_library, geppetto_model):
         instance = pygeppetto.Variable(id='network')
         instance.types.append(netpyne_geppetto_library.types[0])
