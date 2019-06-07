@@ -1,5 +1,5 @@
 # all cfg params ending with this values, affect the 3D view of the model
-CANVAS_KEYS = ["_diam", "_L", "N_pyr_x", "N_pyr_y", "gridSpacingPyr", "sizeY"]
+CANVAS_KEYS = ["_diam", "_L", "N_pyr_x", "N_pyr_y", "gridSpacingBasket", "gridSpacingPyr", "sizeY", 'xzScaling']
 
 # default values when adding a new evoke proximal input
 PROXIMAL = {

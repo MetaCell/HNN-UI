@@ -2,7 +2,6 @@
 hnn_geppetto.py
 Initialise HNN Geppetto, this class contains methods to connect HNN with the Geppetto based UI
 """
-import copy
 import importlib
 import io
 import json
