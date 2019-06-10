@@ -1,4 +1,4 @@
-# HNN-GUI
+# HNN Web User Interface
 
 This repository hosts the web-based user interface for [HNN](https://hnn.brown.edu/). HNN is a user-friendly software tool that gives researchers and clinicians the ability to test and develop hypotheses on the circuit mechanism underlying their EEG/MEG data in an easy-to-use environment.
 
