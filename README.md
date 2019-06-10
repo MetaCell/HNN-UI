@@ -8,7 +8,7 @@ This repository hosts the web-based user interface for [HNN](https://hnn.brown.e
 
 ## Install HNN User Interface from sources (for developers)
 
-Make sure you have [NEURON installed](https://github.com/MetaCell/NetPyNE-UI/wiki/Installing-NEURON-crxd-Version) and then:
+Make sure you have [NEURON installed](https://github.com/MetaCell/NetPyNE-UI/wiki/Installing-NEURON-(version-7.6.2-with-crxd)) and then:
 
 ```
 git clone https://github.com/MetaCell/HNN-UI
