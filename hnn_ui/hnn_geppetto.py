@@ -287,7 +287,7 @@ class HNNGeppetto:
         Parameters
         ----------
         cfg : dict
-            the cfg dictionary
+            the cfg SimConfig
 
         Returns
         -------
@@ -316,9 +316,45 @@ class HNNGeppetto:
                 else:
                     cfg_dict[key] = {inner_key: getattr(cfg, att)}
 
+        return self.filter_evoked_dict(cfg_dict)
+
+    def filter_evoked_dict(self, cfg_dict):
+        """
+
+        Returns a dictionary of valid evoked inputs
+
+        Parameters
+        ----------
+        cfg_dict : dict
+            the cfg_dict dictionary
+
+        Returns
+        -------
+        dict
+            Returns a dictionary of valid evoked inputs as follow:
+                evdist_1:
+                    gbar_L2Basket_ampa: 0.001229
+                    gbar_L2Basket_nmda: 0.002043
+                evprox_1:
+                    gbar_L2Basket_ampa: 0.001229
+                    gbar_L2Basket_nmda: 0.002043
+        """
+        keys_to_delete = []
+        for ev_input in cfg_dict:
+            if 'evdist' in ev_input:
+                if bool(DISTAL.keys() - cfg_dict[ev_input].keys()):
+                    keys_to_delete.append(ev_input)
+            elif 'evprox' in ev_input:
+                if bool(PROXIMAL.keys() - cfg_dict[ev_input].keys()):
+                    keys_to_delete.append(ev_input)
+
+        for key in keys_to_delete:
+            del cfg_dict[key]
+
         return cfg_dict
 
     def getEvokedInputs(self):
+
         """
 
         Creates a list of all the evoked inputs present in evoked_dict.
