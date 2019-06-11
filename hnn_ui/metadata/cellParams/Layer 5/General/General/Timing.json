@@ -1,0 +1,20 @@
+{
+  "id": "geometry",
+  "label": "Geometry",
+  "children": [
+    {
+      "label": "Dendrite resistivity [ohm-cm]",
+      "id": "cfg.L5Pyr_dend_Ra",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Enter dendrite resistivity in ohm-cm"
+    },
+    {
+      "label": "Dendrite capacitive density [F/cm2]",
+      "id": "cfg.L5Pyr_dend_cm",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Enter dendrite capacitive density in F/cm2"
+    }
+  ]
+}

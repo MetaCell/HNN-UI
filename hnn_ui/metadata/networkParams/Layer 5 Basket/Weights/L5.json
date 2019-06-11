@@ -1,0 +1,27 @@
+{
+  "id": "toL5Pyr",
+  "label": "Connection weight to Layer 5 pyramidal cell",
+  "children": [
+    {
+      "label": "Connection weight from L2/3 pyr to L5 basket [uS]",
+      "id": "cfg.gbar_L2Pyr_L5Basket",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Connection weight from L2/3 pyramidal cells to L5 basket cells in uS"
+    },
+    {
+      "label": "Connection weight from L5 pyr to L5 basket [uS]",
+      "id": "cfg.gbar_L5Pyr_L5Basket",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Connection weight from L5 pyramidal cells to L5 basket cells in uS"
+    },
+    {
+      "label": "Connection weight from L5 basket to L5 basket [uS]",
+      "id": "cfg.gbar_L5Basket_L5Basket",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Connection weight from L5 basket cells to L5 basket cells in uS"
+    }
+  ]
+}

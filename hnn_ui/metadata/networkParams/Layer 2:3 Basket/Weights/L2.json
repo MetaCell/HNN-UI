@@ -1,0 +1,23 @@
+{
+  "id": "toL2/3Pyr",
+  "label": "Connection weights to Layer 2/3 pyramidal cell",
+  "component": "Thumbnail",
+  "hintText": "",
+  "help": "",
+  "children": [
+    {
+      "label": "Connection weight from L2/3 pyr to L2/3 basket [uS]",
+      "id": "cfg.gbar_L2Pyr_L2Basket",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Connection weight from L2/3 pyramidal cells to L2/3 basket cells in uS"
+    },
+    {
+      "label": "Connection weight from L2/3 basket to L2/3 basket [uS]",
+      "id": "cfg.gbar_L2Basket_L2Basket",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Connection weight from L2/3 basket cells to L2/3 basket cells in uS"
+    }
+  ]
+}

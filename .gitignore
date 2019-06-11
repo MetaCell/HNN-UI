@@ -7,3 +7,6 @@ org.geppetto.frontend.jupyter/
 *.ipynb
 init.py
 .idea/
+netpyne/
+*.log
+.python-version

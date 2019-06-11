@@ -1,0 +1,48 @@
+{
+  "id": "toL5Pyr",
+  "label": "Connection weight to Layer 5 pyramidal cell",
+  "children": [
+    {
+      "label": "Connection weight from L2 pyr to L5 pyr [uS]",
+      "id": "cfg.gbar_L2Pyr_L5Pyr",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Connection weight from L2 pyramidal cells to L5 pyramidal cells in uS"
+    },
+    {
+      "label": "Connection weight from L2/3 basket to L5 pyr [uS]",
+      "id": "cfg.gbar_L2Basket_L5Pyr",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Connection weight from L2/3 basket cells to L5 pyramidal cells in uS"
+    },
+    {
+      "label": "Connection weight from L5 pyr to 5 pyr AMPA [uS]",
+      "id": "cfg.gbar_L5Pyr_L5Pyr_ampa",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "AMPA connection weight from L5 pyramidal cells to L5 pyramidal cells in uS"
+    },
+    {
+      "label": "Connection weight from L5 pyr to L5 pyr NMDA [uS]",
+      "id": "cfg.gbar_L5Pyr_L5Pyr_nmda",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "NMDA connection weight from L2/3 pyramidal cells to L5 pyramidal cells in uS"
+    },
+    {
+      "label": "Connection weight from L5 basket to 5 pyr GABAA [uS]",
+      "id": "cfg.gbar_L5Basket_L5Pyr_gabaa",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "GABAA connection weight from L5 basket cells to L5 pyramidal cells in uS"
+    },
+    {
+      "label": "Connection weight from L5 basket to L5 pyr GABAB [uS]",
+      "id": "cfg.gbar_L5Basket_L5Pyr_gabab",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "GABAB connection weight from L2/3 basket cells to L5 pyramidal cells in uS"
+    }
+  ]
+}

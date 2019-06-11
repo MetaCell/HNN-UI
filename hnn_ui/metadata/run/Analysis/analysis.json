@@ -1,0 +1,45 @@
+{
+  "id": "run",
+  "label": "Simulation parameters",
+  "children": [            
+    {
+      "label": "Save figures",
+      "id": "cfg.save_figs",
+      "component": "Checkbox",
+      "hintText": "Save figures"
+    },
+    {
+      "label": "Save somatic voltage",
+      "id": "cfg.save_vsoma",
+      "component": "Checkbox",
+      "hintText": "Save somatic voltage"
+    },
+    {
+      "label": "Save spectral data",
+      "id": "cfg.save_spec_data",
+      "component": "Checkbox",
+      "hintText": "Save spectral data"
+    },
+    {
+      "label": "Max spectra frequency [Hz]",
+      "id": "cfg.f_max_spec",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Max spectra frequency (Hz)"
+    },
+    {
+      "label": "Dipole scaling",
+      "id": "cfg.dipole_scalefctr",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Dipole scaling"
+    },
+    {
+      "label": "Dipole smooth window [ms]",
+      "id": "cfg.dipole_smooth_win",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Dipole smooth window (ms)"
+    }
+  ]
+}

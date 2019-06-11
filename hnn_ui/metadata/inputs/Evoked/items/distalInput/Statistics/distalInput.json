@@ -1,0 +1,28 @@
+{
+  "id": "distalInput",
+  "label": "Distal input",
+  "component": "item",
+  "children": [
+    {
+      "label": "Start time mean [ms]",
+      "id": "cfg.t_{}",
+      "hintText": "Start time mean (ms)",
+      "component": "TextField",
+      "field_type": "float"
+    },
+    {
+      "label": "Stop time stddev [ms]",
+      "id": "cfg.sigma_t_{}",
+      "hintText": "Stop time stddev (ms)",
+      "component": "TextField",
+      "field_type": "float"
+    },
+    {
+      "label": "Number of spikes",
+      "id": "cfg.numspikes_{}",
+      "hintText": "Number of spikes",
+      "component": "TextField",
+      "field_type": "float"
+    }
+  ]
+}

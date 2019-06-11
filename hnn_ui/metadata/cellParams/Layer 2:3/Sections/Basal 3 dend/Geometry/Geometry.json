@@ -1,0 +1,21 @@
+{
+  "id": "geometry",
+  "label": "Geometry",
+  "children": [
+    {
+      "label": "Basal dendrite 3 length [um]",
+      "id": "cfg.L2Pyr_basal3_L",
+      "field_type": "float",
+      "component": "TextField",
+      "hintText": "Enter basal dendrite 3 length in microns"
+    },
+    {
+      "label": "Basal dendrite 3 diameter [um]",
+      "id": "cfg.L2Pyr_basal3_diam",
+      "field_type": "float",
+      "default_value": 2.72,
+      "component": "TextField",
+      "hintText": "Enter basal dendrite 3 diameter in microns"
+    }
+  ]
+}
