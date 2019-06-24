@@ -12,7 +12,7 @@ import sys
 import hnn_ui.holoviews_plots as holoviews_plots
 
 import jsonpickle
-from jupyter_geppetto import jupyter_geppetto, synchronization, utils
+from jupyter_geppetto import synchronization, utils
 from netpyne import sim
 from pygeppetto.model.model_serializer import GeppettoModelSerializer
 
@@ -48,7 +48,7 @@ class HNNGeppetto:
         synchronization.startSynchronization(self.__dict__)
         logging.debug("Initializing the original model")
 
-        jupyter_geppetto.context = {'hnn_geppetto': self}
+        synchronization.context = {'hnn_geppetto': self}
 
     def getData(self):
         """
@@ -196,9 +196,10 @@ class HNNGeppetto:
             logging.debug('Running single thread simulation')
             self.simulateModel()
 
-            return json.loads(GeppettoModelSerializer().serialize(self.geppetto_model))
-        except:
-            return utils.getJSONError("Error while instantiating the NetPyNE model", sys.exc_info())
+            return json.loads(GeppettoModelSerializer.serialize(self.geppetto_model))
+        except Exception as e:
+            print(e)
+            return utils.getJSONError("Error while instantiating the NetPyNE model", e)
 
     def instantiateModel(self):
         """
