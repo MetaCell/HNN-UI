@@ -58,7 +58,7 @@ subprocess.call(['pip', 'install', '-r', 'requirements.txt'])
 # Cloning Repos
 clone(repository=PYGEPPETTO, 
     folder='pygeppetto', 
-    default_branch='development'
+    default_branch='feature_21'
 )
 subprocess.call(['pip', 'install', '-e', '.'], cwd='./pygeppetto/')
 
@@ -70,7 +70,7 @@ subprocess.call(['pip', 'install', '-e', '.'], cwd='./netpyne/')
 
 clone(repository=JUPYTER, 
     folder='org.geppetto.frontend.jupyter', 
-    default_branch='infra-merge'
+    default_branch='feature_65'
 )
 subprocess.call(['npm', 'install'], cwd='./org.geppetto.frontend.jupyter/js')
 subprocess.call(['npm', 'run', 'build-dev'], cwd='./org.geppetto.frontend.jupyter/js')
