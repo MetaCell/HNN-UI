@@ -70,7 +70,7 @@ subprocess.call(['pip', 'install', '-e', '.'], cwd='./netpyne/')
 
 clone(repository=JUPYTER, 
     folder='org.geppetto.frontend.jupyter', 
-    default_branch='infra-merge'
+    default_branch='development'
 )
 subprocess.call(['npm', 'install'], cwd='./org.geppetto.frontend.jupyter/js')
 subprocess.call(['npm', 'run', 'build-dev'], cwd='./org.geppetto.frontend.jupyter/js')
