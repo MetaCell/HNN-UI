@@ -217,6 +217,7 @@ class HNNGeppetto:
         netParams_snapshot = set_netParams(self.cfg)
         netParams_snapshot.cellParams = set_cellParams(self.cfg)
         sim.create(simConfig=self.cfg, netParams=netParams_snapshot)
+        sim.net.defineCellShapes()
         sim.gatherData(gatherLFP=False)
         self.last_cfg_snapshot = self.cfg.__dict__.copy()
         return sim
