@@ -547,7 +547,7 @@ class HNNGeppetto:
             html str with the psd plot
 
         """
-        plot_html = sim.analysis.iplotRatePSD(**self.cfg.analysis['iplotRatePSD'])
+        plot_html = sim.analysis.iplotDipolePSD(self.experimental_data, **self.cfg.analysis['iplotDipolePSD'])
         if plot_html != -1:
             return plot_html
         return ""
