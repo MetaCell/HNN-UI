@@ -94,9 +94,9 @@ class NetPyNEModelInterpreter:
             populations[cell['tags']['pop']].size = populations[cell['tags']['pop']].size + 1
             populations[cell['tags']['pop']].defaultValue.elements \
                 .append(ArrayElement(index=len(populations[cell['tags']['pop']].defaultValue.elements),
-                                     position=Point(x=float(cell['tags']['x']) * cfg.xzScaling,
+                                     position=Point(x=float(cell['tags']['x']) * 50,
                                                     y=-float(cell['tags']['y']),
-                                                    z=float(cell['tags']['z']) * cfg.xzScaling)))
+                                                    z=float(cell['tags']['z']) * 50)))
 
     def extractInstances(self, netpyne_model, netpyne_geppetto_library, geppetto_model):
         instance = pygeppetto.Variable(id='network')

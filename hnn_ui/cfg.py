@@ -36,7 +36,8 @@ cfg.cvode_active = False
 cfg.printRunTime = 0.1
 cfg.printPopAvgRates = True
 cfg.distributeSynsUniformly = False  # one syn per section in list of sections
-cfg.allowSelfConns = False # allow connections from a cell to itself
+cfg.allowSelfConns = False  # allow connections from a cell to itself
+cfg.allowConnsWithWeight0 = False # do not allow conns with weight 0 (faster)
 
 # ----------------------------------------------------------------------------
 # Recording
@@ -66,6 +67,10 @@ evprox = ['evokedProximal_1_L2Basket', 'evokedProximal_1_L2Pyr', 'evokedProximal
           'evokedProximal_2_L2Basket', 'evokedProximal_2_L2Pyr', 'evokedProximal_2_L5Basket', 'evokedProximal_2_L5Pyr']
 evdist = ['evokedDistal_1_L2Basket', 'evokedDistal_1_L2Pyr', 'evokedDistal_1_L5Basket', 'evokedDistal_1_L5Pyr']
 
+rhythprox = ['extRhythmicProximal_L2Basket', 'extRhythmicProximal_L2Pyr', 'extRhythmicProximal_L5Basket', 'extRhythmicProximal_L5Pyr']
+rhythdist = ['extRhythmicDistal_L2Basket', 'extRhythmicDistal_L2Pyr', 'extRhythmicDistal_L5Basket', 'extRhythmicDistal_L5Pyr']
+
+
 popColors = {'L2Basket': [0.0, 0.0, 0.0], 'L2Pyr': [0.0, 0.6, 0.0], 'L5Basket': [0.0, 0.0, 1.0], 'L5Pyr': [1.0, 0.0, 0.0],
              'Evoked proximal': [0.0, 1.0, 1.0], 'Evoked distal': [1.0, 1.0, 0.0]}
 
@@ -74,7 +79,7 @@ cfg.analysis['iplotTraces'] = {'include': [('L5Pyr',0) ], 'oneFigPer': 'cell', '
 
 cfg.analysis['iplotRaster'] = {'include': pops, 'showFig': False, 'popColors': popColors, 'markerSize': 6, 'orderInverse': True}
 
-cfg.analysis['iplotSpikeHist'] = {'include': [*pops, evprox, evdist], 'legendLabels': pops + ['Evoked proximal', 'Evoked distal'],
+cfg.analysis['iplotSpikeHist'] = {'include': [*pops, evprox, evdist, rhythprox, rhythdist], 'legendLabels': pops + ['Evoked proximal', 'Evoked distal', 'Rhythmic proximal', 'Rhythmic distal'],
                                   'popColors': popColors, 'yaxis': 'count', 'showFig': False}
 
 cfg.analysis['iplotRatePSD'] = {'include': pops, 'showFig': False}
@@ -91,7 +96,7 @@ cfg.analysis['plotConn'] = {'includePre': pops, 'includePost': pops, 'feature': 
 # ----------------------------------------------------------------------------
 cfg.gridSpacingPyr = 1  # 50
 cfg.gridSpacingBasket = [1, 1, 3]
-cfg.xzScaling = 50
+cfg.xzScaling = 1 #100
 cfg.sizeY = 2000
 
 cfg.localConn = True
