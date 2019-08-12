@@ -13,8 +13,6 @@ import itertools as it
 
 
 def set_netParams(cfg):
-
-
     # ----------------------------------------------------------------------------
     #
     # NETWORK PARAMETERS
@@ -30,13 +28,6 @@ def set_netParams(cfg):
     netParams.sizeY = cfg.sizeY # y-dimension (vertical height or cortical depth) size in um
     netParams.sizeZ = ((cfg.N_pyr_y * cfg.gridSpacingPyr) - 1) * cfg.xzScaling # z-dimension (horizontal depth) size in um
     netParams.shape = 'cuboid'
-
-
-    # ----------------------------------------------------------------------------
-    # Cell parameters
-    # ----------------------------------------------------------------------------
-    # from cellParams import cellParams  # defined in separate module for clarity
-    # netParams.cellParams = cellParams
 
     # ----------------------------------------------------------------------------
     # Population parameters
@@ -523,11 +514,11 @@ def set_netParams(cfg):
         nprox = len([k for k in cfg.__dict__ if k.startswith('t_evprox')])
         ndist = len([k for k in cfg.__dict__ if k.startswith('t_evdist')])
 
-        # # TEMPORARY CODE TO HARD CODE SAME SPIKE TIMES AS IN ORIGINAL MODEL (ERP TUT)
+        # TEMPORARY CODE TO HARD CODE SAME SPIKE TIMES AS IN ORIGINAL MODEL (ERP TUT)
         # import json
         # with open('../input_spikes.json', 'r') as f:
         #     input_spikes = json.load(f)
-        ev_gids = {'L2Basket': [0,35], 'L2Pyr': [35,135], 'L5Basket': [135,170], 'L5Pyr': [170,270]}
+        # ev_gids = {'L2Basket': [0,35], 'L2Pyr': [35,135], 'L5Basket': [135,170], 'L5Pyr': [170,270]}
 
         # Evoked proximal inputs (population of 1 VecStim)
         for iprox in range(nprox):
@@ -977,5 +968,6 @@ def set_netParams(cfg):
             'delay': delayDistFunc.format(**synParams),
             'synsPerConn': 3,
             'sec': ['basal_2', 'basal_3','apical_oblique']}
+
 
     return netParams
