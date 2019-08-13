@@ -58,26 +58,26 @@ subprocess.call(['pip', 'install', '-r', 'requirements.txt'])
 # Cloning Repos
 clone(repository=PYGEPPETTO, 
     folder='pygeppetto', 
-    default_branch='development'
+    default_branch='v0.5.0-alpha'
 )
 subprocess.call(['pip', 'install', '-e', '.'], cwd='./pygeppetto/')
 
 clone(repository=NETPYNE, 
     folder='netpyne', 
-    default_branch='dipole'
+    default_branch='hnn_12Aug19'
 )
 subprocess.call(['pip', 'install', '-e', '.'], cwd='./netpyne/')
 
 clone(repository=JUPYTER, 
     folder='org.geppetto.frontend.jupyter', 
-    default_branch='infra-merge'
+    default_branch='v1.0.0-alpha'
 )
 subprocess.call(['npm', 'install'], cwd='./org.geppetto.frontend.jupyter/js')
 subprocess.call(['npm', 'run', 'build-dev'], cwd='./org.geppetto.frontend.jupyter/js')
 
 clone(repository=APPLICATION, 
     folder='geppetto-hnn', 
-    default_branch='development'
+    default_branch='v0.1.2'
 )
 print("NPM Install and build for Geppetto Frontend  ...")
 os.chdir(os.getcwd() + "/geppetto-hnn")

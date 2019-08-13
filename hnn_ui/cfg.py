@@ -8,7 +8,7 @@ Contributors: salvadordura@gmail.com
 
 from netpyne import specs
 
-cfg = specs.SimConfig()  
+cfg = specs.SimConfig()
 
 cfg.checkErrors = False # True # leave as False to avoid extra printouts
 
@@ -28,24 +28,26 @@ cfg.checkErrors = False # True # leave as False to avoid extra printouts
 # ----------------------------------------------------------------------------
 # Run parameters
 # ----------------------------------------------------------------------------
-cfg.duration = 250 
-cfg.seeds = {'conn': 4321, 'stim': 1234, 'loc': 4321} 
-cfg.hParams['v_init'] = -65  
+cfg.duration = 250
+cfg.seeds = {'conn': 4321, 'stim': 1234, 'loc': 4321}
+cfg.hParams['v_init'] = -65
 cfg.verbose = 0
 cfg.cvode_active = False
 cfg.printRunTime = 0.1
 cfg.printPopAvgRates = True
-cfg.distributeSynsUniformly = True  # one syn per section in list of sections
+cfg.distributeSynsUniformly = False  # one syn per section in list of sections
+cfg.allowSelfConns = False  # allow connections from a cell to itself
+cfg.allowConnsWithWeight0 = False # do not allow conns with weight 0 (faster)
 
 # ----------------------------------------------------------------------------
-# Recording 
+# Recording
 # ----------------------------------------------------------------------------
 cfg.recordTraces = {'V_soma': {'sec': 'soma', 'loc': 0.5, 'var': 'v'}}
 cfg.recordCells = [('L2Basket',0), ('L2Pyr',0), ('L5Basket',0), ('L5Pyr',0)]
-cfg.recordStims = False  
-cfg.recordStep = 0.25
+cfg.recordStims = False
+cfg.recordStep = 0.025
 
-#cfg.recordLFP = [[50, 50, 50], [50, 1300, 50]]
+# cfg.recordLFP = [[50, 50, 50], [50, 1300, 50]]
 
 # ----------------------------------------------------------------------------
 # Saving
@@ -58,29 +60,35 @@ cfg.saveJson = False
 cfg.saveDataInclude = ['simData', 'simConfig'] #, 'netParams', 'net']
 
 # ----------------------------------------------------------------------------
-# Analysis and plotting 
+# Analysis and plotting
 # ----------------------------------------------------------------------------
 pops = ['L2Basket', 'L2Pyr', 'L5Basket', 'L5Pyr']
 evprox = ['evokedProximal_1_L2Basket', 'evokedProximal_1_L2Pyr', 'evokedProximal_1_L5Basket', 'evokedProximal_1_L5Pyr',
-  'evokedProximal_2_L2Basket', 'evokedProximal_2_L2Pyr', 'evokedProximal_2_L5Basket', 'evokedProximal_2_L5Pyr']
+          'evokedProximal_2_L2Basket', 'evokedProximal_2_L2Pyr', 'evokedProximal_2_L5Basket', 'evokedProximal_2_L5Pyr']
 evdist = ['evokedDistal_1_L2Basket', 'evokedDistal_1_L2Pyr', 'evokedDistal_1_L5Basket', 'evokedDistal_1_L5Pyr']
 
-popColors = {'L2Basket': [0.0, 0.0, 0.0], 'L2Pyr': [0.0, 0.6, 0.0], 'L5Basket': [0.0, 0.0, 1.0], 'L5Pyr': [1.0, 0.0, 0.0],
-    'Evoked proximal': [0.0, 1.0, 1.0], 'Evoked distal': [1.0, 1.0, 0.0]}
+rhythprox = ['extRhythmicProximal_L2Basket', 'extRhythmicProximal_L2Pyr', 'extRhythmicProximal_L5Basket', 'extRhythmicProximal_L5Pyr']
+rhythdist = ['extRhythmicDistal_L2Basket', 'extRhythmicDistal_L2Pyr', 'extRhythmicDistal_L5Basket', 'extRhythmicDistal_L5Pyr']
 
-cfg.analysis['iplotTraces'] = {'include': [('L5Pyr',0) ], 'oneFigPer': 'cell', 'saveFig': False, 
-							  'showFig': False, 'timeRange': [0, cfg.duration]}
+
+popColors = {'L2Basket': [0.0, 0.0, 0.0], 'L2Pyr': [0.0, 0.6, 0.0], 'L5Basket': [0.0, 0.0, 1.0], 'L5Pyr': [1.0, 0.0, 0.0],
+             'Evoked proximal': [0.0, 1.0, 1.0], 'Evoked distal': [1.0, 1.0, 0.0]}
+
+cfg.analysis['iplotTraces'] = {'include': [('L5Pyr',0) ], 'oneFigPer': 'cell', 'saveFig': False,
+                               'showFig': False, 'timeRange': [0, cfg.duration]}
 
 cfg.analysis['iplotRaster'] = {'include': pops, 'showFig': False, 'popColors': popColors, 'markerSize': 6, 'orderInverse': True}
 
-cfg.analysis['iplotSpikeHist'] = {'include': [*pops, evprox, evdist], 'legendLabels': pops + ['Evoked proximal', 'Evoked distal'],
-    'popColors': popColors, 'yaxis': 'count', 'showFig': False}
+cfg.analysis['iplotSpikeHist'] = {'include': [*pops, evprox, evdist, rhythprox, rhythdist], 'legendLabels': pops + ['Evoked proximal', 'Evoked distal', 'Rhythmic proximal', 'Rhythmic distal'],
+                                  'popColors': popColors, 'yaxis': 'count', 'showFig': False}
 
 cfg.analysis['iplotRatePSD'] = {'include': pops, 'showFig': False}
 
 cfg.analysis['iplotDipole'] = {'showFig': False}
 
-# cfg.analysis['iplotLFP'] = {'showFig': True}
+cfg.analysis['iplotDipolePSD'] = {'showFig': False, 'maxFreq': 80}
+
+# cfg.analysis['iplotLFP'] = {'showFig': False}
 
 cfg.analysis['plotConn'] = {'includePre': pops, 'includePost': pops, 'feature': 'strength'}
 
@@ -89,9 +97,9 @@ cfg.analysis['plotConn'] = {'includePre': pops, 'includePost': pops, 'feature': 
 # Network parameters
 # ----------------------------------------------------------------------------
 cfg.gridSpacingPyr = 1  # 50
-cfg.gridSpacingBasket = [1, 1, 3]  
-cfg.xzScaling = 50
-cfg.sizeY = 2000 
+cfg.gridSpacingBasket = [1, 1, 3]
+cfg.xzScaling = 1 #100
+cfg.sizeY = 2000
 
 cfg.localConn = True
 cfg.rhythmicInputs = True
@@ -122,15 +130,15 @@ cfg.IIgain = 1.0
 # ----------------------------------------------------------------------------
 # Run parameters
 # ----------------------------------------------------------------------------
-cfg.tstop = cfg.duration 
+cfg.tstop = cfg.duration
 cfg.dt = 0.025
 cfg.celsius = 37.0
-cfg.hParams['celsius'] = cfg.celsius = 37 
+cfg.hParams['celsius'] = cfg.celsius = 37
 cfg.threshold = 0.0 # firing threshold (sets netParams.defaultThreshold)
 
 
 # ----------------------------------------------------------------------------
-# Connectivity/synaptic parameters
+# Cell parameters
 # ----------------------------------------------------------------------------
 # L2 cells
 # Soma

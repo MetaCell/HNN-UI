@@ -36,5 +36,3 @@ or
 .. code-block:: bash
 
     jupyter notebook --NotebookApp.default_url=/geppetto --NotebookApp.token=''
-
-

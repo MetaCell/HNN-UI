@@ -12,13 +12,14 @@ from hnn_ui.cfg import cfg
 class NetPyNEModelInterpreter:
 
     def __init__(self):
-        self.factory = GeppettoModelFactory()
+        self.factory = None
 
     def getGeppettoModel(self, netpyne_model):
         logging.debug('Creating a Geppetto Model')
 
         # We create a GeppettoModel instance and we set a name a assign a lib
-        geppetto_model = self.factory.createGeppettoModel('NetPyNEModel')
+        geppetto_model = GeppettoModelFactory.createGeppettoModel('NetPyNEModel')
+        self.factory = GeppettoModelFactory(geppetto_model)
         netpyne_geppetto_library = pygeppetto.GeppettoLibrary(
             name='netpynelib')
         geppetto_model.libraries.append(netpyne_geppetto_library)
@@ -93,9 +94,9 @@ class NetPyNEModelInterpreter:
             populations[cell['tags']['pop']].size = populations[cell['tags']['pop']].size + 1
             populations[cell['tags']['pop']].defaultValue.elements \
                 .append(ArrayElement(index=len(populations[cell['tags']['pop']].defaultValue.elements),
-                                     position=Point(x=float(cell['tags']['x']) * cfg.xzScaling,
+                                     position=Point(x=float(cell['tags']['x']) * 50,
                                                     y=-float(cell['tags']['y']),
-                                                    z=float(cell['tags']['z']) * cfg.xzScaling)))
+                                                    z=float(cell['tags']['z']) * 50)))
 
     def extractInstances(self, netpyne_model, netpyne_geppetto_library, geppetto_model):
         instance = pygeppetto.Variable(id='network')
