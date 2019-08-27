@@ -59,5 +59,5 @@ docker pull metacell/hnn-ui:release
 ```
 To run the docker container:
 ```bash
-docker run -it -p 8888:8888 metacell/hnn-ui
+docker run -it -p 8888:8888 metacell/hnn-ui:release
 ```
