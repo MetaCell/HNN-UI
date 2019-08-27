@@ -18,7 +18,7 @@ These instructions will get you a copy of the project up and running on your loc
 Have a look in the [documentation](https://github.com/MetaCell/HNN-UI/wiki) for notes on how to use the interface.
 
 ### Prerequisites 
-Before we start make sure you have [NEURON installed](https://github.com/MetaCell/NetPyNE-UI/wiki/Installing-NEURON-(version-7.6.2-with-crxd) in a new python3 virtual environment.
+Before we start make sure you have [NEURON installed](https://github.com/MetaCell/NetPyNE-UI/wiki/Installing-NEURON-version-7.6.2-with-crxd) in a new python3 virtual environment.
 
 ```bash
 python3 -m venv new_venv_folder
