@@ -52,9 +52,9 @@ cd ..
 If everything worked, the default browser will open on http://localhost:8888/geppetto
 
 ### Run with docker
-To pull the docker container:
+To pull the [docker container](https://hub.docker.com/r/metacell/hnn-ui):
 ```bash
-docker pull metacell/hnn-ui
+docker pull metacell/hnn-ui:release 
 ```
 To run the docker container:
 ```bash
