@@ -28,11 +28,11 @@ source new_venv_folder/bin/activate
 ## Install HNN User Interface from sources (for developers)
 Step by step instructions to get a development environment running.
 
-Firstly, clone HNN-UI:
+First clone HNN-UI:
 ```
 git clone https://github.com/MetaCell/HNN-UI
 ```
-Secondly, activate your virtual environment:
+Second activate your virtual environment:
 ```
 source new_venv_folder/bin/activate
 ```
