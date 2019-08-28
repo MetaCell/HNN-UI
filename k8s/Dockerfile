@@ -5,6 +5,6 @@ COPY --chown=1000:1000 spawn_pending.html /usr/local/share/jupyterhub/templates/
 COPY --chown=1000:1000 jupyter.png /usr/local/share/jupyterhub/static/images/jupyter.png
 COPY --chown=1000:1000 favicon.ico /usr/local/share/jupyterhub/static/favicon.ico
 COPY --chown=1000:1000 favicon.ico /usr/local/share/jupyterhub/static/images/favicon.ico
-
+RUN pip3 install jupyterhub-tmpauthenticator==0.6
 
 CMD ["jupyterhub", "--config", "/srv/jupyterhub_config.py"]
